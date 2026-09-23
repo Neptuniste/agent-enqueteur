@@ -219,7 +219,8 @@ __marimo__/
 
 # --- Projet agent-enqueteur ---
 # Poids de modèles / adaptateurs : trop lourds pour git -> Hugging Face Hub
-adapters/
+adapter/*
+!adapter/.gitkeep
 checkpoints/
 outputs/
 *.safetensors

@@ -362,11 +362,16 @@ Un lien public temporaire (`share=True`) suffit pour une démonstration.
 Les 5 livrables du sujet sont couverts : notebook exécuté, rapport PDF de 4 pages maximum, données et script, adaptateur LoRA, README.
 
 ```
-projet-enquete/
+agent-enqueteur/
 ├── agent.ipynb              # notebook principal, parties 1 à 7 dans l'ordre
 ├── rapport.pdf
-├── README.txt               # installation et exécution
+├── README.txt               # installation et exécution (livrable)
+├── README.md                # guide de l'équipe (GitHub)
 ├── requirements.txt         # versions figées
+├── docs/
+│   └── cahier_des_charges.md
+├── notebooks/               # brouillons par partie, fusionnés dans agent.ipynb
+├── rapport/                 # sources du rapport
 ├── src/
 │   ├── config.py
 │   ├── game_state.py
@@ -387,7 +392,7 @@ projet-enquete/
 ├── eval/
 │   ├── grille_evaluation.md
 │   └── evaluate.py
-├── adapter/                 # meilleur adaptateur (ou lien Hugging Face Hub)
+├── adapter/                 # meilleur adaptateur, non versionné (publié sur le Hugging Face Hub)
 └── results/                 # courbes, tableaux d'évaluation
 ```
 

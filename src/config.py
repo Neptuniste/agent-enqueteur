@@ -1,16 +1,26 @@
-"""Paramètres partagés par tous les notebooks (à compléter après la partie 1)."""
+"""Paramètres partagés (voir docs/cahier_des_charges.md, §8 et §10)."""
 
-MODEL_NAME = ""  # ex. "Qwen/Qwen2.5-0.5B-Instruct" — à choisir ensemble
+SEED = 42
 
-SYSTEM_PROMPT = """"""  # rôle, périmètre et refus de l'agent
+# Candidat par défaut, confirmé ou remplacé en partie 2
+MODEL_NAME = "Qwen/Qwen2.5-3B-Instruct"
 
-MAX_HISTORY_TURNS = 4  # nombre d'échanges conservés dans l'historique
+# Historique : nombre d'échanges (joueur + personnage) conservés
+MAX_HISTORY_TURNS = 6
+MAX_LENGTH = 2048
 
 GENERATION_KWARGS = dict(
-    max_new_tokens=256,
+    max_new_tokens=150,
     do_sample=True,
     temperature=0.7,
     top_p=0.9,
+    repetition_penalty=1.1,
 )
+
+# Chemins relatifs à la racine du repo
+CASES_DIR = "cases"
+DATA_DIR = "data"
+ADAPTER_DIR = "adapter"
+RESULTS_DIR = "results"
 
 ADAPTER_REPO = ""  # lien Hugging Face Hub de l'adaptateur LoRA
