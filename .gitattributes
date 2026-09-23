@@ -1,0 +1,5 @@
+# Retire les sorties des notebooks au commit (nécessite `nbstripout --install` une fois par membre)
+*.ipynb filter=nbstripout
+*.ipynb diff=ipynb
+# Le notebook final doit être rendu EXÉCUTÉ : on garde ses sorties
+agent.ipynb -filter

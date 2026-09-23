@@ -216,3 +216,15 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# --- Projet agent-enqueteur ---
+# Poids de modèles / adaptateurs : trop lourds pour git -> Hugging Face Hub
+adapters/
+checkpoints/
+outputs/
+*.safetensors
+*.bin
+*.pt
+*.gguf
+# Cache Hugging Face local
+hf_cache/
