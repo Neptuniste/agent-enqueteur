@@ -25,6 +25,11 @@ Règles :
 MODES = ("verrouille", "complet")
 
 
+def annonce_piece(piece):
+    """Début du message du joueur quand il présente une pièce : identique dans le jeu et les données."""
+    return f"*(L'inspecteur vous montre {piece['nom']}.)*"
+
+
 def _liste(lignes):
     return "\n".join(f"- {ligne}" for ligne in lignes)
 
@@ -61,9 +66,9 @@ def build_system_prompt(fiche, case, etat=None, mode="verrouille"):
         + _liste(fiche["verites"] + [f"Ton emploi du temps : {fiche['alibi']}"]),
         "## Ce que tu penses des autres\n"
         + _liste(f"{noms[cle]} : {avis}" for cle, avis in fiche["relations"].items()),
-        "## Ta version sur les sujets sensibles\n"
-        + _liste(s["mensonge"] for s in verrouilles),
     ]
+    if verrouilles:  # un innocent qui a tout avoué n'a plus de version à tenir
+        parties.append("## Ta version sur les sujets sensibles\n" + _liste(s["mensonge"] for s in verrouilles))
 
     if mode == "complet":
         caches = [

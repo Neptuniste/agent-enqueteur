@@ -1,0 +1,4967 @@
+{
+ "celeste_moreau": {
+  "split": "val",
+  "exemples": [
+   {
+    "situation": "sans_rapport",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "lili"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ],
+     "piece_presentee": "piece_boucle_oreille"
+    },
+    "perte_sur": "dernier",
+    "id": "celeste_moreau-001"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "lili"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ],
+     "piece_presentee": "piece_carnet_noir"
+    },
+    "perte_sur": "dernier",
+    "id": "celeste_moreau-002"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "piece_presentee": "piece_carnet_noir"
+    },
+    "perte_sur": "dernier",
+    "id": "celeste_moreau-003"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "piece_presentee": "piece_carnet_noir"
+    },
+    "perte_sur": "dernier",
+    "id": "celeste_moreau-004"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 1,
+    "etat": {
+     "piece_presentee": "piece_carnet_noir"
+    },
+    "perte_sur": "tous",
+    "id": "celeste_moreau-005"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "piece_presentee": "piece_carnet_noir"
+    },
+    "perte_sur": "dernier",
+    "id": "celeste_moreau-006"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "piece_presentee": "piece_carnet_noir"
+    },
+    "perte_sur": "dernier",
+    "id": "celeste_moreau-007"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 1,
+    "etat": {
+     "piece_presentee": "piece_carnet_noir"
+    },
+    "perte_sur": "tous",
+    "id": "celeste_moreau-008"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "piece_presentee": "piece_carnet_noir"
+    },
+    "perte_sur": "dernier",
+    "id": "celeste_moreau-009"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "piece_presentee": "piece_carnet_noir"
+    },
+    "perte_sur": "dernier",
+    "id": "celeste_moreau-010"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "piece_presentee": "piece_carnet_noir"
+    },
+    "perte_sur": "dernier",
+    "id": "celeste_moreau-011"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 1,
+    "etat": {
+     "piece_presentee": "piece_carnet_noir"
+    },
+    "perte_sur": "tous",
+    "id": "celeste_moreau-012"
+   },
+   {
+    "situation": "sans_rapport",
+    "n_tours": 1,
+    "etat": {
+     "piece_presentee": "piece_cle_double"
+    },
+    "perte_sur": "tous",
+    "id": "celeste_moreau-013"
+   },
+   {
+    "situation": "sans_rapport",
+    "n_tours": 2,
+    "etat": {
+     "piece_presentee": "piece_deposition_josephine"
+    },
+    "perte_sur": "dernier",
+    "id": "celeste_moreau-014"
+   },
+   {
+    "situation": "sans_rapport",
+    "n_tours": 1,
+    "etat": {
+     "piece_presentee": "piece_lettre_avocat"
+    },
+    "perte_sur": "tous",
+    "id": "celeste_moreau-015"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "lili"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "celeste_moreau-016"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 1,
+    "etat": {
+     "secrets_avoues": [
+      "lili"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "celeste_moreau-017"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "lili"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "celeste_moreau-018"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 1,
+    "etat": {
+     "secrets_avoues": [
+      "lili"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "celeste_moreau-019"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {
+     "secrets_avoues": [
+      "lili"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "celeste_moreau-020"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {
+     "secrets_avoues": [
+      "lili"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "celeste_moreau-021"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "lili"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "celeste_moreau-022"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "lili"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "celeste_moreau-023"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "lili"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "celeste_moreau-024"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "lili"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "celeste_moreau-025"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "lili"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "celeste_moreau-026"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 1,
+    "etat": {
+     "secrets_avoues": [
+      "lili"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "celeste_moreau-027"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 1,
+    "etat": {
+     "secrets_avoues": [
+      "lili"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "celeste_moreau-028"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "lili"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "celeste_moreau-029"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "lili"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "celeste_moreau-030"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 1,
+    "etat": {
+     "secrets_avoues": [
+      "lili"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "celeste_moreau-031"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "lili"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "celeste_moreau-032"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "lili"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "celeste_moreau-033"
+   },
+   {
+    "situation": "memoire",
+    "n_tours": 4,
+    "etat": {
+     "secrets_avoues": [
+      "lili"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "celeste_moreau-034"
+   },
+   {
+    "situation": "memoire",
+    "n_tours": 3,
+    "etat": {
+     "secrets_avoues": [
+      "lili"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "celeste_moreau-035"
+   },
+   {
+    "situation": "memoire",
+    "n_tours": 3,
+    "etat": {
+     "secrets_avoues": [
+      "lili"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "celeste_moreau-036"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "lili"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "celeste_moreau-037"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "lili"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "celeste_moreau-038"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "celeste_moreau-039"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "celeste_moreau-040"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "celeste_moreau-041"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "celeste_moreau-042"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "celeste_moreau-043"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "celeste_moreau-044"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "celeste_moreau-045"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "celeste_moreau-046"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "celeste_moreau-047"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "celeste_moreau-048"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "celeste_moreau-049"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "celeste_moreau-050"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "celeste_moreau-051"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "celeste_moreau-052"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "celeste_moreau-053"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "celeste_moreau-054"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "celeste_moreau-055"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "celeste_moreau-056"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "celeste_moreau-057"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "celeste_moreau-058"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "celeste_moreau-059"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "celeste_moreau-060"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "celeste_moreau-061"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "celeste_moreau-062"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "celeste_moreau-063"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "celeste_moreau-064"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "celeste_moreau-065"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "celeste_moreau-066"
+   },
+   {
+    "situation": "memoire",
+    "n_tours": 3,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "celeste_moreau-067"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "celeste_moreau-068"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "celeste_moreau-069"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "celeste_moreau-070"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 3,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "celeste_moreau-071"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "celeste_moreau-072"
+   }
+  ]
+ },
+ "henri_berthier": {
+  "split": "train",
+  "exemples": [
+   {
+    "situation": "confrontation",
+    "n_tours": 1,
+    "etat": {
+     "secrets_avoues": [
+      "enveloppes"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ],
+     "piece_presentee": "piece_carnet_noir"
+    },
+    "perte_sur": "tous",
+    "id": "henri_berthier-001"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "enveloppes"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ],
+     "piece_presentee": "piece_carnet_noir"
+    },
+    "perte_sur": "dernier",
+    "id": "henri_berthier-002"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 1,
+    "etat": {
+     "piece_presentee": "piece_carnet_noir"
+    },
+    "perte_sur": "tous",
+    "id": "henri_berthier-003"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "piece_presentee": "piece_carnet_noir"
+    },
+    "perte_sur": "dernier",
+    "id": "henri_berthier-004"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "piece_presentee": "piece_carnet_noir"
+    },
+    "perte_sur": "dernier",
+    "id": "henri_berthier-005"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 1,
+    "etat": {
+     "piece_presentee": "piece_carnet_noir"
+    },
+    "perte_sur": "tous",
+    "id": "henri_berthier-006"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "piece_presentee": "piece_carnet_noir"
+    },
+    "perte_sur": "dernier",
+    "id": "henri_berthier-007"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "piece_presentee": "piece_carnet_noir"
+    },
+    "perte_sur": "dernier",
+    "id": "henri_berthier-008"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 1,
+    "etat": {
+     "piece_presentee": "piece_carnet_noir"
+    },
+    "perte_sur": "tous",
+    "id": "henri_berthier-009"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 1,
+    "etat": {
+     "piece_presentee": "piece_carnet_noir"
+    },
+    "perte_sur": "tous",
+    "id": "henri_berthier-010"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "piece_presentee": "piece_carnet_noir"
+    },
+    "perte_sur": "dernier",
+    "id": "henri_berthier-011"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "piece_presentee": "piece_carnet_noir"
+    },
+    "perte_sur": "dernier",
+    "id": "henri_berthier-012"
+   },
+   {
+    "situation": "sans_rapport",
+    "n_tours": 1,
+    "etat": {
+     "piece_presentee": "piece_deposition_josephine"
+    },
+    "perte_sur": "tous",
+    "id": "henri_berthier-013"
+   },
+   {
+    "situation": "sans_rapport",
+    "n_tours": 2,
+    "etat": {
+     "piece_presentee": "piece_flacon"
+    },
+    "perte_sur": "dernier",
+    "id": "henri_berthier-014"
+   },
+   {
+    "situation": "sans_rapport",
+    "n_tours": 1,
+    "etat": {
+     "piece_presentee": "piece_flacon"
+    },
+    "perte_sur": "tous",
+    "id": "henri_berthier-015"
+   },
+   {
+    "situation": "sans_rapport",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "enveloppes"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ],
+     "piece_presentee": "piece_liasse_billets"
+    },
+    "perte_sur": "dernier",
+    "id": "henri_berthier-016"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "enveloppes"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "henri_berthier-017"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 1,
+    "etat": {
+     "secrets_avoues": [
+      "enveloppes"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "henri_berthier-018"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 1,
+    "etat": {
+     "secrets_avoues": [
+      "enveloppes"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "henri_berthier-019"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 1,
+    "etat": {
+     "secrets_avoues": [
+      "enveloppes"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "henri_berthier-020"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {
+     "secrets_avoues": [
+      "enveloppes"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "henri_berthier-021"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "enveloppes"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "henri_berthier-022"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {
+     "secrets_avoues": [
+      "enveloppes"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "henri_berthier-023"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "enveloppes"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "henri_berthier-024"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "enveloppes"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "henri_berthier-025"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "enveloppes"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "henri_berthier-026"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-027"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-028"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-029"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-030"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-031"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-032"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-033"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-034"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-035"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-036"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-037"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-038"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-039"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-040"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-041"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-042"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-043"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-044"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-045"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-046"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-047"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-048"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-049"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-050"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-051"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-052"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-053"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-054"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-055"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-056"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-057"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-058"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-059"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-060"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-061"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-062"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-063"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-064"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-065"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-066"
+   },
+   {
+    "situation": "memoire",
+    "n_tours": 4,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-067"
+   },
+   {
+    "situation": "memoire",
+    "n_tours": 3,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-068"
+   },
+   {
+    "situation": "memoire",
+    "n_tours": 3,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-069"
+   },
+   {
+    "situation": "memoire",
+    "n_tours": 4,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-070"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 3,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-071"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 3,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-072"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 3,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-073"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-074"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 3,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-075"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-076"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-077"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "henri_berthier-078"
+   }
+  ]
+ },
+ "josephine_laurent": {
+  "split": "train",
+  "exemples": [
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "piece_presentee": "piece_boucle_oreille"
+    },
+    "perte_sur": "dernier",
+    "id": "josephine_laurent-001"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "piece_presentee": "piece_boucle_oreille"
+    },
+    "perte_sur": "dernier",
+    "id": "josephine_laurent-002"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 1,
+    "etat": {
+     "piece_presentee": "piece_boucle_oreille"
+    },
+    "perte_sur": "tous",
+    "id": "josephine_laurent-003"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "piece_presentee": "piece_boucle_oreille"
+    },
+    "perte_sur": "dernier",
+    "id": "josephine_laurent-004"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "piece_presentee": "piece_boucle_oreille"
+    },
+    "perte_sur": "dernier",
+    "id": "josephine_laurent-005"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 1,
+    "etat": {
+     "piece_presentee": "piece_boucle_oreille"
+    },
+    "perte_sur": "tous",
+    "id": "josephine_laurent-006"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 1,
+    "etat": {
+     "piece_presentee": "piece_boucle_oreille"
+    },
+    "perte_sur": "tous",
+    "id": "josephine_laurent-007"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 1,
+    "etat": {
+     "piece_presentee": "piece_boucle_oreille"
+    },
+    "perte_sur": "tous",
+    "id": "josephine_laurent-008"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "piece_presentee": "piece_boucle_oreille"
+    },
+    "perte_sur": "dernier",
+    "id": "josephine_laurent-009"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "piece_presentee": "piece_boucle_oreille"
+    },
+    "perte_sur": "dernier",
+    "id": "josephine_laurent-010"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "piece_presentee": "piece_boucle_oreille"
+    },
+    "perte_sur": "dernier",
+    "id": "josephine_laurent-011"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "piece_presentee": "piece_boucle_oreille"
+    },
+    "perte_sur": "dernier",
+    "id": "josephine_laurent-012"
+   },
+   {
+    "situation": "sans_rapport",
+    "n_tours": 1,
+    "etat": {
+     "piece_presentee": "piece_bouteille"
+    },
+    "perte_sur": "tous",
+    "id": "josephine_laurent-013"
+   },
+   {
+    "situation": "sans_rapport",
+    "n_tours": 2,
+    "etat": {
+     "piece_presentee": "piece_cle_double"
+    },
+    "perte_sur": "dernier",
+    "id": "josephine_laurent-014"
+   },
+   {
+    "situation": "sans_rapport",
+    "n_tours": 1,
+    "etat": {
+     "piece_presentee": "piece_lettre_r"
+    },
+    "perte_sur": "tous",
+    "id": "josephine_laurent-015"
+   },
+   {
+    "situation": "sans_rapport",
+    "n_tours": 2,
+    "etat": {
+     "piece_presentee": "piece_trousse"
+    },
+    "perte_sur": "dernier",
+    "id": "josephine_laurent-016"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 1,
+    "etat": {
+     "secrets_avoues": [
+      "passeport"
+     ],
+     "pieces_montrees": [
+      "piece_boucle_oreille"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "josephine_laurent-017"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "passeport"
+     ],
+     "pieces_montrees": [
+      "piece_boucle_oreille"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "josephine_laurent-018"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {
+     "secrets_avoues": [
+      "passeport"
+     ],
+     "pieces_montrees": [
+      "piece_boucle_oreille"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "josephine_laurent-019"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {
+     "secrets_avoues": [
+      "passeport"
+     ],
+     "pieces_montrees": [
+      "piece_boucle_oreille"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "josephine_laurent-020"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "passeport"
+     ],
+     "pieces_montrees": [
+      "piece_boucle_oreille"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "josephine_laurent-021"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "passeport"
+     ],
+     "pieces_montrees": [
+      "piece_boucle_oreille"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "josephine_laurent-022"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "passeport"
+     ],
+     "pieces_montrees": [
+      "piece_boucle_oreille"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "josephine_laurent-023"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "passeport"
+     ],
+     "pieces_montrees": [
+      "piece_boucle_oreille"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "josephine_laurent-024"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 1,
+    "etat": {
+     "secrets_avoues": [
+      "passeport"
+     ],
+     "pieces_montrees": [
+      "piece_boucle_oreille"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "josephine_laurent-025"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "passeport"
+     ],
+     "pieces_montrees": [
+      "piece_boucle_oreille"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "josephine_laurent-026"
+   },
+   {
+    "situation": "memoire",
+    "n_tours": 4,
+    "etat": {
+     "secrets_avoues": [
+      "passeport"
+     ],
+     "pieces_montrees": [
+      "piece_boucle_oreille"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "josephine_laurent-027"
+   },
+   {
+    "situation": "memoire",
+    "n_tours": 3,
+    "etat": {
+     "secrets_avoues": [
+      "passeport"
+     ],
+     "pieces_montrees": [
+      "piece_boucle_oreille"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "josephine_laurent-028"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 3,
+    "etat": {
+     "secrets_avoues": [
+      "passeport"
+     ],
+     "pieces_montrees": [
+      "piece_boucle_oreille"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "josephine_laurent-029"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "passeport"
+     ],
+     "pieces_montrees": [
+      "piece_boucle_oreille"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "josephine_laurent-030"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 3,
+    "etat": {
+     "secrets_avoues": [
+      "passeport"
+     ],
+     "pieces_montrees": [
+      "piece_boucle_oreille"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "josephine_laurent-031"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-032"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-033"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-034"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-035"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-036"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-037"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-038"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-039"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-040"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-041"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-042"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-043"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-044"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-045"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-046"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-047"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-048"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-049"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-050"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-051"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-052"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-053"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-054"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-055"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-056"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-057"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-058"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-059"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-060"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-061"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-062"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-063"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-064"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-065"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-066"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-067"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-068"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-069"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-070"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-071"
+   },
+   {
+    "situation": "memoire",
+    "n_tours": 4,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-072"
+   },
+   {
+    "situation": "memoire",
+    "n_tours": 4,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-073"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 3,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-074"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-075"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-076"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 3,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-077"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "josephine_laurent-078"
+   }
+  ]
+ },
+ "leon_perrin": {
+  "split": "train",
+  "exemples": [
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "dettes"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ],
+     "piece_presentee": "piece_carnet_noir"
+    },
+    "perte_sur": "dernier",
+    "id": "leon_perrin-001"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 1,
+    "etat": {
+     "piece_presentee": "piece_carnet_noir"
+    },
+    "perte_sur": "tous",
+    "id": "leon_perrin-002"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "piece_presentee": "piece_carnet_noir"
+    },
+    "perte_sur": "dernier",
+    "id": "leon_perrin-003"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 1,
+    "etat": {
+     "piece_presentee": "piece_carnet_noir"
+    },
+    "perte_sur": "tous",
+    "id": "leon_perrin-004"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "piece_presentee": "piece_carnet_noir"
+    },
+    "perte_sur": "dernier",
+    "id": "leon_perrin-005"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "piece_presentee": "piece_carnet_noir"
+    },
+    "perte_sur": "dernier",
+    "id": "leon_perrin-006"
+   },
+   {
+    "situation": "sans_rapport",
+    "n_tours": 2,
+    "etat": {
+     "piece_presentee": "piece_deposition_josephine"
+    },
+    "perte_sur": "dernier",
+    "id": "leon_perrin-007"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "dettes"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ],
+     "piece_presentee": "piece_flacon"
+    },
+    "perte_sur": "dernier",
+    "id": "leon_perrin-008"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "flacon"
+     ],
+     "pieces_montrees": [
+      "piece_flacon"
+     ],
+     "piece_presentee": "piece_flacon"
+    },
+    "perte_sur": "dernier",
+    "id": "leon_perrin-009"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "flacon"
+     ],
+     "pieces_montrees": [
+      "piece_flacon"
+     ],
+     "piece_presentee": "piece_flacon"
+    },
+    "perte_sur": "dernier",
+    "id": "leon_perrin-010"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "flacon"
+     ],
+     "pieces_montrees": [
+      "piece_flacon"
+     ],
+     "piece_presentee": "piece_flacon"
+    },
+    "perte_sur": "dernier",
+    "id": "leon_perrin-011"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "piece_presentee": "piece_flacon"
+    },
+    "perte_sur": "dernier",
+    "id": "leon_perrin-012"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 1,
+    "etat": {
+     "piece_presentee": "piece_flacon"
+    },
+    "perte_sur": "tous",
+    "id": "leon_perrin-013"
+   },
+   {
+    "situation": "sans_rapport",
+    "n_tours": 1,
+    "etat": {
+     "piece_presentee": "piece_lettre_r"
+    },
+    "perte_sur": "tous",
+    "id": "leon_perrin-014"
+   },
+   {
+    "situation": "sans_rapport",
+    "n_tours": 1,
+    "etat": {
+     "piece_presentee": "piece_liasse_billets"
+    },
+    "perte_sur": "tous",
+    "id": "leon_perrin-015"
+   },
+   {
+    "situation": "sans_rapport",
+    "n_tours": 1,
+    "etat": {
+     "piece_presentee": "piece_testament"
+    },
+    "perte_sur": "tous",
+    "id": "leon_perrin-016"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "dettes"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "leon_perrin-017"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "dettes"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "leon_perrin-018"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "dettes"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "leon_perrin-019"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "dettes"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "leon_perrin-020"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {
+     "secrets_avoues": [
+      "dettes"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "leon_perrin-021"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "dettes"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "leon_perrin-022"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "dettes"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "leon_perrin-023"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "dettes"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "leon_perrin-024"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "flacon",
+      "dettes"
+     ],
+     "pieces_montrees": [
+      "piece_flacon",
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "leon_perrin-025"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "flacon",
+      "dettes"
+     ],
+     "pieces_montrees": [
+      "piece_flacon",
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "leon_perrin-026"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "flacon",
+      "dettes"
+     ],
+     "pieces_montrees": [
+      "piece_flacon",
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "leon_perrin-027"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {
+     "secrets_avoues": [
+      "flacon",
+      "dettes"
+     ],
+     "pieces_montrees": [
+      "piece_flacon",
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "leon_perrin-028"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 1,
+    "etat": {
+     "secrets_avoues": [
+      "flacon",
+      "dettes"
+     ],
+     "pieces_montrees": [
+      "piece_flacon",
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "leon_perrin-029"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "flacon",
+      "dettes"
+     ],
+     "pieces_montrees": [
+      "piece_flacon",
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "leon_perrin-030"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-031"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-032"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-033"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-034"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-035"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-036"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-037"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-038"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-039"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-040"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-041"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-042"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-043"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-044"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-045"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-046"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-047"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-048"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-049"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-050"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-051"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-052"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-053"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-054"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-055"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-056"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-057"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-058"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-059"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-060"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-061"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-062"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-063"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-064"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-065"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-066"
+   },
+   {
+    "situation": "memoire",
+    "n_tours": 3,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-067"
+   },
+   {
+    "situation": "memoire",
+    "n_tours": 4,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-068"
+   },
+   {
+    "situation": "memoire",
+    "n_tours": 4,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-069"
+   },
+   {
+    "situation": "memoire",
+    "n_tours": 4,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-070"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 3,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-071"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-072"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 3,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-073"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 3,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-074"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 3,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-075"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-076"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-077"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "leon_perrin-078"
+   }
+  ]
+ },
+ "lucien_fabre": {
+  "split": "train",
+  "exemples": [
+   {
+    "situation": "sans_rapport",
+    "n_tours": 1,
+    "etat": {
+     "secrets_avoues": [
+      "cle"
+     ],
+     "pieces_montrees": [
+      "piece_cle_double"
+     ],
+     "piece_presentee": "piece_boucle_oreille"
+    },
+    "perte_sur": "tous",
+    "id": "lucien_fabre-001"
+   },
+   {
+    "situation": "sans_rapport",
+    "n_tours": 1,
+    "etat": {
+     "piece_presentee": "piece_carnet_celeste"
+    },
+    "perte_sur": "tous",
+    "id": "lucien_fabre-002"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "caisse"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ],
+     "piece_presentee": "piece_carnet_noir"
+    },
+    "perte_sur": "dernier",
+    "id": "lucien_fabre-003"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "piece_presentee": "piece_carnet_noir"
+    },
+    "perte_sur": "dernier",
+    "id": "lucien_fabre-004"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 1,
+    "etat": {
+     "piece_presentee": "piece_carnet_noir"
+    },
+    "perte_sur": "tous",
+    "id": "lucien_fabre-005"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 1,
+    "etat": {
+     "piece_presentee": "piece_carnet_noir"
+    },
+    "perte_sur": "tous",
+    "id": "lucien_fabre-006"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "piece_presentee": "piece_carnet_noir"
+    },
+    "perte_sur": "dernier",
+    "id": "lucien_fabre-007"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 1,
+    "etat": {
+     "piece_presentee": "piece_carnet_noir"
+    },
+    "perte_sur": "tous",
+    "id": "lucien_fabre-008"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "caisse"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ],
+     "piece_presentee": "piece_cle_double"
+    },
+    "perte_sur": "dernier",
+    "id": "lucien_fabre-009"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "cle"
+     ],
+     "pieces_montrees": [
+      "piece_cle_double"
+     ],
+     "piece_presentee": "piece_cle_double"
+    },
+    "perte_sur": "dernier",
+    "id": "lucien_fabre-010"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 1,
+    "etat": {
+     "piece_presentee": "piece_cle_double"
+    },
+    "perte_sur": "tous",
+    "id": "lucien_fabre-011"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "piece_presentee": "piece_cle_double"
+    },
+    "perte_sur": "dernier",
+    "id": "lucien_fabre-012"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "piece_presentee": "piece_cle_double"
+    },
+    "perte_sur": "dernier",
+    "id": "lucien_fabre-013"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 1,
+    "etat": {
+     "piece_presentee": "piece_cle_double"
+    },
+    "perte_sur": "tous",
+    "id": "lucien_fabre-014"
+   },
+   {
+    "situation": "sans_rapport",
+    "n_tours": 1,
+    "etat": {
+     "piece_presentee": "piece_deposition_josephine"
+    },
+    "perte_sur": "tous",
+    "id": "lucien_fabre-015"
+   },
+   {
+    "situation": "sans_rapport",
+    "n_tours": 2,
+    "etat": {
+     "piece_presentee": "piece_testament"
+    },
+    "perte_sur": "dernier",
+    "id": "lucien_fabre-016"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "caisse"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "lucien_fabre-017"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 1,
+    "etat": {
+     "secrets_avoues": [
+      "caisse"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "lucien_fabre-018"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "caisse"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "lucien_fabre-019"
+   },
+   {
+    "situation": "memoire",
+    "n_tours": 4,
+    "etat": {
+     "secrets_avoues": [
+      "caisse"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "lucien_fabre-020"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "caisse"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "lucien_fabre-021"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "cle",
+      "caisse"
+     ],
+     "pieces_montrees": [
+      "piece_cle_double",
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "lucien_fabre-022"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {
+     "secrets_avoues": [
+      "cle",
+      "caisse"
+     ],
+     "pieces_montrees": [
+      "piece_cle_double",
+      "piece_carnet_noir"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "lucien_fabre-023"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "cle"
+     ],
+     "pieces_montrees": [
+      "piece_cle_double"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "lucien_fabre-024"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "cle"
+     ],
+     "pieces_montrees": [
+      "piece_cle_double"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "lucien_fabre-025"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {
+     "secrets_avoues": [
+      "cle"
+     ],
+     "pieces_montrees": [
+      "piece_cle_double"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "lucien_fabre-026"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "cle"
+     ],
+     "pieces_montrees": [
+      "piece_cle_double"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "lucien_fabre-027"
+   },
+   {
+    "situation": "memoire",
+    "n_tours": 4,
+    "etat": {
+     "secrets_avoues": [
+      "cle"
+     ],
+     "pieces_montrees": [
+      "piece_cle_double"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "lucien_fabre-028"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-029"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-030"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-031"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-032"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-033"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-034"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-035"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-036"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-037"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-038"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-039"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-040"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-041"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-042"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-043"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-044"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-045"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-046"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-047"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-048"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-049"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-050"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-051"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-052"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-053"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-054"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-055"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-056"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-057"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-058"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-059"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-060"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-061"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-062"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-063"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-064"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-065"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-066"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-067"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-068"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-069"
+   },
+   {
+    "situation": "memoire",
+    "n_tours": 4,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-070"
+   },
+   {
+    "situation": "memoire",
+    "n_tours": 3,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-071"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-072"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-073"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 3,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-074"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-075"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-076"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 3,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-077"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "lucien_fabre-078"
+   }
+  ]
+ },
+ "marguerite_delorme": {
+  "split": "train",
+  "exemples": [
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "liaison"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_celeste"
+     ],
+     "piece_presentee": "piece_carnet_celeste"
+    },
+    "perte_sur": "dernier",
+    "id": "marguerite_delorme-001"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "liaison"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_celeste"
+     ],
+     "piece_presentee": "piece_carnet_celeste"
+    },
+    "perte_sur": "dernier",
+    "id": "marguerite_delorme-002"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 1,
+    "etat": {
+     "piece_presentee": "piece_carnet_celeste"
+    },
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-003"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 1,
+    "etat": {
+     "piece_presentee": "piece_carnet_celeste"
+    },
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-004"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "piece_presentee": "piece_carnet_celeste"
+    },
+    "perte_sur": "dernier",
+    "id": "marguerite_delorme-005"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 1,
+    "etat": {
+     "piece_presentee": "piece_carnet_celeste"
+    },
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-006"
+   },
+   {
+    "situation": "sans_rapport",
+    "n_tours": 1,
+    "etat": {
+     "piece_presentee": "piece_flacon"
+    },
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-007"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 1,
+    "etat": {
+     "secrets_avoues": [
+      "liaison"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_celeste"
+     ],
+     "piece_presentee": "piece_lettre_avocat"
+    },
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-008"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "piece_presentee": "piece_lettre_avocat"
+    },
+    "perte_sur": "dernier",
+    "id": "marguerite_delorme-009"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 1,
+    "etat": {
+     "piece_presentee": "piece_lettre_avocat"
+    },
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-010"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 1,
+    "etat": {
+     "piece_presentee": "piece_lettre_avocat"
+    },
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-011"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 1,
+    "etat": {
+     "piece_presentee": "piece_lettre_avocat"
+    },
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-012"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "piece_presentee": "piece_lettre_avocat"
+    },
+    "perte_sur": "dernier",
+    "id": "marguerite_delorme-013"
+   },
+   {
+    "situation": "sans_rapport",
+    "n_tours": 2,
+    "etat": {
+     "piece_presentee": "piece_liasse_billets"
+    },
+    "perte_sur": "dernier",
+    "id": "marguerite_delorme-014"
+   },
+   {
+    "situation": "sans_rapport",
+    "n_tours": 2,
+    "etat": {
+     "piece_presentee": "piece_testament"
+    },
+    "perte_sur": "dernier",
+    "id": "marguerite_delorme-015"
+   },
+   {
+    "situation": "sans_rapport",
+    "n_tours": 1,
+    "etat": {
+     "secrets_avoues": [
+      "divorce",
+      "liaison"
+     ],
+     "pieces_montrees": [
+      "piece_lettre_avocat",
+      "piece_carnet_celeste"
+     ],
+     "piece_presentee": "piece_trousse"
+    },
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-016"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 1,
+    "etat": {
+     "secrets_avoues": [
+      "liaison"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_celeste"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-017"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {
+     "secrets_avoues": [
+      "liaison"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_celeste"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-018"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "liaison"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_celeste"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-019"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "liaison"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_celeste"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-020"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "liaison"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_celeste"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-021"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "liaison"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_celeste"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-022"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {
+     "secrets_avoues": [
+      "divorce",
+      "liaison"
+     ],
+     "pieces_montrees": [
+      "piece_lettre_avocat",
+      "piece_carnet_celeste"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-023"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 1,
+    "etat": {
+     "secrets_avoues": [
+      "divorce",
+      "liaison"
+     ],
+     "pieces_montrees": [
+      "piece_lettre_avocat",
+      "piece_carnet_celeste"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-024"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "divorce",
+      "liaison"
+     ],
+     "pieces_montrees": [
+      "piece_lettre_avocat",
+      "piece_carnet_celeste"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-025"
+   },
+   {
+    "situation": "memoire",
+    "n_tours": 3,
+    "etat": {
+     "secrets_avoues": [
+      "divorce",
+      "liaison"
+     ],
+     "pieces_montrees": [
+      "piece_lettre_avocat",
+      "piece_carnet_celeste"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-026"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 3,
+    "etat": {
+     "secrets_avoues": [
+      "divorce",
+      "liaison"
+     ],
+     "pieces_montrees": [
+      "piece_lettre_avocat",
+      "piece_carnet_celeste"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-027"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "divorce"
+     ],
+     "pieces_montrees": [
+      "piece_lettre_avocat"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-028"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "divorce"
+     ],
+     "pieces_montrees": [
+      "piece_lettre_avocat"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-029"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 1,
+    "etat": {
+     "secrets_avoues": [
+      "divorce"
+     ],
+     "pieces_montrees": [
+      "piece_lettre_avocat"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-030"
+   },
+   {
+    "situation": "memoire",
+    "n_tours": 3,
+    "etat": {
+     "secrets_avoues": [
+      "divorce"
+     ],
+     "pieces_montrees": [
+      "piece_lettre_avocat"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-031"
+   },
+   {
+    "situation": "memoire",
+    "n_tours": 3,
+    "etat": {
+     "secrets_avoues": [
+      "divorce"
+     ],
+     "pieces_montrees": [
+      "piece_lettre_avocat"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-032"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-033"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-034"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-035"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-036"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-037"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-038"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-039"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-040"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-041"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-042"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-043"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-044"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-045"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-046"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-047"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-048"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-049"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-050"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-051"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-052"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-053"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-054"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-055"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-056"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-057"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-058"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-059"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-060"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-061"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-062"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-063"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-064"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-065"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-066"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-067"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-068"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-069"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-070"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-071"
+   },
+   {
+    "situation": "memoire",
+    "n_tours": 4,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-072"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 3,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-073"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 3,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-074"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 3,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-075"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-076"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 3,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-077"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "marguerite_delorme-078"
+   }
+  ]
+ },
+ "rose_delorme": {
+  "split": "train",
+  "exemples": [
+   {
+    "situation": "sans_rapport",
+    "n_tours": 1,
+    "etat": {
+     "piece_presentee": "piece_bouteille"
+    },
+    "perte_sur": "tous",
+    "id": "rose_delorme-001"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "piece_presentee": "piece_carnet_celeste"
+    },
+    "perte_sur": "dernier",
+    "id": "rose_delorme-002"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "piece_presentee": "piece_carnet_celeste"
+    },
+    "perte_sur": "dernier",
+    "id": "rose_delorme-003"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 1,
+    "etat": {
+     "piece_presentee": "piece_carnet_celeste"
+    },
+    "perte_sur": "tous",
+    "id": "rose_delorme-004"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "vestiaire"
+     ],
+     "pieces_montrees": [
+      "piece_deposition_josephine"
+     ],
+     "piece_presentee": "piece_deposition_josephine"
+    },
+    "perte_sur": "dernier",
+    "id": "rose_delorme-005"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 1,
+    "etat": {
+     "secrets_avoues": [
+      "heritage"
+     ],
+     "pieces_montrees": [
+      "piece_testament"
+     ],
+     "piece_presentee": "piece_deposition_josephine"
+    },
+    "perte_sur": "tous",
+    "id": "rose_delorme-006"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 1,
+    "etat": {
+     "piece_presentee": "piece_deposition_josephine"
+    },
+    "perte_sur": "tous",
+    "id": "rose_delorme-007"
+   },
+   {
+    "situation": "sans_rapport",
+    "n_tours": 1,
+    "etat": {
+     "piece_presentee": "piece_flacon"
+    },
+    "perte_sur": "tous",
+    "id": "rose_delorme-008"
+   },
+   {
+    "situation": "sans_rapport",
+    "n_tours": 2,
+    "etat": {
+     "piece_presentee": "piece_lettre_avocat"
+    },
+    "perte_sur": "dernier",
+    "id": "rose_delorme-009"
+   },
+   {
+    "situation": "sans_rapport",
+    "n_tours": 1,
+    "etat": {
+     "piece_presentee": "piece_lettre_r"
+    },
+    "perte_sur": "tous",
+    "id": "rose_delorme-010"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 1,
+    "etat": {
+     "secrets_avoues": [
+      "vestiaire"
+     ],
+     "pieces_montrees": [
+      "piece_deposition_josephine"
+     ],
+     "piece_presentee": "piece_liasse_billets"
+    },
+    "perte_sur": "tous",
+    "id": "rose_delorme-011"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 1,
+    "etat": {
+     "secrets_avoues": [
+      "heritage",
+      "vestiaire"
+     ],
+     "pieces_montrees": [
+      "piece_testament",
+      "piece_deposition_josephine"
+     ],
+     "piece_presentee": "piece_liasse_billets"
+    },
+    "perte_sur": "tous",
+    "id": "rose_delorme-012"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "heritage",
+      "vestiaire"
+     ],
+     "pieces_montrees": [
+      "piece_testament",
+      "piece_trousse"
+     ],
+     "piece_presentee": "piece_liasse_billets"
+    },
+    "perte_sur": "dernier",
+    "id": "rose_delorme-013"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "vestiaire"
+     ],
+     "pieces_montrees": [
+      "piece_trousse"
+     ],
+     "piece_presentee": "piece_testament"
+    },
+    "perte_sur": "dernier",
+    "id": "rose_delorme-014"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "piece_presentee": "piece_testament"
+    },
+    "perte_sur": "dernier",
+    "id": "rose_delorme-015"
+   },
+   {
+    "situation": "confrontation",
+    "n_tours": 2,
+    "etat": {
+     "piece_presentee": "piece_testament"
+    },
+    "perte_sur": "dernier",
+    "id": "rose_delorme-016"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 1,
+    "etat": {
+     "secrets_avoues": [
+      "absence",
+      "vestiaire",
+      "vol"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_celeste",
+      "piece_deposition_josephine",
+      "piece_liasse_billets"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "rose_delorme-017"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "absence",
+      "vestiaire"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_celeste",
+      "piece_deposition_josephine"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "rose_delorme-018"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 1,
+    "etat": {
+     "secrets_avoues": [
+      "absence",
+      "vestiaire",
+      "vol"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_celeste",
+      "piece_trousse",
+      "piece_liasse_billets"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "rose_delorme-019"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 1,
+    "etat": {
+     "secrets_avoues": [
+      "absence",
+      "vestiaire"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_celeste",
+      "piece_trousse"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "rose_delorme-020"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {
+     "secrets_avoues": [
+      "absence",
+      "vestiaire"
+     ],
+     "pieces_montrees": [
+      "piece_carnet_celeste",
+      "piece_trousse"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "rose_delorme-021"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 1,
+    "etat": {
+     "secrets_avoues": [
+      "vestiaire",
+      "vol"
+     ],
+     "pieces_montrees": [
+      "piece_deposition_josephine",
+      "piece_liasse_billets"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "rose_delorme-022"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "heritage",
+      "vestiaire",
+      "vol"
+     ],
+     "pieces_montrees": [
+      "piece_testament",
+      "piece_deposition_josephine",
+      "piece_liasse_billets"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "rose_delorme-023"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "heritage",
+      "vestiaire"
+     ],
+     "pieces_montrees": [
+      "piece_testament",
+      "piece_trousse"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "rose_delorme-024"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "heritage"
+     ],
+     "pieces_montrees": [
+      "piece_testament"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "rose_delorme-025"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "heritage"
+     ],
+     "pieces_montrees": [
+      "piece_testament"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "rose_delorme-026"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 1,
+    "etat": {
+     "secrets_avoues": [
+      "heritage"
+     ],
+     "pieces_montrees": [
+      "piece_testament"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "rose_delorme-027"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "heritage"
+     ],
+     "pieces_montrees": [
+      "piece_testament"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "rose_delorme-028"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 3,
+    "etat": {
+     "secrets_avoues": [
+      "heritage"
+     ],
+     "pieces_montrees": [
+      "piece_testament"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "rose_delorme-029"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {
+     "secrets_avoues": [
+      "vestiaire",
+      "vol"
+     ],
+     "pieces_montrees": [
+      "piece_trousse",
+      "piece_liasse_billets"
+     ]
+    },
+    "perte_sur": "tous",
+    "id": "rose_delorme-030"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-031"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-032"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-033"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-034"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-035"
+   },
+   {
+    "situation": "alibi",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-036"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-037"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-038"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-039"
+   },
+   {
+    "situation": "autre_personnage",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-040"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-041"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-042"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-043"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-044"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-045"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-046"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-047"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-048"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-049"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-050"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-051"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-052"
+   },
+   {
+    "situation": "factuel",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-053"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-054"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-055"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-056"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-057"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-058"
+   },
+   {
+    "situation": "hors_perimetre",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-059"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-060"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-061"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-062"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-063"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-064"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-065"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-066"
+   },
+   {
+    "situation": "inconnu",
+    "n_tours": 1,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-067"
+   },
+   {
+    "situation": "memoire",
+    "n_tours": 4,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-068"
+   },
+   {
+    "situation": "memoire",
+    "n_tours": 4,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-069"
+   },
+   {
+    "situation": "memoire",
+    "n_tours": 3,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-070"
+   },
+   {
+    "situation": "memoire",
+    "n_tours": 3,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-071"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 3,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-072"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-073"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-074"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 3,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-075"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 3,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-076"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 3,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-077"
+   },
+   {
+    "situation": "mensonge_maintenu",
+    "n_tours": 2,
+    "etat": {},
+    "perte_sur": "tous",
+    "id": "rose_delorme-078"
+   }
+  ]
+ }
+}
