@@ -1,0 +1,172 @@
+{
+  "id": "faisan_dore",
+  "titre": "Le Dernier Verre du Faisan Doré",
+  "source": "Librement adapté du scénario de murder party « Le Dernier Verre du Faisan Doré » publié par Team Break (https://team-break.fr/scenario-murder-party-gratuit). Cadre, rôles et solution repris ; chronologie, pièces, fiches et textes écrits pour ce projet.",
+  "cadre": {
+    "lieu": "Le Faisan Doré, bar clandestin de Montmartre, à Paris",
+    "date": "Nuit du samedi 13 au dimanche 14 octobre 1928",
+    "contexte_public": "Paris, nuit du 13 au 14 octobre 1928. Au Faisan Doré, bar clandestin de Montmartre, Victor Delorme inaugurait son Salon doré. Vers 22h45, on l'a retrouvé mort dans son bureau fermé à clé de l'intérieur, empoisonné au cyanure, son coffre vidé. Personne n'a quitté les lieux ; passé minuit, un inspecteur interroge chaque invité."
+  },
+  "victime": {
+    "id": "victor_delorme",
+    "nom": "Victor Delorme",
+    "identite": "52 ans, propriétaire du Faisan Doré, frère aîné de Rose et époux de Marguerite",
+    "cause_deces": "Empoisonnement au cyanure de potassium, versé dans sa bouteille personnelle de champagne de 1921",
+    "heure_deces": "Vers 22h30, entre 22h25 et 22h40"
+  },
+  "personnages": {
+    "rose_delorme": "Rose Delorme",
+    "marguerite_delorme": "Marguerite Delorme",
+    "lucien_fabre": "Lucien Fabre",
+    "josephine_laurent": "Joséphine Laurent",
+    "henri_berthier": "Henri Berthier",
+    "armand_riviere": "Armand Rivière",
+    "celeste_moreau": "Céleste Moreau",
+    "leon_perrin": "Léon Perrin"
+  },
+  "chronologie": [
+    {"quand": "1923", "fait": "Céleste Moreau danse dans la revue du café Delorme, que Victor dirige pour son père, sous le nom de « Lili »."},
+    {"quand": "2 mai 1924", "fait": "Auguste Delorme rédige son testament : le café ira à Victor, à charge pour lui de verser sa part à Rose."},
+    {"quand": "Mars 1925", "fait": "Mort d'Auguste Delorme, soigné jusqu'au bout par le docteur Perrin. Victor hérite du café, ne verse rien à Rose et en fait un bar clandestin, le Faisan Doré (absinthe, salle de jeu). Lucien Fabre devient barman, Armand Rivière fournisseur."},
+    {"quand": "1926", "fait": "Le commissaire Berthier commence à recevoir de Victor 2 000 francs le premier de chaque mois pour fermer les yeux. Victor garde ses reçus."},
+    {"quand": "1927", "fait": "Victor engage Joséphine Laurent comme chanteuse, avec un contrat jusqu'en décembre 1928."},
+    {"quand": "Automne 1927", "fait": "Début de la liaison de Marguerite Delorme et d'Armand Rivière."},
+    {"quand": "Été 1928", "fait": "Les dettes de jeu du docteur Perrin envers Victor atteignent 31 000 francs, perdus au baccara. À partir d'août, Lucien Fabre prend de l'argent dans la caisse du bar (1 250 francs en tout) pour payer le sanatorium de sa mère."},
+    {"quand": "Septembre 1928", "fait": "Victor découvre la liaison de sa femme. Le 22, il annonce à Armand Rivière qu'il prendra un autre fournisseur fin octobre ; le soir même, Armand lui écrit une lettre de menace en capitales, signée « R. »."},
+    {"quand": "Début octobre 1928", "fait": "On propose à Joséphine Laurent une tournée à New York (bateau au Havre le 20 octobre). Victor garde son passeport dans la poche de son pardessus pour l'empêcher de partir."},
+    {"quand": "8 octobre 1928", "fait": "Me Lambert confirme à Victor leur rendez-vous du lundi 15 octobre pour sa demande en divorce."},
+    {"quand": "Mercredi 10 octobre 1928", "fait": "Marguerite trouve la lettre de l'avocat dans la veste de Victor. Le même jour, Rose réclame encore sa part à Victor, qui lui rit au nez ; Lucien la voit sortir du bureau en larmes."},
+    {"quand": "Samedi 13 octobre, après-midi", "fait": "Le docteur Perrin achète chez son pharmacien un flacon de cyanure de potassium pour ses bocaux à papillons."},
+    {"quand": "20h00", "fait": "Ouverture des portes ; apéritif au bar."},
+    {"quand": "20h30", "fait": "Arrivée du docteur Perrin, qui laisse manteau et trousse au vestiaire (non gardé ce soir), et de Rose Delorme."},
+    {"quand": "20h45", "fait": "Au bar, Perrin raconte en plaisantant à Rose qu'il a du cyanure dans sa trousse, pour ses papillons."},
+    {"quand": "21h00", "fait": "Les invités passent au Salon doré. Perrin et Berthier s'installent au comptoir du salon et ne le quittent plus."},
+    {"quand": "21h30", "fait": "Lucien prend la clé en double au crochet derrière le bar, monte au bureau le seau à glace et la bouteille de 1921, la débouche et pose le bouchon d'argent."},
+    {"quand": "21h35", "fait": "Lucien referme le bureau et raccroche la clé derrière le bar."},
+    {"quand": "21h45", "fait": "Marguerite quitte le salon pour la cave ; Armand la rejoint à 21h46."},
+    {"quand": "21h50", "fait": "Lucien sert le champagne du toast au salon : le bar reste vide jusqu'à 22h15. Au vestiaire, Rose prend le flacon dans la trousse de Perrin ; une de ses épingles reste au fond de la trousse. Joséphine, venue reprendre son passeport dans le pardessus de Victor, la voit sans être vue et perd une boucle d'oreille."},
+    {"quand": "21h55", "fait": "Rose décroche la clé en double derrière le bar désert, puis regagne le salon."},
+    {"quand": "21h58", "fait": "Marguerite puis Armand reviennent au salon. Lucien, revenu un instant au bar chercher des bouteilles, voit que la clé n'est plus au crochet ; il croit que Victor l'a prise et se tait."},
+    {"quand": "22h00", "fait": "Discours de Victor sur « l'héritage de son père » et toast, servi à tous depuis les mêmes plateaux."},
+    {"quand": "22h01", "fait": "Rose sort du salon pendant le discours."},
+    {"quand": "22h02", "fait": "Rose ouvre le bureau avec la clé en double, ouvre le coffre (la combinaison de leur père : la date de naissance de leur mère), prend la recette de septembre (37 400 francs), verse le cyanure dans la bouteille de 1921, referme le coffre et le bureau."},
+    {"quand": "22h08", "fait": "En redescendant, Rose enfonce la clé dans la terre du palmier, au pied de l'escalier du bureau."},
+    {"quand": "22h09", "fait": "Rose jette le flacon vide dans la corbeille des toilettes des dames."},
+    {"quand": "22h10", "fait": "Rose cache la liasse dans la poche secrète de la doublure de son manteau, au vestiaire. Joséphine commence son tour de chant (trois chansons, jusqu'à 22h30)."},
+    {"quand": "22h12", "fait": "Rose revient au salon, essoufflée, et se place au fond."},
+    {"quand": "22h25", "fait": "Victor quitte le salon pendant la dernière chanson, monte au bureau et s'y enferme à clé, comme chaque soir d'ouverture."},
+    {"quand": "22h30", "fait": "Victor trouve le coffre vide, se sert une coupe de 1921 et meurt en quelques minutes. Fin du tour de chant."},
+    {"quand": "22h40", "fait": "Lucien monte chercher Victor : porte fermée, pas de réponse ; en bas, le crochet de la clé en double est vide."},
+    {"quand": "22h45", "fait": "Lucien et Armand enfoncent la porte. Victor est mort ; sa clé est dans la poche de son gilet ; le coffre est ouvert et vide d'argent."},
+    {"quand": "22h46", "fait": "Appelé, le docteur Perrin reprend sa trousse au vestiaire."},
+    {"quand": "22h47", "fait": "Perrin constate le décès et l'odeur d'amande amère."},
+    {"quand": "22h48", "fait": "Perrin vérifie sa trousse : le flacon a disparu. Il prend peur et se tait."},
+    {"quand": "22h50", "fait": "Le commissaire Berthier fait fermer les portes et téléphone au commissariat."},
+    {"quand": "23h20", "fait": "Arrivée du brigadier Garnier et de deux agents : premières fouilles du bureau, du couloir et des toilettes. Les manteaux du vestiaire ne sont pas fouillés."},
+    {"quand": "00h10", "fait": "Arrivée de l'inspecteur : début des interrogatoires."}
+  ],
+  "coupable": "rose_delorme",
+  "mobile": "Victor ne lui avait jamais versé sa part de l'héritage de leur père et lui avait encore ri au nez le mercredi 10 octobre. Elle a repris « sa part » dans le coffre et s'est vengée.",
+  "moyen": "Le cyanure de potassium du docteur Perrin, pris dans sa trousse au vestiaire à 21h50, versé dans la bouteille de champagne de 1921 que Victor buvait seul chaque soir d'ouverture.",
+  "opportunite": "La clé en double, décrochée derrière le bar désert à 21h55, et la combinaison du coffre paternel ; elle est montée au bureau pendant le discours, de 22h01 à 22h12.",
+  "preuves": {
+    "coupable": ["piece_liasse_billets", "piece_deposition_josephine", "piece_trousse"],
+    "mobile": ["piece_testament"],
+    "moyen": ["piece_bouteille", "piece_flacon", "piece_trousse"],
+    "opportunite": ["piece_cle_double", "piece_carnet_celeste"]
+  },
+  "documents": [
+    {"id": "rapport_police", "titre": "Rapport de police", "fichier": "assets/rapport_police.md"},
+    {"id": "rapport_legiste", "titre": "Rapport du médecin légiste", "fichier": "assets/rapport_legiste.md"},
+    {"id": "lieux", "titre": "Les lieux et la soirée", "fichier": "assets/lieux.md"},
+    {"id": "plan", "titre": "Plan du Faisan Doré", "fichier": "assets/plan.svg"}
+  ],
+  "pieces": [
+    {
+      "id": "piece_bouteille",
+      "nom": "la bouteille de champagne",
+      "description": "La bouteille de champagne de 1921 trouvée dans le seau à glace du bureau de Victor, fermée d'un bouchon d'argent, et les éclats de sa coupe. Elles sentent fortement l'amande amère : le poison avait été versé dans la bouteille.",
+      "document": "assets/pieces/piece_bouteille.md",
+      "disponible_au_depart": true
+    },
+    {
+      "id": "piece_cle_double",
+      "nom": "la clé du bureau en double",
+      "description": "La clé en double du bureau de Victor, à étiquette de cuivre « BUREAU ». D'habitude, elle pend à un crochet derrière le bar ; les agents l'ont retrouvée enfoncée dans la terre du palmier en pot, au pied de l'escalier du bureau.",
+      "document": "assets/pieces/piece_cle_double.md",
+      "disponible_au_depart": true
+    },
+    {
+      "id": "piece_flacon",
+      "nom": "le flacon vide",
+      "description": "Un petit flacon de verre brun, vide, retrouvé dans la corbeille des toilettes des dames. Son étiquette porte : « Cyanure de potassium — POISON — délivré au Dr L. Perrin le 13 octobre 1928 ».",
+      "document": "assets/pieces/piece_flacon.md",
+      "disponible_au_depart": true
+    },
+    {
+      "id": "piece_lettre_r",
+      "nom": "la lettre signée « R. »",
+      "description": "Une lettre trouvée dans le tiroir du bureau de Victor, écrite en lettres capitales et datée du 22 septembre 1928 : « TU NE ME JETTERAS PAS COMME UN CHIEN. TU ME LE PAIERAS. — R. »",
+      "document": "assets/pieces/piece_lettre_r.md",
+      "disponible_au_depart": true
+    },
+    {
+      "id": "piece_lettre_avocat",
+      "nom": "la lettre de l'avocat",
+      "description": "Une lettre de Me Édouard Lambert, avocat, datée du 8 octobre 1928 et trouvée dans le tiroir du bureau de Victor. Elle confirme leur rendez-vous du lundi 15 octobre, à 10 heures, pour déposer la demande en divorce de Victor, « avec les preuves que vous m'avez remises ».",
+      "document": "assets/pieces/piece_lettre_avocat.md",
+      "disponible_au_depart": true
+    },
+    {
+      "id": "piece_carnet_noir",
+      "nom": "le carnet noir de Victor",
+      "description": "Un petit carnet de cuir noir trouvé dans le tiroir du bureau de Victor. Ses dernières notes : « B. — 2 000, comme chaque 1er. Veut arrêter ? Je garde les reçus. » « Dr P. — 31 000. Lundi, dernier délai. » « Bar : 1 250 manquent depuis août. L. ? Régler ça lundi. » « C. M. = Lili (revue 23). L'article samedi, sinon lettre à son rédacteur. »",
+      "document": "assets/pieces/piece_carnet_noir.md",
+      "disponible_au_depart": true
+    },
+    {
+      "id": "piece_testament",
+      "nom": "le testament d'Auguste Delorme",
+      "description": "La copie du testament d'Auguste Delorme, le père de Victor et de Rose, datée du 2 mai 1924 et trouvée dans le coffre vidé : « Je laisse mon café à mon fils Victor, à charge pour lui de verser à sa sœur Rose la part qui lui revient. »",
+      "document": "assets/pieces/piece_testament.md",
+      "disponible_au_depart": true
+    },
+    {
+      "id": "piece_trousse",
+      "nom": "la trousse du docteur Perrin",
+      "description": "La trousse noire du docteur Perrin, ouverte : le compartiment du flacon de cyanure est vide, et une épingle de couturière à tête de verre rouge est restée prise au fond de la trousse.",
+      "document": "assets/pieces/piece_trousse.md",
+      "disponible_au_depart": false
+    },
+    {
+      "id": "piece_boucle_oreille",
+      "nom": "la boucle d'oreille de strass",
+      "description": "Une boucle d'oreille de strass retrouvée par terre au vestiaire, sous le pardessus de Victor, lors de la fouille ordonnée après les aveux du docteur Perrin.",
+      "document": "assets/pieces/piece_boucle_oreille.md",
+      "disponible_au_depart": false
+    },
+    {
+      "id": "piece_deposition_josephine",
+      "nom": "la déposition de Joséphine Laurent",
+      "description": "La déposition signée de Joséphine Laurent : vers 21h50, au vestiaire, elle a vu Rose Delorme penchée sur une sacoche noire de médecin, posée sur la tablette.",
+      "document": "assets/pieces/piece_deposition_josephine.md",
+      "disponible_au_depart": false
+    },
+    {
+      "id": "piece_carnet_celeste",
+      "nom": "le carnet de Céleste Moreau",
+      "description": "Le carnet de Céleste Moreau, avec ses notes de la soirée : « 21h45 — Mme D. s'éclipse ; M. R. la suit une minute après. » « 21h58 — Mme D. revient, puis M. R. » « 22h00 — discours du patron. » « 22h01 — Mlle Rose D. sort pendant le discours. » « 22h12 — Mlle Rose D. revient, essoufflée. » « 22h25 — le patron quitte le salon. » « Le Dr P. et le commissaire B. n'ont pas quitté le comptoir de la soirée. »",
+      "document": "assets/pieces/piece_carnet_celeste.md",
+      "disponible_au_depart": false
+    },
+    {
+      "id": "piece_liasse_billets",
+      "nom": "la liasse de billets",
+      "description": "Une liasse de 37 400 francs, trouvée dans une poche secrète cousue dans la doublure du manteau de Rose Delorme, au vestiaire, entourée d'une bande de papier où Victor a écrit : « Recette de septembre ».",
+      "document": "assets/pieces/piece_liasse_billets.md",
+      "disponible_au_depart": false
+    }
+  ],
+  "solution": "Rose Delorme a empoisonné son frère. Victor ne lui avait jamais versé sa part de l'héritage de leur père et, le mercredi 10 octobre, il lui avait encore ri au nez. Vers 20h45, au bar, le docteur Perrin lui a raconté qu'il avait du cyanure dans sa trousse pour ses papillons. À 21h50, elle a pris le flacon dans la trousse, au vestiaire : Joséphine Laurent l'a vue, et l'une de ses épingles est restée au fond de la trousse. À 21h55, elle a décroché la clé en double derrière le bar désert. Pendant le discours, de 22h01 à 22h12, elle est montée au bureau, a ouvert le coffre avec la combinaison de leur père, a pris la recette et versé le cyanure dans la bouteille de 1921 que Victor buvait seul chaque soir d'ouverture. En redescendant, elle a enfoncé la clé dans la terre du palmier, jeté le flacon dans la corbeille des toilettes des dames et caché l'argent dans la doublure de son manteau. À 22h25, Victor est monté compter sa recette ; il a trouvé le coffre vide, s'est servi une coupe et il est mort en quelques minutes, enfermé de l'intérieur. Les autres invités avaient tous un secret, mais aucun n'avait à la fois le poison, la clé et le temps de monter au bureau.",
+  "aveu_final": "*(Rose retire lentement une épingle de son revers et la fait tourner entre ses doigts.)* Trois ans, inspecteur. Trois ans que j'attendais ma part, et mercredi il m'a ri au nez. Ce soir, quand le docteur m'a parlé de son cyanure comme on parle de la pluie, j'ai su ce que j'allais faire. Papa buvait son 1921 seul dans son bureau ; Victor aussi. Pendant qu'il parlait de « l'héritage de notre père » devant tout le monde, je suis montée lui servir son dernier verre."
+}

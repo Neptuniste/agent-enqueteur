@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 720" width="960" height="720" font-family="Georgia, 'Times New Roman', serif">
+  <title>Plan du Faisan Doré</title>
+  <defs>
+    <pattern id="marches" width="10" height="10" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="10" y2="0" stroke="#8a7f6e" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <style>
+    .mur { fill: #fffaf0; stroke: #2a2420; stroke-width: 3; }
+    .piece-int { fill: #fffaf0; stroke: #2a2420; stroke-width: 2; }
+    .couloir { fill: #efe6d2; stroke: #2a2420; stroke-width: 2; }
+    .meuble { fill: #e8dcc0; stroke: #6b5d48; stroke-width: 1.5; }
+    .titre { font-size: 22px; fill: #2a2420; font-weight: bold; }
+    .salle { font-size: 15px; fill: #2a2420; letter-spacing: 1px; font-weight: bold; }
+    .lib { font-size: 13px; fill: #3d342b; }
+    .petit { font-size: 12px; fill: #5a4f42; font-style: italic; }
+    .num { font-size: 12px; fill: #fffaf0; font-weight: bold; }
+    .repere { fill: #a8791e; }
+  </style>
+
+  <rect width="960" height="720" fill="#f7f1e3"/>
+  <text x="56" y="40" class="titre">Le Faisan Doré : plan des lieux</text>
+  <text x="56" y="62" class="petit">Rez-de-chaussée. Les numéros renvoient aux scellés de la première fouille.</text>
+
+  <!-- Rue -->
+  <rect x="20" y="80" width="36" height="380" fill="#e3dccb"/>
+  <text x="44" y="290" class="salle" transform="rotate(-90 44 290)" text-anchor="middle">RUE</text>
+
+  <!-- Le bar -->
+  <rect x="56" y="90" width="244" height="360" class="mur"/>
+  <line x1="56" y1="250" x2="56" y2="300" stroke="#f7f1e3" stroke-width="5"/>
+  <text x="64" y="280" class="lib">entrée</text>
+  <rect x="90" y="170" width="180" height="26" class="meuble"/>
+  <text x="180" y="188" class="lib" text-anchor="middle">comptoir de zinc</text>
+  <circle cx="262" cy="128" r="5" class="repere"/>
+  <text x="252" y="132" class="lib" text-anchor="end">crochet de la clé en double</text>
+  <text x="178" y="340" class="salle" text-anchor="middle">LE BAR</text>
+  <circle cx="120" cy="390" r="14" class="meuble"/>
+  <circle cx="190" cy="400" r="14" class="meuble"/>
+  <circle cx="250" cy="380" r="14" class="meuble"/>
+
+  <!-- Pièces au nord du couloir -->
+  <rect x="300" y="110" width="90" height="120" class="piece-int"/>
+  <text x="345" y="166" class="lib" text-anchor="middle">Vestiaire</text>
+  <text x="345" y="184" class="petit" text-anchor="middle">non gardé</text>
+  <rect x="390" y="110" width="90" height="120" class="piece-int"/>
+  <text x="435" y="166" class="lib" text-anchor="middle">Toilettes</text>
+  <text x="435" y="184" class="lib" text-anchor="middle">des dames</text>
+  <rect x="480" y="110" width="120" height="120" class="piece-int"/>
+  <text x="540" y="166" class="lib" text-anchor="middle">Toilettes</text>
+  <text x="540" y="184" class="lib" text-anchor="middle">des messieurs</text>
+
+  <!-- Couloir -->
+  <rect x="300" y="230" width="300" height="80" class="couloir"/>
+  <line x1="300" y1="252" x2="300" y2="292" stroke="#efe6d2" stroke-width="5"/>
+  <line x1="600" y1="252" x2="600" y2="292" stroke="#efe6d2" stroke-width="5"/>
+  <text x="510" y="276" class="salle" text-anchor="middle">COULOIR</text>
+  <circle cx="335" cy="292" r="11" fill="#5d7a3a" stroke="#3b4f23" stroke-width="1.5"/>
+  <text x="352" y="297" class="petit">palmier</text>
+
+  <!-- Pièces au sud du couloir -->
+  <rect x="300" y="310" width="70" height="140" class="piece-int"/>
+  <rect x="306" y="330" width="58" height="80" fill="url(#marches)" stroke="#8a7f6e"/>
+  <text x="335" y="428" class="lib" text-anchor="middle">escalier</text>
+  <text x="335" y="444" class="petit" text-anchor="middle">↑ bureau</text>
+  <rect x="370" y="310" width="70" height="140" class="piece-int"/>
+  <rect x="376" y="330" width="58" height="80" fill="url(#marches)" stroke="#8a7f6e"/>
+  <text x="405" y="428" class="lib" text-anchor="middle">escalier</text>
+  <text x="405" y="444" class="petit" text-anchor="middle">↓ cave</text>
+  <rect x="440" y="310" width="160" height="140" class="piece-int"/>
+  <text x="520" y="376" class="lib" text-anchor="middle">Salle de jeu</text>
+  <circle cx="520" cy="410" r="16" class="meuble"/>
+
+  <!-- Salon doré -->
+  <rect x="600" y="70" width="260" height="400" class="mur"/>
+  <rect x="618" y="100" width="28" height="160" class="meuble"/>
+  <text x="636" y="180" class="lib" text-anchor="middle" transform="rotate(-90 636 180)">comptoir</text>
+  <rect x="780" y="150" width="80" height="240" class="meuble"/>
+  <text x="820" y="300" class="lib" text-anchor="middle">scène</text>
+  <rect x="792" y="166" width="54" height="26" fill="#2a2420"/>
+  <text x="819" y="210" class="petit" text-anchor="middle">piano</text>
+  <circle cx="690" cy="140" r="14" class="meuble"/>
+  <circle cx="740" cy="200" r="14" class="meuble"/>
+  <circle cx="690" cy="380" r="14" class="meuble"/>
+  <circle cx="740" cy="420" r="14" class="meuble"/>
+  <text x="705" y="300" class="salle" text-anchor="middle">SALON DORÉ</text>
+  <rect x="860" y="150" width="80" height="240" class="piece-int"/>
+  <text x="900" y="262" class="lib" text-anchor="middle">Loge de la</text>
+  <text x="900" y="280" class="lib" text-anchor="middle">chanteuse</text>
+
+  <!-- Repères des scellés au rez-de-chaussée -->
+  <circle cx="318" cy="266" r="10" class="repere"/>
+  <text x="318" y="270" class="num" text-anchor="middle">2</text>
+  <circle cx="462" cy="128" r="10" class="repere"/>
+  <text x="462" y="132" class="num" text-anchor="middle">3</text>
+
+  <!-- Entresol : bureau de Victor -->
+  <text x="56" y="508" class="salle">ENTRESOL : BUREAU DE VICTOR</text>
+  <rect x="56" y="520" width="374" height="170" class="mur"/>
+  <line x1="56" y1="580" x2="56" y2="630" stroke="#f7f1e3" stroke-width="5"/>
+  <text x="66" y="660" class="petit">porte (ferme à clé)</text>
+  <line x1="180" y1="520" x2="300" y2="520" stroke="#2a2420" stroke-width="7" stroke-dasharray="3 6"/>
+  <text x="240" y="540" class="petit" text-anchor="middle">fenêtre à barreaux (cour)</text>
+  <rect x="150" y="585" width="130" height="55" class="meuble"/>
+  <text x="215" y="617" class="lib" text-anchor="middle">bureau</text>
+  <circle cx="215" cy="660" r="12" class="meuble"/>
+  <text x="240" y="682" class="petit">fauteuil</text>
+  <circle cx="265" cy="597" r="8" fill="#c9d6dc" stroke="#6b5d48"/>
+  <rect x="340" y="570" width="66" height="60" fill="#5a5048" stroke="#2a2420" stroke-width="2"/>
+  <text x="373" y="605" class="lib" text-anchor="middle" fill="#fffaf0" style="fill:#fffaf0">coffre</text>
+  <circle cx="283" cy="575" r="10" class="repere"/>
+  <text x="283" y="579" class="num" text-anchor="middle">1</text>
+  <circle cx="160" cy="572" r="10" class="repere"/>
+  <text x="160" y="576" class="num" text-anchor="middle">4</text>
+  <circle cx="182" cy="572" r="10" class="repere"/>
+  <text x="182" y="576" class="num" text-anchor="middle">5</text>
+  <circle cx="204" cy="572" r="10" class="repere"/>
+  <text x="204" y="576" class="num" text-anchor="middle">6</text>
+  <circle cx="373" cy="648" r="10" class="repere"/>
+  <text x="373" y="652" class="num" text-anchor="middle">7</text>
+
+  <!-- Sous-sol -->
+  <text x="470" y="508" class="salle">SOUS-SOL : CAVE</text>
+  <rect x="470" y="520" width="220" height="170" class="mur"/>
+  <circle cx="510" cy="560" r="16" class="meuble"/>
+  <circle cx="550" cy="560" r="16" class="meuble"/>
+  <circle cx="590" cy="560" r="16" class="meuble"/>
+  <rect x="500" y="610" width="160" height="22" class="meuble"/>
+  <text x="580" y="660" class="petit" text-anchor="middle">réserve de vins et d'alcools</text>
+
+  <!-- Légende -->
+  <text x="725" y="508" class="salle">SCELLÉS</text>
+  <rect x="725" y="520" width="215" height="170" fill="#fffaf0" stroke="#2a2420" stroke-width="1.5"/>
+  <text x="737" y="545" class="lib">1  bouteille et coupe</text>
+  <text x="737" y="568" class="lib">2  clé en double (palmier)</text>
+  <text x="737" y="591" class="lib">3  flacon vide (corbeille)</text>
+  <text x="737" y="614" class="lib">4  lettre signée « R. »</text>
+  <text x="737" y="637" class="lib">5  lettre de l'avocat</text>
+  <text x="737" y="660" class="lib">6  carnet noir</text>
+  <text x="737" y="683" class="lib">7  testament (coffre)</text>
+</svg>
