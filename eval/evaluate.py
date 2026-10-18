@@ -16,6 +16,7 @@ propre historique.
 
 import argparse
 import csv
+import io
 import json
 import random
 import re
@@ -321,22 +322,34 @@ def lire_note(cellule, ou):
     return valeur
 
 
+def lire_feuille(chemin):
+    """Lignes d'une feuille de notes, quel que soit le format d'enregistrement d'Excel ou de LibreOffice :
+    UTF-8 (avec ou sans BOM) ou Windows-1252, séparateur point-virgule ou virgule."""
+    brut = Path(chemin).read_bytes()
+    try:
+        texte = brut.decode("utf-8-sig")
+    except UnicodeDecodeError:
+        texte = brut.decode("cp1252")
+    entete = texte.split("\n", 1)[0]
+    separateur = ";" if entete.count(";") >= entete.count(",") else ","
+    return list(csv.DictReader(io.StringIO(texte, newline=""), delimiter=separateur))
+
+
 def notes_humaines(feuilles, cles, tests):
     """Notes moyennes par code et critère (moyenne des notateurs), taux d'accord et cases oubliées."""
     par_case = defaultdict(list)
     infos, oublis = {}, Counter()
     for feuille in feuilles:
-        with open(feuille, encoding="utf-8-sig") as f:
-            for ligne in csv.DictReader(f, delimiter=";"):
-                code = ligne["code"]
-                infos[code] = {"id": ligne["id"], "version": cles[code], "type": ligne["type"],
-                               "personnage": ligne["personnage"], "groupe": GROUPES[tests[ligne["id"]]["vu"]]}
-                for c in CRITERES:
-                    if ligne[c].strip() == "":
-                        oublis[feuille.name] += 1
-                    note = lire_note(ligne[c], f"{feuille.name}, {code}, {c}")
-                    if note is not None:
-                        par_case[(code, c)].append(note)
+        for ligne in lire_feuille(feuille):
+            code = ligne["code"]
+            infos[code] = {"id": ligne["id"], "version": cles[code], "type": ligne["type"],
+                           "personnage": ligne["personnage"], "groupe": GROUPES[tests[ligne["id"]]["vu"]]}
+            for c in CRITERES:
+                if (ligne[c] or "").strip() == "":
+                    oublis[feuille.name] += 1
+                note = lire_note(ligne[c], f"{feuille.name}, {code}, {c}")
+                if note is not None:
+                    par_case[(code, c)].append(note)
     doubles = [v for v in par_case.values() if len(v) >= 2]
     accord = (sum(len(set(v)) == 1 for v in doubles), len(doubles))
     moyennes = {k: sum(v) / len(v) for k, v in par_case.items()}
