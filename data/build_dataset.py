@@ -120,6 +120,12 @@ def main():
     print(f"{len(dialogues)} exemples : {dict(statuts)}")
     if relus:
         print(f"taux de rejet : {statuts['rejete'] / relus:.0%} des exemples tranchés")
+    if not args.stats:
+        if not statuts["ok"]:
+            sys.exit("Aucun exemple accepté (statut « ok ») : relire d'abord les dialogues avec data/relire.py.")
+        if statuts["a_relire"]:
+            print(f"ATTENTION : {statuts['a_relire']} exemple(s) pas encore relu(s), donc exclu(s) "
+                  "(python data/relire.py --bilan)")
 
     gardes = dialogues if args.stats else [d for d in dialogues if d["statut"] == "ok"]
     erreurs = []
