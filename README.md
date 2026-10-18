@@ -45,17 +45,17 @@ Le code est écrit et testé sur CPU avec un petit modèle. Les 540 dialogues so
 2. **Exécuter `agent.ipynb` sur Colab avec un GPU T4.**
    - Pour l'ouvrir : *Fichier > Ouvrir un notebook > GitHub*, en cochant « Inclure les dépôts privés ».
    - La première cellule de code clone le dépôt. Si le dépôt est privé, elle a besoin d'un jeton `GITHUB_TOKEN` dans les secrets Colab (icône de clé), avec l'accès du notebook activé.
-   - Avant l'entraînement, renseigner `ADAPTER_REPO` dans `src/config.py` (par exemple `Neptuniste/faisan-dore-lora`) et commiter. Puis donner accès au Hub :
+   - `ADAPTER_REPO` est déjà renseigné dans `src/config.py` : `Neptuniste/faisan-dore-lora`. Il reste à donner accès au Hub :
      - soit un secret Colab `HF_TOKEN`, avec un jeton en écriture créé sur huggingface.co, *Settings > Access Tokens* ;
      - soit `from huggingface_hub import login; login()` dans une cellule.
    - Après l'entraînement et la génération des réponses de la section 6, **commiter `results/`** : courbes, bilan, `eval_*.jsonl` et feuille de notation. Une nouvelle session Colab repart d'un clone du dépôt, et ces fichiers doivent y être.
      - Sur Colab, la cellule qui suit la création de la feuille télécharge `resultats.zip`.
      - Le décompresser à la racine du dépôt, puis commiter.
      - Si `ADAPTER_REPO` est vide, elle télécharge aussi `adaptateur.zip`, à garder hors de git.
-   - **Facultatif, environ 10 minutes, même session :** mesurer la généralisation sur la seconde affaire, jamais vue à l'entraînement (14 requêtes de `data/test_theatre.jsonl`, métriques automatiques seulement). Coller dans une nouvelle cellule, en remplaçant `ADAPTATEUR` par le dossier `adapter` ou par le dépôt Hugging Face :
+   - **Facultatif, environ 10 minutes, même session :** mesurer la généralisation sur la seconde affaire, jamais vue à l'entraînement (14 requêtes de `data/test_theatre.jsonl`, métriques automatiques seulement). Coller dans une nouvelle cellule :
      ```python
      !python eval/evaluate.py --affaire cases/theatre_miroir --test data/test_theatre.jsonl --resultats results/theatre generer --version baseline
-     !python eval/evaluate.py --affaire cases/theatre_miroir --test data/test_theatre.jsonl --resultats results/theatre generer --version lora --adaptateur ADAPTATEUR
+     !python eval/evaluate.py --affaire cases/theatre_miroir --test data/test_theatre.jsonl --resultats results/theatre generer --version lora --adaptateur Neptuniste/faisan-dore-lora
      !python eval/evaluate.py --test data/test_theatre.jsonl --resultats results/theatre auto
      ```
      Le tableau affiché (fuites, aveux corrects, format, baseline contre LoRA) va dans le rapport, section 5. `results/theatre/` est à commiter avec le reste.

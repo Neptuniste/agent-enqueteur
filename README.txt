@@ -11,7 +11,7 @@ CONTENU
   agent.ipynb          notebook exécuté, de l'installation à l'interface (sections 0 à 7)
   rapport.pdf          rapport (4 pages hors annexes)
   data/                données : train.jsonl, val.jsonl, test.jsonl, et les scripts qui les produisent
-  adaptateur LoRA      https://huggingface.co/(à compléter), ou dossier adapter/
+  adaptateur LoRA      https://huggingface.co/Neptuniste/faisan-dore-lora (ou dossier adapter/)
   src/                 code du jeu et du modèle, importé par le notebook
   eval/                grille et script d'évaluation
   cases/main_case/     l'affaire : fiches des personnages, pièces à conviction, plan

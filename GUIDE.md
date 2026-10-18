@@ -99,22 +99,15 @@ Le script doit afficher `train: … exemples` et `val: … exemples`. S'il dit �
 
 ---
 
-## Étape 2 : indiquer où publier l'adaptateur (2 min)
+## Étape 2 : indiquer où publier l'adaptateur (déjà faite)
 
-1. Ouvrez `src\config.py` (dans VS Code) et allez à la ligne 50 :
-   ```python
-   ADAPTER_REPO = ""
-   ```
-2. Remplacez-la par la ligne suivante, avec **votre** pseudo Hugging Face :
-   ```python
-   ADAPTER_REPO = "votre-pseudo/faisan-dore-lora"
-   ```
-3. Enregistrez, puis :
-   ```
-   git add src\config.py
-   git commit -m "Dépôt Hugging Face de l'adaptateur"
-   git push
-   ```
+`src\config.py`, ligne 50, contient déjà :
+
+```python
+ADAPTER_REPO = "Neptuniste/faisan-dore-lora"
+```
+
+Le notebook créera ce dépôt sur Hugging Face et y publiera l'adaptateur, grâce au jeton `HF_TOKEN`, qui doit appartenir au compte Neptuniste.
 
 ---
 
@@ -156,11 +149,11 @@ Si le message contient `CUDA out of memory`, le GPU manque de mémoire :
 
 **3.8 Facultatif, 10 min, dans la même session.** Ce test mesure le jeu sur la seconde affaire, que le modèle n'a jamais vue.
 
-Tout en bas du notebook, cliquez sur **+ Code**, puis collez et exécutez la cellule suivante, en remplaçant `votre-pseudo` :
+Tout en bas du notebook, cliquez sur **+ Code**, puis collez et exécutez la cellule suivante :
 
 ```python
 !python eval/evaluate.py --affaire cases/theatre_miroir --test data/test_theatre.jsonl --resultats results/theatre generer --version baseline
-!python eval/evaluate.py --affaire cases/theatre_miroir --test data/test_theatre.jsonl --resultats results/theatre generer --version lora --adaptateur votre-pseudo/faisan-dore-lora
+!python eval/evaluate.py --affaire cases/theatre_miroir --test data/test_theatre.jsonl --resultats results/theatre generer --version lora --adaptateur Neptuniste/faisan-dore-lora
 !python eval/evaluate.py --test data/test_theatre.jsonl --resultats results/theatre auto
 import shutil
 from google.colab import files
@@ -251,7 +244,7 @@ Le tableau final est dans `results\tableau_evaluation.md`, et le graphique dans 
 
 **5.7 Complétez `README.txt` :**
 - remplacez « Membres : (à compléter) » par vos noms ;
-- remplacez « https://huggingface.co/(à compléter) » par `https://huggingface.co/votre-pseudo/faisan-dore-lora`.
+- le lien de l'adaptateur est déjà renseigné : `https://huggingface.co/Neptuniste/faisan-dore-lora`.
 
 **5.8 Envoyez le tout :**
 
@@ -270,7 +263,7 @@ Déposez, selon les consignes du cours :
 - `rapport.pdf` ;
 - `README.txt` ;
 - les données : le dossier `data\`, ou le lien du dépôt GitHub ;
-- le lien de l'adaptateur : `https://huggingface.co/votre-pseudo/faisan-dore-lora`.
+- le lien de l'adaptateur : `https://huggingface.co/Neptuniste/faisan-dore-lora`.
 
 Avant de rendre le dépôt GitHub public, demandez l'autorisation à Team Break : l'affaire principale est adaptée de leur scénario.
 

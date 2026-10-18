@@ -47,4 +47,4 @@ DATA_DIR = "data"
 ADAPTER_DIR = "adapter"
 RESULTS_DIR = "results"
 
-ADAPTER_REPO = ""  # lien Hugging Face Hub de l'adaptateur LoRA
+ADAPTER_REPO = "Neptuniste/faisan-dore-lora"  # dépôt Hugging Face de l'adaptateur LoRA (créé par le notebook)
