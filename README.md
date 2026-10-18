@@ -23,6 +23,9 @@ Le code est écrit et testé sur CPU avec un petit modèle. Les 540 dialogues so
    - La première cellule de code clone le dépôt. Si le dépôt est privé, elle a besoin d'un jeton `GITHUB_TOKEN` dans les secrets Colab (icône de clé), avec l'accès du notebook activé.
    - Avant l'entraînement, renseigner `ADAPTER_REPO` dans `src/config.py` (par exemple `Neptuniste/faisan-dore-lora`) et se connecter à Hugging Face : `from huggingface_hub import login; login()`.
    - Après l'entraînement et la génération des réponses de la section 6, **commiter `results/`** : courbes, bilan, `eval_*.jsonl` et feuille de notation. Une nouvelle session Colab repart d'un clone du dépôt, et ces fichiers doivent y être.
+     - Sur Colab, la cellule qui suit la création de la feuille télécharge `resultats.zip`.
+     - Le décompresser à la racine du dépôt, puis commiter.
+     - Si `ADAPTER_REPO` est vide, elle télécharge aussi `adaptateur.zip`, à garder hors de git.
 3. **Noter à l'aveugle** :
    - copier `results/notation_aveugle.csv` en `results/notes_A.csv` et `results/notes_B.csv` ;
    - chaque notateur remplit sa copie avec la grille (`eval/grille_evaluation.md`) ;
