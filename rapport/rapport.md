@@ -144,6 +144,14 @@ La baseline est le même modèle, adaptateur désactivé, avec le même prompt B
 - scénario long de Rose (S02) ;
 - erreurs restantes ou introduites par la LoRA.]
 
+**Généralisation à une intrigue inédite** (facultatif). Une seconde affaire originale, « Dernière au Théâtre du Miroir » (1929), n'a servi ni à l'entraînement ni à la validation. Elle compte 7 personnages et 11 pièces.
+
+Sur ses 14 requêtes de test, et avec les métriques automatiques seulement :
+- taux de fuite : [baseline] % contre [LoRA] % ;
+- aveux corrects en confrontation : [baseline] % contre [LoRA] %.
+
+[À COMPLÉTER : une phrase sur ce que cela dit de la généralisation, au-delà d'une nouvelle fiche (Armand) : une nouvelle intrigue.]
+
 ## 6. Interface
 
 L'interface Gradio est lancée depuis le notebook et comprend :

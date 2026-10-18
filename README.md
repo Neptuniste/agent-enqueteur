@@ -52,6 +52,13 @@ Le code est écrit et testé sur CPU avec un petit modèle. Les 540 dialogues so
      - Sur Colab, la cellule qui suit la création de la feuille télécharge `resultats.zip`.
      - Le décompresser à la racine du dépôt, puis commiter.
      - Si `ADAPTER_REPO` est vide, elle télécharge aussi `adaptateur.zip`, à garder hors de git.
+   - **Facultatif, environ 10 minutes, même session :** mesurer la généralisation sur la seconde affaire, jamais vue à l'entraînement (14 requêtes de `data/test_theatre.jsonl`, métriques automatiques seulement). Coller dans une nouvelle cellule, en remplaçant `ADAPTATEUR` par le dossier `adapter` ou par le dépôt Hugging Face :
+     ```python
+     !python eval/evaluate.py --affaire cases/theatre_miroir --test data/test_theatre.jsonl --resultats results/theatre generer --version baseline
+     !python eval/evaluate.py --affaire cases/theatre_miroir --test data/test_theatre.jsonl --resultats results/theatre generer --version lora --adaptateur ADAPTATEUR
+     !python eval/evaluate.py --test data/test_theatre.jsonl --resultats results/theatre auto
+     ```
+     Le tableau affiché (fuites, aveux corrects, format, baseline contre LoRA) va dans le rapport, section 5. `results/theatre/` est à commiter avec le reste.
 3. **Noter à l'aveugle** :
    - copier `results/notation_aveugle.csv` en `results/notes_A.csv` et `results/notes_B.csv` ;
    - chaque notateur remplit sa copie avec la grille (`eval/grille_evaluation.md`) ;

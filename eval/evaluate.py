@@ -32,8 +32,11 @@ from src.game_state import charger_affaire, secrets_ouverts_par, texte_du_dossie
 from src.guard import compter_didascalies, compter_phrases, detecter_fuites, normaliser, sort_du_role  # noqa: E402
 from src.prompt_builder import annonce_piece, build_system_prompt  # noqa: E402
 
+# L'affaire et le jeu de test évalués. Par défaut, ceux du rendu ; les options --affaire et --test les
+# remplacent, par exemple pour mesurer la généralisation sur cases/theatre_miroir (data/test_theatre.jsonl).
 AFFAIRE = ROOT / "cases" / "main_case"
-TEST = ROOT / "data" / "test.jsonl"
+TEST_PRINCIPAL = ROOT / "data" / "test.jsonl"
+TEST = TEST_PRINCIPAL
 RESULTATS = ROOT / "results"
 TYPES = ["factuel", "alibi", "mensonge_maintenu", "confrontation", "sans_rapport",
          "autre_personnage", "inconnu", "hors_perimetre", "memoire"]  # §9.4
@@ -46,7 +49,7 @@ COURTS = {"personnages vus": "vus", "personnage jamais vu": "jamais vu", "person
 
 
 def charger_tests():
-    return [json.loads(l) for l in TEST.read_text(encoding="utf-8").splitlines() if l.strip()]
+    return [json.loads(l) for l in Path(TEST).read_text(encoding="utf-8").splitlines() if l.strip()]
 
 
 def criteres_applicables(item):
@@ -63,7 +66,12 @@ def criteres_applicables(item):
 
 
 def verifier_tests(tests, case, fiches):
-    """Le jeu de test respecte-t-il le §11 et l'affaire ? Renvoie la liste des problèmes."""
+    """Le jeu de test respecte-t-il le §11 et l'affaire ? Renvoie la liste des problèmes.
+
+    Les règles de répartition du §11 (24 requêtes, 4 scénarios, un tiers sur le personnage jamais vu) ne
+    valent que pour le jeu de test principal ; sur une autre affaire, tous les personnages sont jamais vus.
+    """
+    principal = Path(TEST) == TEST_PRINCIPAL
     pieces = {p["id"]: p for p in case["pieces"]}
     problemes = []
     if len({t["id"] for t in tests}) != len(tests):
@@ -73,7 +81,7 @@ def verifier_tests(tests, case, fiches):
         if fiche is None:
             problemes.append(f"{t['id']} : personnage inconnu {t['personnage']}")
             continue
-        vu = ("non" if t["personnage"] in TEST_CHARACTERS
+        vu = ("non" if t["personnage"] in TEST_CHARACTERS or not principal
               else "validation" if t["personnage"] in VAL_CHARACTERS else "oui")
         if t["vu"] != vu:
             problemes.append(f"{t['id']} : vu = {t['vu']}, mais le découpage donne {vu}")
@@ -106,6 +114,8 @@ def verifier_tests(tests, case, fiches):
             problemes.append(f"{t['id']} : mots_attendus réservés aux confrontations, et obligatoires pour elles")
         elif t.get("mots_attendus") and len(t["mots_attendus"]) < 2:
             problemes.append(f"{t['id']} : au moins 2 mots_attendus")
+    if not principal:
+        return problemes
     simples = Counter(t["type"] for t in tests if t["type"] != "scenario")
     problemes += [f"type « {ty} » : {simples[ty]} requête(s), 2 au moins" for ty in TYPES if simples[ty] < 2]
     if simples["hors_perimetre"] < 4:
@@ -478,8 +488,11 @@ def main():
         sys.stdout.reconfigure(encoding="utf-8")
     except AttributeError:
         pass
+    global AFFAIRE, TEST
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--resultats", default=str(RESULTATS), help="dossier des résultats (par défaut results/)")
+    parser.add_argument("--affaire", default=str(AFFAIRE), help="dossier de l'affaire (par défaut cases/main_case)")
+    parser.add_argument("--test", default=str(TEST), help="jeu de test (par défaut data/test.jsonl)")
     sous = parser.add_subparsers(dest="commande", required=True)
     sous.add_parser("verifier", help="contrôle du jeu de test")
     p = sous.add_parser("generer", help="réponses d'une version du modèle")
@@ -494,13 +507,15 @@ def main():
     p = sous.add_parser("agreger", help="tableau final, une fois les notes saisies")
     p.add_argument("feuilles", nargs="*", help="feuilles remplies (une par notateur)")
     args = parser.parse_args()
+    AFFAIRE, TEST = Path(args.affaire).resolve(), Path(args.test).resolve()
     if args.commande == "verifier":
         case, fiches = charger_affaire(AFFAIRE)
         tests = charger_tests()
         problemes = verifier_tests(tests, case, fiches)
         types = Counter(t["type"] for t in tests)
         print(f"{len(tests)} requêtes ; {dict(types)} ; jamais vu : {sum(t['vu'] == 'non' for t in tests)}")
-        print("\n".join(problemes) if problemes else "jeu de test conforme au §11")
+        conforme = "jeu de test conforme au §11" if TEST == TEST_PRINCIPAL else "jeu de test cohérent avec l'affaire"
+        print("\n".join(problemes) if problemes else conforme)
         sys.exit(1 if problemes else 0)
     {"generer": commande_generer, "auto": commande_auto, "feuille": commande_feuille,
      "agreger": commande_agreger}[args.commande](args)

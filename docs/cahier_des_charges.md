@@ -548,6 +548,7 @@ Ces deux extensions dépassent les exigences du sujet. Elles ne changent ni les 
   - `jouer.ipynb`, pour Colab ;
   - `jouer_demo.bat`, en double-clic sous Windows.
 - **Tests** : `tests/test_jeu.py` couvre le moteur sur les deux affaires, puis un parcours complet dans le navigateur avec Playwright.
+- **Généralisation, facultatif** : 14 requêtes sur la seconde affaire, écrites à la main (`data/test_theatre.jsonl`). On les évalue avec les métriques automatiques seulement, par `eval/evaluate.py --affaire cases/theatre_miroir --test data/test_theatre.jsonl`. Le jeu de test principal et son protocole (§11) ne changent pas.
 
 ## 13. Livrables et arborescence
 
@@ -591,7 +592,8 @@ agent-enqueteur/
 │   ├── interrogatoires_types.json   # 5 interrogatoires types + questions de pression (mise au point)
 │   ├── train.jsonl
 │   ├── val.jsonl
-│   └── test.jsonl           # écrit à la main
+│   ├── test.jsonl           # écrit à la main
+│   └── test_theatre.jsonl   # généralisation sur la seconde affaire (§12.1, facultatif)
 ├── eval/
 │   ├── grille_evaluation.md # grille et liste des 34 requêtes
 │   └── evaluate.py          # génération baseline / LoRA, métriques, notation à l'aveugle
