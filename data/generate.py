@@ -26,7 +26,8 @@ sys.path.insert(0, str(ROOT))
 
 from src.config import SEED, TEST_CHARACTERS, VAL_CHARACTERS  # noqa: E402
 from src.game_state import charger_affaire, secrets_ouverts_par, texte_du_dossier  # noqa: E402
-from src.guard import detecter_fuites, normaliser  # noqa: E402
+from src.guard import (DIDASCALIE, HORS_ROLE, compter_phrases, detecter_fuites,  # noqa: E402
+                       normaliser)
 from src.prompt_builder import annonce_piece, build_system_prompt  # noqa: E402
 
 DOSSIER_AFFAIRE = ROOT / "cases" / "main_case"
@@ -52,13 +53,10 @@ PART_APRES_AVEU = 0.25       # situations sans pièce : part jouée après un av
 PART_REPRESENTATION = 0.15   # confrontations où la pièce a déjà été avouée (« déjà avoué »)
 TAILLE_LOT = 6               # dialogues affichés ensemble par `fiche`
 
-# Le personnage se présente comme une machine : bloquant. Il cite un terme moderne : à vérifier,
-# sauf si le joueur vient de l'employer (« Une IA ? Qu'est-ce que c'est ? » est la bonne réaction).
-HORS_ROLE = ["je suis une ia", "en tant qu'ia", "je suis un modèle", "modèle de langage",
-             "assistant virtuel", "je suis un programme"]
+# Le personnage cite un terme moderne : à vérifier, sauf si le joueur vient de l'employer
+# (« Une IA ? Qu'est-ce que c'est ? » est la bonne réaction). HORS_ROLE (src/guard) est bloquant.
 TERMES_MODERNES = ["intelligence artificielle", " ia ", "chatbot", "prompt système", "programme"]
 ANACHRONISMES = ["portable", "internet", "ordinateur", "e-mail", "smartphone", "texto", " ok ", "cool"]
-DIDASCALIE = re.compile(r"\*\([^*]+\)\*")
 
 
 # --- Plan -----------------------------------------------------------------------------------
@@ -289,12 +287,6 @@ def commande_fiche(args):
 
 # --- Assemblage et contrôles -------------------------------------------------------------------
 
-def phrases(texte):
-    """Nombre de phrases d'une réplique, didascalies exclues (« M. Delorme » ne coupe pas la phrase)."""
-    texte = re.sub(r"\bM\.\s", "M ", DIDASCALIE.sub(" ", texte))
-    return len([p for p in re.split(r"(?<=[.!?…])\s+", texte.strip()) if re.search(r"\w", p)])
-
-
 def controler(exemple, tours, fiche, case, public):
     """Contrôles automatiques. Renvoie (bloquants, remarques)."""
     pieces = {p["id"]: p for p in case["pieces"]}
@@ -334,7 +326,7 @@ def controler(exemple, tours, fiche, case, public):
         modernes = [m.strip() for m in TERMES_MODERNES if m in bas and m not in " " + normaliser(joueur) + " "]
         if modernes:
             remarques.append(f"tour {i} : terme moderne ({', '.join(modernes)})")
-        n = phrases(reponse)
+        n = compter_phrases(reponse)
         if not 2 <= n <= 5:
             remarques.append(f"tour {i} : {n} phrase(s) (2 à 5 attendues)")
         if len(DIDASCALIE.findall(reponse)) > 1:
