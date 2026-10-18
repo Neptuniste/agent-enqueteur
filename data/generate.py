@@ -123,6 +123,8 @@ def etat_apres_aveux(fiche, avoues, prereqs_pieces, rng):
         if p not in montrees:
             montrees.append(p)
         faits.add(sid)
+    # Une pièce montrée a fait avouer TOUS les secrets qu'elle ouvre (la liasse : sortie et vol).
+    avoues = set(avoues) | {s["id"] for p in montrees for s in secrets_ouverts_par(fiche, p)}
     return {"secrets_avoues": sorted(avoues, key=list(secrets).index), "pieces_montrees": montrees}
 
 
@@ -164,6 +166,9 @@ def planifier_personnage(case, fiches, perso_id, total, rng):
                     if autres and rng.random() < 0.3:
                         avant = fermer(avant | {rng.choice(autres)}, prereqs)
                     etat = etat_apres_aveux(fiche, avant, prereqs_pieces, rng)
+                    if secret["id"] in etat["secrets_avoues"]:  # déjà ouvert par une pièce montrée
+                        avant = fermer(set(prereqs.get(secret["id"], [])), prereqs)
+                        etat = etat_apres_aveux(fiche, avant, prereqs_pieces, rng)
                     etat["piece_presentee"] = piece_pour(secret, avant, prereqs_pieces, rng)
             elif situation == "sans_rapport":
                 avoues = set(rng.choice(candidats)) if rng.random() < 0.2 and candidats else set()
@@ -197,8 +202,37 @@ def construire_plan():
     return plan
 
 
+def verifier_plan(plan):
+    """Garde-fous : chaque état tiré doit être possible en jeu."""
+    case, fiches = charger_affaire(DOSSIER_AFFAIRE)
+    problemes = []
+    for perso_id, bloc in plan.items():
+        fiche = fiches[perso_id]
+        prereqs = prerequis(case, fiches, perso_id)
+        for e in bloc["exemples"]:
+            avoues = set(e["etat"].get("secrets_avoues", []))
+            montrees = e["etat"].get("pieces_montrees", [])
+            piece = e["etat"].get("piece_presentee")
+            for p in montrees:
+                manquants = {s["id"] for s in secrets_ouverts_par(fiche, p)} - avoues
+                if manquants:
+                    problemes.append(f"{e['id']} : {p} montrée sans l'aveu de {sorted(manquants)}")
+            for s in avoues:
+                if not set(prereqs.get(s, [])) <= avoues:
+                    problemes.append(f"{e['id']} : {s} avoué sans ses prérequis")
+            ouverts = {s["id"] for s in secrets_ouverts_par(fiche, piece)} if piece else set()
+            if e["situation"] == "confrontation" and not ouverts:
+                problemes.append(f"{e['id']} : confrontation avec une pièce qui n'ouvre rien")
+            if e["situation"] == "sans_rapport" and ouverts:
+                problemes.append(f"{e['id']} : pièce « sans rapport » qui ouvre un secret")
+    return problemes
+
+
 def commande_plan(_args):
     plan = construire_plan()
+    problemes = verifier_plan(plan)
+    if problemes:
+        sys.exit("Plan incohérent :\n  " + "\n  ".join(problemes))
     RAW.mkdir(parents=True, exist_ok=True)
     PLAN.write_text(json.dumps(plan, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     total = 0

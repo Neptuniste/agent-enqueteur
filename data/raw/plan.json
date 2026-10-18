@@ -4495,6 +4495,7 @@
     "n_tours": 1,
     "etat": {
      "secrets_avoues": [
+      "absence",
       "vestiaire",
       "vol"
      ],
@@ -4512,6 +4513,7 @@
     "etat": {
      "secrets_avoues": [
       "heritage",
+      "absence",
       "vestiaire",
       "vol"
      ],
@@ -4615,6 +4617,7 @@
     "n_tours": 2,
     "etat": {
      "secrets_avoues": [
+      "absence",
       "vestiaire",
       "vol"
      ],
