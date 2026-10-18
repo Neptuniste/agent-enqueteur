@@ -229,3 +229,5 @@ outputs/
 *.gguf
 # Cache Hugging Face local
 hf_cache/
+# Sorties du mode ESSAI_RAPIDE d'agent.ipynb (petit modèle, sans valeur)
+results/essai_rapide/

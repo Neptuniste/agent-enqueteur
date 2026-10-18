@@ -1,9 +1,11 @@
 # Cahier des charges – Agent d'enquête conversationnel
 
 **Mini-projet 2 NLP – Du Transformer pré-entraîné à une application de dialogue**\
-Version 1.2 – 18 octobre 2026 – **rendu le 23 octobre 2026**\
+Version 1.3 – 18 octobre 2026 – **rendu le 23 octobre 2026**\
 Sujet : [mini_projet_2_agent_conversationnel.pdf](mini_projet_2_agent_conversationnel.pdf)
 
+> **Changements de la v1.3** : dialogues rédigés avec Claude dans Claude Code, contrôlés puis relus (§9.3) ; format des données et champ `perte_sur` (§9.6) ; `top_k` explicite (§8.2) ; 34 requêtes de test (§11) ; arborescence réelle (§13) ; planning compressé jusqu'au rendu (§14) ; questions tranchées (§16).
+>
 > **Changements de la v1.2** : l'affaire est écrite, « Le Dernier Verre du Faisan Doré » (§2) ; format exact de `case.json` (§7.1) ; budget de tokens mesuré, longueurs d'entraînement et d'inférence séparées (§8.4) ; personnages tenus à l'écart choisis (§9.5) ; vérificateur d'affaire `cases/check_case.py` (§4.3, §7) ; planning à replanifier (§14).
 >
 > **Changements de la v1.1** : une seule affaire, plus riche, au lieu de 9 petites (§2) ; découpage des données par personnage (§9.5) ; gestion de l'information par secrets verrouillés (§4.1) ; déblocage des pièces par les aveux (§4.2) ; style théâtral porté par les données (§9.7) ; budget de tokens recalculé (§8.4) ; protocole d'évaluation précisé (§11) ; planning daté (§14).
@@ -310,6 +312,7 @@ Procédure : tester les 2 premiers candidats sur les 5 interrogatoires de la par
 |---|---|---|
 | `temperature` | 0,7 | Voix variée sans dérive vers l'invention |
 | `top_p` | 0,9 | Coupe la queue de distribution improbable |
+| `top_k` | 20 | Valeur recommandée pour Qwen3 ; explicite pour que les deux candidats soient réglés pareil |
 | `repetition_penalty` | 1,1 | Évite les tics de langage répétés |
 | `max_new_tokens` | 150 | Réponses courtes |
 
@@ -350,11 +353,30 @@ Sur une réplique courte de personnage : afficher les identifiants de tokens, la
 
 ### 9.3 Constitution (décision)
 
-1. **Affaire et fiches** : écrites à la main par l'équipe (§2, §7).
-2. **Dialogues d'entraînement et de validation** : génération synthétique par un LLM « professeur » à partir du **message système produit par `prompt_builder.py`** (exactement celui vu à l'inférence) et d'un type de situation (§9.4). Passe **générateur puis critique** (un second appel vérifie la conformité à la fiche et au style), puis **relecture manuelle** de chaque exemple (exigée par le sujet).
-3. **Test** : requêtes **écrites à la main** (§11), jamais générées.
+1. **Affaire et fiches** : écrites pour le projet (§2, §7), contrôlées par `cases/check_case.py`.
+2. **Dialogues d'entraînement et de validation** : rédigés par **Claude (Opus 5.5), utilisé comme assistant de rédaction dans Claude Code**, personnage par personnage, à partir de trois éléments :
+   - le **plan** (`data/generate.py plan` → `data/raw/plan.json`), qui fixe pour chaque exemple :
+     - la situation (§9.4) ;
+     - l'état du jeu ;
+     - le nombre de tours ;
+     - la présentation éventuelle d'une pièce ;
+   - le **message système produit par `prompt_builder.py`**, exactement celui vu à l'inférence ;
+   - les consignes de `data/consignes_redaction.md` (style du §9.7).
 
-Volume : ~75 exemples par personnage d'entraînement (6 personnages), soit **~450 exemples d'entraînement** et **~70 de validation**, chacun de 1 à 4 tours.
+   Les répliques rédigées sont gardées dans `data/raw/brut/`.
+3. **Contrôles automatiques** (`data/generate.py assembler`). Ils portent sur :
+   - le nombre de tours et l'annonce des pièces ;
+   - les fuites de mots interdits et la sortie du rôle ;
+   - le nombre de phrases et de didascalies ;
+   - les termes modernes, les anachronismes et la longueur.
+
+   Un exemple qui échoue à un contrôle bloquant est réécrit. Ces contrôles remplacent la passe « critique » prévue en v1.1.
+4. **Relecture manuelle** de chaque exemple (`data/relire.py` : accepter, corriger, rejeter), exigée par le sujet.
+5. **Test** : requêtes **écrites à la main** (§11), jamais générées.
+
+Volume : 78 exemples par personnage d'entraînement (6 personnages), soit **468 exemples d'entraînement**, et **72 de validation**, chacun de 1 à 4 tours. Ces chiffres sont ceux d'avant la relecture ; le taux de rejet est rapporté par `build_dataset.py`.
+
+L'usage de Claude pour rédiger les données et assister le code est déclaré dans le rapport et dans le notebook.
 
 ### 9.4 Types de situations à couvrir
 
@@ -390,11 +412,26 @@ Grille de validation des données : conforme à la fiche, ton respecté, aucun f
 
 ### 9.6 Format
 
-- `data/raw/<personnage>.jsonl` : dialogues générés, une ligne par exemple, avec `personnage`, `situation`, `messages` et `statut` de relecture (`ok` ou `rejete`).
-- `data/build_dataset.py` : ne garde que les `ok`, découpe par personnage (§9.5), écrit `data/train.jsonl` et `data/val.jsonl`.
-- `data/test.jsonl` : écrit à la main ; chaque ligne contient le message système, l'historique, la question, le type et le comportement attendu.
+- `data/raw/plan.json` : le plan de rédaction (personnage, situation, état du jeu, tours, pièce présentée).
+- `data/raw/brut/<personnage>.json` : les répliques rédigées (source).
+- `data/raw/<personnage>.jsonl` : les exemples assemblés et contrôlés, une ligne par exemple. Champs :
+  - `id`, `personnage`, `split`, `situation`, `etat`, `perte_sur`, `messages` ;
+  - `controles` : bloquants et remarques ;
+  - `statut` de relecture (`a_relire`, `ok` ou `rejete`) et `motif`.
+- `data/build_dataset.py` :
+  - ne garde que les `ok` et reconstruit le message système avec les fiches actuelles ;
+  - découpe par personnage (§9.5) ;
+  - vérifie qu'aucune question du test n'est reprise (identité, ou similarité ≥ 85 %) ;
+  - écarte les exemples de plus de `MAX_LENGTH` ;
+  - écrit `data/train.jsonl` et `data/val.jsonl`.
+- `data/test.jsonl` : écrit à la main (§11). Chaque ligne est :
+  - soit une requête : `etat`, `historique`, `question`, `type`, `attendu`, et `mots_attendus` pour les confrontations ;
+  - soit un scénario : `tours`, dont certains avec une pièce.
+- `data/interrogatoires_types.json` : les 5 interrogatoires types (§5.3) et 14 questions de pression, qui forment le jeu de mise au point des parties 2 et 3.
 
-Chaque ligne suit le format chat de `transformers` : `system` (règles + fiche verrouillée + état), puis `user` / `assistant` sur 1 à 4 tours.
+Chaque exemple suit le format chat de `transformers` : `system`, puis `user` / `assistant` sur 1 à 4 tours. Le champ `perte_sur` vaut :
+- `tous` : la perte porte sur toutes les répliques du personnage ;
+- `dernier` : la perte ne porte que sur la dernière réplique. C'est le cas quand une pièce est présentée au dernier tour d'un dialogue de plusieurs tours : le message système décrit alors l'aveu en cours et ne correspond plus aux répliques précédentes.
 
 ### 9.7 Style théâtral (décision)
 
@@ -427,7 +464,7 @@ QLoRA avec `peft` : modèle de base gelé en 4 bits, seuls les paramètres de l'
 | `lora_dropout` | 0,05 | Régularisation légère |
 | Modules ciblés | Toutes les couches linéaires (`q_proj`, `k_proj`, `v_proj`, `o_proj`, `gate_proj`, `up_proj`, `down_proj`) | Recommandation de l'article QLoRA ; le style et le comportement passent aussi par les MLP |
 | Taux d'apprentissage | 2e-4 | Valeur standard en QLoRA |
-| Taille de lot | 4, accumulation 2 (lot effectif 8) | Contrainte mémoire ; ~55 pas par époque, donc une courbe lisible |
+| Taille de lot | 2, accumulation 4 (lot effectif 8) | Contrainte mémoire : pour la perte, les logits (lot × longueur × 151 936) passent en float32, soit ~6 Go à 2 exemples et le double à 4 ; ~59 pas par époque, donc une courbe lisible |
 | Époques | 4 au maximum, arrêt anticipé | Petit jeu de données |
 | Longueur maximale | 2 048 tokens par exemple | Message système + 1 à 4 tours (§8.4) |
 
@@ -461,8 +498,14 @@ Protocole :
 - **Génération** : configuration retenue en partie 3, mêmes paramètres pour les deux versions, graine fixée par requête ; 1 tirage noté à la main, 5 tirages pour les métriques automatiques.
 - **Requêtes à un tour et requêtes « mémoire »** : l'historique précédent est écrit à l'avance, identique pour les deux versions.
 - **4 scénarios multi-tours, dont 2 de 10 tours** : les questions du joueur sont écrites à l'avance, chaque version répond avec son propre historique ; notation sur l'ensemble du scénario.
-- **Répartition** : au moins 2 requêtes par type de situation (§9.4), les 4 scénarios multi-tours, 2 requêtes hors périmètre de plus, soit **24 au moins** ; au moins un tiers sur le personnage non vu.
-- **Notation à l'aveugle** : ordre mélangé, version masquée ; 2 notateurs si possible, désaccords discutés et taux d'accord reporté.
+- **Répartition** : au moins 2 requêtes par type de situation (§9.4), les 4 scénarios multi-tours, 2 requêtes hors périmètre de plus, soit **24 au moins** ; au moins un tiers sur le personnage non vu. Le jeu final compte **34 requêtes** :
+  - 30 requêtes à un tour, dont 4 hors périmètre ;
+  - 4 scénarios ;
+  - 13 requêtes sur Armand Rivière.
+
+  `python eval/evaluate.py verifier` contrôle ces règles et la cohérence avec l'affaire.
+- **Baseline** : le même modèle, adaptateur désactivé (`model.disable_adapter()`), avec le même prompt B.
+- **Notation à l'aveugle** : ordre mélangé, version masquée ; 2 notateurs si possible, désaccords discutés et taux d'accord reporté. Les critères sans objet pour une requête sont marqués « - » (`eval/grille_evaluation.md`).
 
 Métriques automatiques en complément :
 
@@ -490,7 +533,7 @@ Les 5 livrables du sujet sont couverts : notebook exécuté, rapport PDF de 4 pa
 
 ```
 agent-enqueteur/
-├── agent.ipynb              # notebook principal, parties 1 à 7 dans l'ordre
+├── agent.ipynb              # notebook principal : installation (0), puis parties 1 à 7 dans l'ordre
 ├── rapport.pdf
 ├── README.txt               # installation et exécution (livrable)
 ├── README.md                # guide de l'équipe (GitHub)
@@ -504,9 +547,10 @@ agent-enqueteur/
 │   ├── config.py
 │   ├── game_state.py
 │   ├── prompt_builder.py
-│   ├── guard.py
-│   ├── llm.py
-│   └── app.py
+│   ├── guard.py             # filtre de sortie et règles de style
+│   ├── llm.py               # chargement (4 bits), historique, génération
+│   ├── train.py             # QLoRA : masques de perte, entraînement, courbes
+│   └── app.py               # interface Gradio
 ├── cases/
 │   ├── check_case.py        # vérificateur d'affaire (à relancer après chaque modification)
 │   └── main_case/           # l'affaire : Le Dernier Verre du Faisan Doré
@@ -514,14 +558,20 @@ agent-enqueteur/
 │       ├── characters/      # une fiche JSON par personnage (8)
 │       └── assets/          # rapports, lieux, plan.svg et pieces/ (12 pièces)
 ├── data/
-│   ├── raw/                 # dialogues générés et relus, un fichier par personnage
+│   ├── consignes_redaction.md
+│   ├── generate.py          # plan, fiche de rédaction, assemblage et contrôles
+│   ├── relire.py            # relecture humaine exemple par exemple
+│   ├── raw/                 # plan.json, brut/ (répliques rédigées), un .jsonl par personnage
 │   ├── build_dataset.py     # filtre + découpage par personnage + export JSONL
+│   ├── interrogatoires_types.json   # 5 interrogatoires types + questions de pression (mise au point)
 │   ├── train.jsonl
 │   ├── val.jsonl
 │   └── test.jsonl           # écrit à la main
 ├── eval/
-│   ├── grille_evaluation.md
-│   └── evaluate.py
+│   ├── grille_evaluation.md # grille et liste des 34 requêtes
+│   └── evaluate.py          # génération baseline / LoRA, métriques, notation à l'aveugle
+├── tests/
+│   └── test_interface.py    # jeu et interface, avec un générateur factice (sans modèle)
 ├── adapter/                 # meilleur adaptateur, non versionné (publié sur le Hugging Face Hub)
 └── results/                 # courbes, tableaux d'évaluation
 ```
@@ -537,17 +587,16 @@ Conventions de code (à transmettre à l'outil de vibe coding) :
 
 ## 14. Planning et répartition
 
-> **État au 18 octobre** : l'étape 1 est faite (affaire, fiches, dossier, vérificateur), sauf les 5 interrogatoires écrits. Les étapes 2 à 8 restent à faire en 5 jours : le planning ci-dessous est dépassé et doit être replanifié (§16).
+> **Replanifié le 18 octobre.** Le code est écrit et testé sur CPU avec un petit modèle, et les données sont rédigées et contrôlées. Le reste demande un GPU (Colab) ou des humains (relecture, notation, rapport).
 
-Le chemin critique est l'**affaire écrite** : tout le reste en dépend. `prompt_builder.py` et `game_state.py` sont écrits dès la semaine 1, car la baseline et les données en ont besoin ; seule l'interface arrive en fin de parcours.
-
-| Semaine | Dates | Contenu | Jalon |
-|---|---|---|---|
-| S1 | 25 sept – 1er oct | Écrire l'affaire (`case.json`, fiches, pièces, chaîne d'indices) ; 5 interrogatoires ; `prompt_builder.py` et `game_state.py` minimaux ; observation du modèle, choix entre 2 candidats | Affaire et modèle figés |
-| S2 | 2 – 8 oct | Baseline (prompt A vs B) ; génération, critique et relecture des données ; requêtes de test et grille écrites | Train / val prêts, test et grille figés |
-| S3 | 9 – 15 oct | Entraînement QLoRA, courbes, choix de l'arrêt, adaptateur publié ; en parallèle, interface Gradio | Adaptateur publié |
-| S4 | 16 – 21 oct | Évaluation baseline vs LoRA, analyse d'erreurs ; assemblage de `agent.ipynb` ; rapport, README | Notebook exécuté, rapport rédigé |
-| – | 22 – 23 oct | Marge, relecture, rendu | **Rendu le 23 oct** |
+| Date | Contenu | Jalon |
+|---|---|---|
+| sam. 18 oct | Modèle, entraînement, évaluation, interface et notebook écrits et testés ; 540 dialogues rédigés et contrôlés ; 5 interrogatoires types | Dépôt prêt pour Colab |
+| dim. 19 oct | Relecture des 540 exemples (`data/relire.py`), répartie entre les membres ; `build_dataset.py` ; commit de `train.jsonl` et `val.jsonl` | Données figées |
+| lun. 20 oct | Colab : parties 1 à 3 (choix du modèle, baseline), puis entraînement QLoRA (partie 5) ; publication de l'adaptateur | Adaptateur publié |
+| mar. 21 oct | Évaluation (partie 6) ; notation à l'aveugle par deux membres ; agrégation | Tableau d'évaluation |
+| mer. 22 oct | Analyse des cinq cas ; commentaires « À VÉRIFIER » du notebook ; rapport ; `README.txt` | Rapport rédigé |
+| jeu. 23 oct | Exécution complète du notebook, relecture, rendu | **Rendu** |
 
 | Étape | Contenu | Mode | Points |
 |---|---|---|---|
@@ -581,14 +630,14 @@ Règle pour le code assisté : chaque bloc des étapes 2, 3, 5 et 6 doit pouvoir
 - [x] Date de rendu : 23 octobre 2026
 - [ ] Taille de l'équipe et répartition des rôles
 - [x] Ambiance et époque de l'affaire : Paris, 1928, huis clos dans un bar clandestin (§2)
-- [ ] LLM « professeur » pour générer les données, et ses conditions d'utilisation (droit d'entraîner un modèle sur ses sorties)
-- [ ] Où entraîner : Colab T4 par défaut, Kaggle en secours (sessions plus longues)
+- [x] LLM « professeur » : Claude (Opus 5.5) dans Claude Code, avec contrôles automatiques et relecture humaine (§9.3) ; usage déclaré dans le rapport
+- [x] Où entraîner : Colab T4 (le notebook s'y installe seul), Kaggle en secours
 - [x] Personnages tenus à l'écart : Céleste Moreau (validation), Armand Rivière (test) (§9.5)
-- [ ] Replanifier les étapes 2 à 8 d'ici le 23 octobre, quitte à réduire le volume de données
+- [x] Replanifier les étapes 2 à 8 d'ici le 23 octobre (§14)
 - [ ] Demander à Team Break l'autorisation de publier l'adaptation avant de rendre le dépôt public
 - [ ] Images de scène (facultatif)
 
-Décisions prises en v1.2 : l'affaire du Faisan Doré (8 personnages, 12 pièces) ; budget d'inférence porté à 3 072 tokens. Décisions de la v1.1 : une seule affaire de 6 à 8 personnages ; découpage par personnage ; secrets verrouillés et meurtre jamais dans le prompt ; déblocage des pièces par les aveux ; style théâtral porté par les données ; Qwen3-4B-Instruct-2507 contre Qwen2.5-3B-Instruct en partie 2 ; LoRA sur toutes les couches linéaires.
+Décisions prises en v1.3 : dialogues rédigés avec Claude, contrôlés puis relus ; 34 requêtes de test ; `top_k` = 20 explicite. Décisions prises en v1.2 : l'affaire du Faisan Doré (8 personnages, 12 pièces) ; budget d'inférence porté à 3 072 tokens. Décisions de la v1.1 : une seule affaire de 6 à 8 personnages ; découpage par personnage ; secrets verrouillés et meurtre jamais dans le prompt ; déblocage des pièces par les aveux ; style théâtral porté par les données ; Qwen3-4B-Instruct-2507 contre Qwen2.5-3B-Instruct en partie 2 ; LoRA sur toutes les couches linéaires.
 
 ---
 

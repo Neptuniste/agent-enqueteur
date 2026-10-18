@@ -1,6 +1,6 @@
 """Interface Gradio du jeu (cahier des charges, §12).
 
-Depuis le notebook (partie 8) :
+Depuis le notebook (section 7) :
     from src.app import lancer
     lancer(model, tokenizer, modele_affiche="Qwen3-4B-Instruct-2507 + LoRA")   # lien public temporaire
 
@@ -43,6 +43,14 @@ def generateur_du_modele(model, tokenizer):
     return generer
 
 
+def question_posee(case, question, piece=None):
+    """La question telle qu'elle s'affiche et part au modèle : l'annonce de la pièce, puis la question."""
+    if not piece:
+        return question
+    p = next(x for x in case["pieces"] if x["id"] == piece)
+    return f"{annonce_piece(p)} {question or QUESTION_PAR_DEFAUT}"
+
+
 class Partie:
     """Une partie : l'état du jeu (pièces, aveux) et un historique par personnage."""
 
@@ -57,9 +65,7 @@ class Partie:
         Renvoie (réponse, nouvelles pièces). Si la génération échoue, l'état du jeu est rétabli.
         """
         jeu, historique = self.jeu, self.historiques[perso]
-        pieces = {p["id"]: p for p in jeu.case["pieces"]}
-        if piece:
-            question = f"{annonce_piece(pieces[piece])} {question or QUESTION_PAR_DEFAUT}"
+        question = question_posee(jeu.case, question, piece)
         # ce que le joueur sait AVANT ce tour : un mot connu n'est pas une fuite
         connu = "\n".join([texte_du_dossier(jeu.case, self.dossier, jeu.disponibles),
                            *(m["content"] for m in historique if m["role"] == "user")])
@@ -242,14 +248,24 @@ def creer_interface(model=None, tokenizer=None, generer=None, modele_affiche=Non
             return (p, p.historiques[perso_id], "", gr.update(choices=choix_pieces(p.jeu), value=None),
                     texte_pieces(p.jeu, dossier), message)
 
+        def afficher(p, perso_id, texte, piece_id):
+            """Montre la question tout de suite : la réponse, elle, prend quelques secondes."""
+            texte = (texte or "").strip()
+            if not piece_id and not texte:
+                return gr.update()
+            return p.historiques[perso_id] + [{"role": "user", "content": question_posee(case, texte, piece_id)}]
+
         sorties_tour = [partie, chat, question, piece, pieces_md, statut]
-        envoyer.click(lambda p, s, t: jouer(p, s, t, None), [partie, perso, question], sorties_tour,
-                      api_name="interroger")
-        question.submit(lambda p, s, t: jouer(p, s, t, None), [partie, perso, question], sorties_tour,
-                        api_name="interroger_entree")
-        presenter.click(lambda p, s, t, x: jouer(p, s, t, x) if x else
-                        (p, gr.update(), gr.update(), gr.update(), gr.update(), "Choisissez d'abord une pièce."),
-                        [partie, perso, question, piece], sorties_tour, api_name="presenter")
+        for declencheur, nom in ((envoyer.click, "interroger"), (question.submit, "interroger_entree")):
+            declencheur(lambda p, s, t: afficher(p, s, t, None), [partie, perso, question], chat, queue=False,
+                        show_progress="hidden", api_name=f"afficher_{nom}").then(
+                lambda p, s, t: jouer(p, s, t, None), [partie, perso, question], sorties_tour, api_name=nom)
+        presenter.click(lambda p, s, t, x: afficher(p, s, t, x) if x else gr.update(),
+                        [partie, perso, question, piece], chat, queue=False, show_progress="hidden",
+                        api_name="afficher_presenter").then(
+            lambda p, s, t, x: jouer(p, s, t, x) if x else
+            (p, gr.update(), gr.update(), gr.update(), gr.update(), "Choisissez d'abord une pièce."),
+            [partie, perso, question, piece], sorties_tour, api_name="presenter")
 
         def changer(p, perso_id):
             return (gr.update(value=p.historiques[perso_id], label=f"Interrogatoire de {fiches[perso_id]['nom']}"),

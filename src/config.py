@@ -10,11 +10,13 @@ MAX_HISTORY_TURNS = 6
 MAX_LENGTH = 2048    # entraînement : un exemple (système + 1 à 4 tours)
 MAX_CONTEXT = 3072   # inférence : système + historique + réponse (§8.4)
 
+# Génération (§8.2) : top_k est explicite, sinon chaque modèle applique sa propre valeur par défaut
 GENERATION_KWARGS = dict(
     max_new_tokens=150,
     do_sample=True,
     temperature=0.7,
     top_p=0.9,
+    top_k=20,
     repetition_penalty=1.1,
 )
 
@@ -27,8 +29,8 @@ LORA = dict(
 )
 ENTRAINEMENT = dict(
     learning_rate=2e-4,
-    per_device_train_batch_size=4,   # réduire à 2 (et accumulation à 4) si la mémoire du T4 sature
-    gradient_accumulation_steps=2,   # lot effectif : 8
+    per_device_train_batch_size=2,   # 4 saturerait le T4 : la perte passe les logits (lot × 1 450 × 151 936) en float32
+    gradient_accumulation_steps=4,   # lot effectif : 8
     num_train_epochs=4,
     eval_steps=10,
     patience=3,                      # arrêt après 3 évaluations sans amélioration

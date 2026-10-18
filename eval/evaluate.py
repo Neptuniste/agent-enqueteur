@@ -165,8 +165,11 @@ def jouer_simple(item, model, tokenizer, case, fiches, graine, tirages):
             for t in textes]
 
 
-def jouer_scenario(item, model, tokenizer, case, fiches, graine):
-    """Les questions sont écrites à l'avance ; l'état du jeu et l'historique suivent les réponses."""
+def jouer_scenario(item, model, tokenizer, case, fiches, graine, mode="verrouille"):
+    """Les questions sont écrites à l'avance ; l'état du jeu et l'historique suivent les réponses.
+
+    mode : « verrouille » (prompt B, celui du jeu) ou « complet » (prompt A, comparé en partie 3).
+    """
     from src.llm import construire_messages, generer_tirages
     fiche = fiches[item["personnage"]]
     pieces = {p["id"]: p for p in case["pieces"]}
@@ -176,7 +179,8 @@ def jouer_scenario(item, model, tokenizer, case, fiches, graine):
         question = f"{annonce_piece(pieces[piece])} {tour['question']}" if piece else tour["question"]
         # comme GameState.presenter : l'état du tour est pris AVANT la mise à jour
         etat = {"secrets_avoues": list(avoues), "pieces_montrees": list(montrees), "piece_presentee": piece}
-        messages = construire_messages(build_system_prompt(fiche, case, etat), historique, question, tokenizer)
+        messages = construire_messages(build_system_prompt(fiche, case, etat, mode=mode), historique, question,
+                                       tokenizer)
         if piece:
             avoues += [s["id"] for s in secrets_ouverts_par(fiche, piece) if s["id"] not in avoues]
             montrees += [piece] if piece not in montrees else []
@@ -188,19 +192,21 @@ def jouer_scenario(item, model, tokenizer, case, fiches, graine):
     return tours
 
 
-def commande_generer(args):
-    from src.llm import charger_modele
+def generer_version(model, tokenizer, version, dossier=RESULTATS, tirages=5, ids=None, infos=None):
+    """Fait répondre un modèle déjà chargé à tout le jeu de test (ou aux requêtes ids).
+
+    Écrit eval_<version>.jsonl et eval_<version>.json (réglages, durée) dans dossier.
+    Dans le notebook, la baseline est le même modèle sous `with model.disable_adapter():`.
+    """
     case, fiches = charger_affaire(AFFAIRE)
     tests = charger_tests()
     problemes = verifier_tests(tests, case, fiches)
     if problemes:
-        sys.exit("Jeu de test invalide :\n  " + "\n  ".join(problemes))
-    selection = [t for t in tests if not args.ids or t["id"] in args.ids.split(",")]
-    modele = args.modele or MODEL_NAME
-    model, tokenizer = charger_modele(modele, adaptateur=args.adaptateur)
-    dossier = Path(args.resultats)
+        raise ValueError("Jeu de test invalide :\n  " + "\n  ".join(problemes))
+    selection = [t for t in tests if not ids or t["id"] in ids]
+    dossier = Path(dossier)
     dossier.mkdir(parents=True, exist_ok=True)
-    sortie = dossier / f"eval_{args.version}.jsonl"
+    sortie = dossier / f"eval_{version}.jsonl"
     debut = time.perf_counter()
     with open(sortie, "w", encoding="utf-8") as f:
         for n, item in enumerate(selection, 1):
@@ -208,15 +214,29 @@ def commande_generer(args):
             if item["type"] == "scenario":
                 resultat = {"tours": jouer_scenario(item, model, tokenizer, case, fiches, graine)}
             else:
-                resultat = {"reponses": jouer_simple(item, model, tokenizer, case, fiches, graine, args.tirages)}
-            f.write(json.dumps({**item, "version": args.version, **resultat}, ensure_ascii=False) + "\n")
+                resultat = {"reponses": jouer_simple(item, model, tokenizer, case, fiches, graine, tirages)}
+            f.write(json.dumps({**item, "version": version, **resultat}, ensure_ascii=False) + "\n")
             f.flush()
             print(f"[{n}/{len(selection)}] {item['id']} ({item['personnage']}, {item['type']}) "
                   f"{time.perf_counter() - debut:.0f} s")
-    meta = {"version": args.version, "modele": modele, "adaptateur": args.adaptateur, "tirages": args.tirages,
-            "reglages": GENERATION_KWARGS, "requetes": len(selection), "graine": SEED,
-            "duree_s": round(time.perf_counter() - debut), "date": time.strftime("%Y-%m-%d %H:%M")}
-    (dossier / f"eval_{args.version}.json").write_text(json.dumps(meta, ensure_ascii=False, indent=1), encoding="utf-8")
+    meta = {"version": version, **(infos or {}), "tirages": tirages, "reglages": GENERATION_KWARGS,
+            "requetes": len(selection), "graine": SEED, "duree_s": round(time.perf_counter() - debut),
+            "date": time.strftime("%Y-%m-%d %H:%M")}
+    (dossier / f"eval_{version}.json").write_text(json.dumps(meta, ensure_ascii=False, indent=1), encoding="utf-8")
+    return sortie
+
+
+def commande_generer(args):
+    from src.llm import charger_modele
+    case, fiches = charger_affaire(AFFAIRE)
+    problemes = verifier_tests(charger_tests(), case, fiches)
+    if problemes:  # avant de charger le modèle
+        sys.exit("Jeu de test invalide :\n  " + "\n  ".join(problemes))
+    modele = args.modele or MODEL_NAME
+    model, tokenizer = charger_modele(modele, adaptateur=args.adaptateur)
+    sortie = generer_version(model, tokenizer, args.version, args.resultats, args.tirages,
+                             args.ids.split(",") if args.ids else None,
+                             {"modele": modele, "adaptateur": args.adaptateur})
     print(f"-> {sortie}")
 
 

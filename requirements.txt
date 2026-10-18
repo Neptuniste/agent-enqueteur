@@ -1,10 +1,12 @@
-torch
-transformers
-peft
-bitsandbytes
-datasets
-accelerate
-gradio
-matplotlib
-pandas
-nbstripout
+# Versions testées en octobre 2026 (Python 3.10 à 3.12).
+# torch n'est pas listé : on garde celui de Colab (avec CUDA). En local, l'installer d'abord
+# depuis https://pytorch.org (version 2.4 ou plus récente).
+transformers==5.20.1
+tokenizers==0.23.3
+huggingface_hub==2.2.0
+peft==0.21.2
+accelerate==1.15.0
+bitsandbytes==0.50.2    # quantification 4 bits (QLoRA), GPU NVIDIA ; inutilisé sur CPU
+gradio==6.30.0
+matplotlib>=3.8
+pandas>=2.0

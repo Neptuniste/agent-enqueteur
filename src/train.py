@@ -187,10 +187,14 @@ def entrainer(nom=MODEL_NAME, train=ROOT / "data" / "train.jsonl", val=ROOT / "d
     tracer_courbes(historique, resultats / "courbes_loss.png")
     val_pertes = [(h["step"], h["eval_loss"]) for h in historique if "eval_loss" in h]
     meilleur = min(val_pertes, key=lambda p: p[1]) if val_pertes else (None, None)
+    pertes = [h[cle] for h in historique for cle in ("loss", "eval_loss") if cle in h]
     bilan = {"meilleur_pas": meilleur[0], "meilleure_perte_val": meilleur[1],
              "pas_effectues": trainer.state.global_step, "pas_par_epoque": pas_par_epoque,
              "exemples_train": len(jeu_train), "exemples_val": len(jeu_val),
-             "arret_anticipe": trainer.state.global_step < (reglages.get("max_steps", -1) if reglages.get("max_steps", -1) > 0 else pas_total)}
+             "arret_anticipe": trainer.state.global_step < (reglages.get("max_steps", -1) if reglages.get("max_steps", -1) > 0 else pas_total),
+             "pertes_finies": all(math.isfinite(x) for x in pertes)}  # pas de NaN en float16 (§10)
+    if not bilan["pertes_finies"]:
+        print("ATTENTION : perte NaN ou infinie, l'adaptateur n'est pas utilisable (baisser learning_rate)")
     (resultats / "bilan_entrainement.json").write_text(json.dumps(bilan, indent=1), encoding="utf-8")
     print(bilan)
     return bilan
