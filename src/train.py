@@ -4,7 +4,7 @@ Le modèle de base reste gelé (quantifié en 4 bits sur GPU) ; seuls les param�
 LoRA sont entraînés. La perte ne porte que sur les répliques du personnage : toutes, ou seulement
 la dernière quand une pièce est présentée au dernier tour (champ perte_sur, §9.6).
 
-Depuis le notebook (partie 6) :
+Depuis le notebook (section 5) :
     from src.train import entrainer
     resultat = entrainer()
 """

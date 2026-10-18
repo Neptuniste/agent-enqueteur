@@ -21,7 +21,9 @@ Le code est écrit et testé sur CPU avec un petit modèle. Les 540 dialogues so
 2. **Exécuter `agent.ipynb` sur Colab avec un GPU T4.**
    - Pour l'ouvrir : *Fichier > Ouvrir un notebook > GitHub*, en cochant « Inclure les dépôts privés ».
    - La première cellule de code clone le dépôt. Si le dépôt est privé, elle a besoin d'un jeton `GITHUB_TOKEN` dans les secrets Colab (icône de clé), avec l'accès du notebook activé.
-   - Avant l'entraînement, renseigner `ADAPTER_REPO` dans `src/config.py` (par exemple `Neptuniste/faisan-dore-lora`) et se connecter à Hugging Face : `from huggingface_hub import login; login()`.
+   - Avant l'entraînement, renseigner `ADAPTER_REPO` dans `src/config.py` (par exemple `Neptuniste/faisan-dore-lora`) et commiter. Puis donner accès au Hub :
+     - soit un secret Colab `HF_TOKEN`, avec un jeton en écriture créé sur huggingface.co, *Settings > Access Tokens* ;
+     - soit `from huggingface_hub import login; login()` dans une cellule.
    - Après l'entraînement et la génération des réponses de la section 6, **commiter `results/`** : courbes, bilan, `eval_*.jsonl` et feuille de notation. Une nouvelle session Colab repart d'un clone du dépôt, et ces fichiers doivent y être.
      - Sur Colab, la cellule qui suit la création de la feuille télécharge `resultats.zip`.
      - Le décompresser à la racine du dépôt, puis commiter.

@@ -69,7 +69,7 @@ Aucune question d'entraînement ne reprend une question de test : `data/build_da
 
 ## Notation
 
-1. `python eval/evaluate.py generer --version baseline`, puis `generer --version lora --adaptateur adapter`. Le notebook, partie 7, lance ces commandes.
+1. `python eval/evaluate.py generer --version baseline`, puis `generer --version lora --adaptateur adapter`. Le notebook (section 6) fait de même avec le modèle déjà chargé.
 2. `python eval/evaluate.py feuille` produit trois fichiers dans `results/` :
    - `notation_aveugle.csv` : ordre mélangé, version masquée par un code ;
    - `notation_transcriptions.md` : les mêmes transcriptions, plus faciles à lire ;
