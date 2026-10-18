@@ -81,6 +81,12 @@ Nous retenons B : le modèle ne peut pas révéler ce qu'il ignore. Reste ce que
 
 **Format.** Le message système de chaque exemple est reconstruit par le code, à l'identique de celui du jeu : le modèle apprend un comportement, pas des faits. La perte ne porte que sur les répliques du personnage. Quand une pièce est présentée au dernier tour, seule la réplique d'aveu compte.
 
+**Diversité.** Les chiffres ci-dessous datent d'avant la relecture et sont à mettre à jour :
+
+- 27 % des 937 répliques portent une didascalie, avec 149 didascalies distinctes. Les plus fréquentes sont des traits prévus dans les fiches (Rose se raidit, Perrin toussote).
+- On compte 893 questions distinctes sur 937.
+- Les répliques presque identiques d'un exemple à l'autre reprennent la version officielle d'un personnage : c'est la cohérence recherchée.
+
 **Découpage par personnage.** Avec une seule affaire, on ne découpe pas ligne par ligne :
 
 - l'entraînement porte sur 6 personnages ([N] exemples) ;
