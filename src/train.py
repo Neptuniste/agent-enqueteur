@@ -200,10 +200,13 @@ def entrainer(nom=MODEL_NAME, train=ROOT / "data" / "train.jsonl", val=ROOT / "d
     return bilan
 
 
-def publier_adaptateur(dossier, depot):
-    """Publie l'adaptateur sur le Hugging Face Hub (après `huggingface-cli login`)."""
+def publier_adaptateur(dossier, depot, prive=False):
+    """Publie l'adaptateur sur le Hugging Face Hub (après `huggingface_hub.login()`).
+
+    Public par défaut, pour que le lien du rendu soit accessible ; prive=True le réserve aux membres.
+    """
     from huggingface_hub import HfApi
     api = HfApi()
-    api.create_repo(depot, exist_ok=True)
+    api.create_repo(depot, exist_ok=True, private=prive)
     api.upload_folder(folder_path=str(dossier), repo_id=depot)
     return f"https://huggingface.co/{depot}"
