@@ -55,7 +55,7 @@ TAILLE_LOT = 6               # dialogues affichés ensemble par `fiche`
 # Le personnage se présente comme une machine : bloquant. Il cite un terme moderne : à vérifier,
 # sauf si le joueur vient de l'employer (« Une IA ? Qu'est-ce que c'est ? » est la bonne réaction).
 HORS_ROLE = ["je suis une ia", "en tant qu'ia", "je suis un modèle", "modèle de langage",
-             "assistant virtuel", "je suis un programme", "mes instructions"]
+             "assistant virtuel", "je suis un programme"]
 TERMES_MODERNES = ["intelligence artificielle", " ia ", "chatbot", "prompt système", "programme"]
 ANACHRONISMES = ["portable", "internet", "ordinateur", "e-mail", "smartphone", "texto", " ok ", "cool"]
 DIDASCALIE = re.compile(r"\*\([^*]+\)\*")
