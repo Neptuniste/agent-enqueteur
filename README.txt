@@ -78,7 +78,18 @@ CONTENU
     lancer(model, tokenizer)
 
 
+6. LE JEU COMPLET (facultatif)
+
+  Une interface plus ludique, avec deux enquêtes : la seconde, « Dernière au Théâtre du Miroir »,
+  n'a jamais été vue à l'entraînement.
+    jouer.ipynb                     sur Colab, avec le modèle et l'adaptateur
+    python jouer.py                 avec un GPU
+    python jouer.py --demo          sans modèle ni GPU : les personnages répondent avec leur fiche
+                                    (sous Windows : double-clic sur jouer_demo.bat)
+
+
 Matériel : Google Colab, GPU NVIDIA T4 (15 Go).
 Modèle de base : Qwen/Qwen3-4B-Instruct-2507 (licence Apache 2.0).
 Affaire librement adaptée de « Le Dernier Verre du Faisan Doré » (Team Break, https://team-break.fr).
+Seconde affaire, « Dernière au Théâtre du Miroir » : originale, écrite pour le projet avec l'aide de Claude.
 Dialogues d'entraînement rédigés avec l'aide de Claude (Anthropic), puis relus par l'équipe.

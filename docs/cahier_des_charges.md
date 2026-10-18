@@ -527,6 +527,28 @@ Construite avec `gr.Blocks`, lancée depuis le notebook.
 
 Un lien public temporaire (`share=True`) suffit pour une démonstration.
 
+### 12.1 Extensions : interface ludique et seconde affaire
+
+Ces deux extensions dépassent les exigences du sujet. Elles ne changent ni les données, ni l'entraînement, ni l'évaluation.
+
+- **Seconde affaire, « Dernière au Théâtre du Miroir »** (`cases/theatre_miroir/`). Elle est originale et suit le même format (§7) : 7 personnages, 11 pièces, une chaîne de 3 aveux en cascade. Elle passe `check_case.py` sans erreur ni avertissement. Elle n'a servi ni à l'entraînement ni à la validation, et teste donc l'agent sur une intrigue nouvelle, pas seulement sur une fiche nouvelle comme Armand Rivière (§9.5).
+- **Interface ludique** (`src/jeu/`). C'est une page de jeu servie par `gr.HTML` et ses `server_functions`, qui propose :
+  - un choix des affaires ;
+  - la une du journal ;
+  - des portraits ;
+  - des répliques tapées à la machine ;
+  - des pièces à glisser sur le suspect ;
+  - un carnet des aveux ;
+  - une accusation avec score et grade.
+
+  La logique d'un tour est celle de `src/app.py` : même message système, même filtre de sortie, même état rétabli si la génération échoue. Le navigateur ne reçoit jamais la solution ni les secrets avant l'accusation.
+- **Mode démo** (`src/jeu/demo.py`). Les personnages répondent sans modèle, à partir de leur prompt, pour essayer l'interface ou tester une affaire sans GPU.
+- **Lanceurs** :
+  - `jouer.py`, en ligne de commande : démo, modèle avec ou sans adaptateur, interface classique ;
+  - `jouer.ipynb`, pour Colab ;
+  - `jouer_demo.bat`, en double-clic sous Windows.
+- **Tests** : `tests/test_jeu.py` couvre le moteur sur les deux affaires, puis un parcours complet dans le navigateur avec Playwright.
+
 ## 13. Livrables et arborescence
 
 Les 5 livrables du sujet sont couverts : notebook exécuté, rapport PDF de 4 pages maximum hors annexes, données et script, adaptateur LoRA (lien stable), README.txt.
@@ -550,13 +572,16 @@ agent-enqueteur/
 │   ├── guard.py             # filtre de sortie et règles de style
 │   ├── llm.py               # chargement (4 bits), historique, génération
 │   ├── train.py             # QLoRA : masques de perte, entraînement, courbes
-│   └── app.py               # interface Gradio
+│   ├── app.py               # interface Gradio (celle du rendu)
+│   └── jeu/                 # interface ludique (§12.1) : moteur, catalogue, mode démo, page web
+├── jouer.py, jouer.ipynb, jouer_demo.bat   # lanceurs du jeu (§12.1)
 ├── cases/
 │   ├── check_case.py        # vérificateur d'affaire (à relancer après chaque modification)
-│   └── main_case/           # l'affaire : Le Dernier Verre du Faisan Doré
-│       ├── case.json
-│       ├── characters/      # une fiche JSON par personnage (8)
-│       └── assets/          # rapports, lieux, plan.svg et pieces/ (12 pièces)
+│   ├── main_case/           # l'affaire : Le Dernier Verre du Faisan Doré
+│   │   ├── case.json
+│   │   ├── characters/      # une fiche JSON par personnage (8)
+│   │   └── assets/          # rapports, lieux, plan.svg et pieces/ (12 pièces)
+│   └── theatre_miroir/      # seconde affaire (§12.1), même format : 7 fiches, 11 pièces
 ├── data/
 │   ├── consignes_redaction.md
 │   ├── generate.py          # plan, fiche de rédaction, assemblage et contrôles
@@ -571,7 +596,8 @@ agent-enqueteur/
 │   ├── grille_evaluation.md # grille et liste des 34 requêtes
 │   └── evaluate.py          # génération baseline / LoRA, métriques, notation à l'aveugle
 ├── tests/
-│   └── test_interface.py    # jeu et interface, avec un générateur factice (sans modèle)
+│   ├── test_interface.py    # jeu et interface, avec un générateur factice (sans modèle)
+│   └── test_jeu.py          # interface ludique : moteur, puis parcours dans le navigateur
 ├── adapter/                 # meilleur adaptateur, non versionné (publié sur le Hugging Face Hub)
 └── results/                 # courbes, tableaux d'évaluation
 ```

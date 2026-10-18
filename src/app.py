@@ -107,20 +107,23 @@ def retrograder(markdown, niveaux=2):
     return "\n".join("#" * niveaux + ligne if ligne.startswith("#") else ligne for ligne in markdown.splitlines())
 
 
-def presentation(case, modele_affiche=None):
+NOMBRES = {2: "deux", 3: "trois", 4: "quatre", 5: "cinq", 6: "six", 7: "sept", 8: "huit", 9: "neuf", 10: "dix"}
+
+
+def presentation(case, modele_affiche=None, nombre=8):
     modele = f" ({modele_affiche})" if modele_affiche else ""
     return f"""# {case['titre']}
 
 {case['cadre']['contexte_public']}
 
-**Votre rôle.** Vous êtes l'inspecteur. Lisez le dossier, interrogez les huit personnes retenues au Faisan Doré,
-présentez-leur les pièces à conviction, puis désignez le coupable dans l'onglet *Accusation*.
+**Votre rôle.** Vous êtes l'inspecteur. Lisez le dossier, interrogez les {NOMBRES.get(nombre, nombre)} personnes retenues
+sur les lieux, présentez-leur les pièces à conviction, puis désignez le coupable dans l'onglet *Accusation*.
 
 **L'agent.** Chaque personnage est joué par un modèle de langage compact{modele}. Il ne connaît que sa propre
 fiche et ignore ce que les autres vous ont dit. Il peut **mentir** pour protéger ses secrets et ne cède que devant
 la bonne pièce. Un aveu peut faire apparaître de nouvelles pièces dans le dossier.
 
-**Limites.** Le personnage peut se tromper sur un détail : le dossier fait foi. Il ne sort pas de 1928 et ne
+**Limites.** Le personnage peut se tromper sur un détail : le dossier fait foi. Il ne sort pas de son époque et ne
 répond pas aux questions étrangères à l'enquête. Une réponse prend quelques secondes.
 """
 
@@ -194,7 +197,7 @@ def creer_interface(model=None, tokenizer=None, generer=None, modele_affiche=Non
 
     with gr.Blocks(title=case["titre"]) as demo:
         partie = gr.State(nouvelle)
-        gr.Markdown(presentation(case, modele_affiche), elem_id="presentation")
+        gr.Markdown(presentation(case, modele_affiche, len(fiches)), elem_id="presentation")
         nouvelle_partie = gr.Button("Nouvelle partie", size="sm")
 
         with gr.Tab("Dossier"):
@@ -222,7 +225,7 @@ def creer_interface(model=None, tokenizer=None, generer=None, modele_affiche=Non
             statut = gr.Markdown(elem_id="statut")
 
         with gr.Tab("Accusation"):
-            gr.Markdown("Quand vous êtes sûr de vous, désignez l'assassin de Victor Delorme.")
+            gr.Markdown(f"Quand vous êtes sûr de vous, désignez l'assassin de {case['victime']['nom']}.")
             with gr.Row():
                 accuse = gr.Dropdown(choix_persos, value=None, label="Le coupable est…", scale=3)
                 accuser = gr.Button("Accuser", variant="stop", scale=1)
@@ -295,8 +298,8 @@ def creer_interface(model=None, tokenizer=None, generer=None, modele_affiche=Non
     return demo
 
 
-def lancer(model=None, tokenizer=None, generer=None, modele_affiche=None, share=True, **options):
-    """Construit et lance l'interface (lien public temporaire avec share=True)."""
-    demo = creer_interface(model, tokenizer, generer, modele_affiche)
+def lancer(model=None, tokenizer=None, generer=None, modele_affiche=None, share=True, dossier=AFFAIRE, **options):
+    """Construit et lance l'interface (lien public temporaire avec share=True) ; dossier : l'affaire à jouer."""
+    demo = creer_interface(model, tokenizer, generer, modele_affiche, dossier)
     demo.queue(default_concurrency_limit=1)  # un seul modèle en mémoire : une génération à la fois
     return demo.launch(share=share, theme=gr.themes.Soft(primary_hue="amber"), css=CSS, **options)

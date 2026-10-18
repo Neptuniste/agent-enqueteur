@@ -11,6 +11,30 @@ Mini-projet 2 NLP : un agent conversationnel qui joue les suspects d'une enquêt
 
 Référence : [docs/cahier_des_charges.md](docs/cahier_des_charges.md). Le planning jusqu'au rendu est au §14.
 
+## Jouer
+
+Le jeu a deux enquêtes :
+- **Le Dernier Verre du Faisan Doré** (1928), celle des données d'entraînement ;
+- **Dernière au Théâtre du Miroir** (1929), une intrigue que le modèle n'a jamais vue, qui teste sa généralisation.
+
+Il existe aussi une interface ludique (`src/jeu/`), plus complète que celle du rendu (`src/app.py`). Elle offre :
+- un choix des enquêtes ;
+- la une du journal ;
+- des portraits ;
+- des répliques tapées à la machine ;
+- des pièces à glisser sur le suspect ;
+- un carnet des aveux ;
+- une accusation avec score et grade.
+
+| Comment | Commande |
+|---|---|
+| Sans modèle ni GPU (mode démo : les personnages répondent avec leur fiche) | double-clic sur `jouer_demo.bat`, ou `python jouer.py --demo` |
+| Avec le modèle et l'adaptateur, sur Colab | ouvrir `jouer.ipynb` et exécuter ses trois cellules |
+| Avec le modèle, sur une machine avec GPU | `python jouer.py` (`--sans-adaptateur` pour la baseline, `--share` pour un lien public) |
+| L'interface du rendu, sur une autre affaire | `python jouer.py --classique --affaire theatre_miroir` |
+
+Le mode démo sert à essayer l'interface et à tester une affaire : il ne contient aucun modèle de langage, et ne peut rien divulguer, puisqu'il ne lit que le prompt.
+
 ## Ce qu'il reste à faire
 
 Le code est écrit et testé sur CPU avec un petit modèle. Les 540 dialogues sont rédigés et passent les contrôles automatiques. Il reste les étapes qui demandent un GPU ou des humains :
@@ -68,6 +92,9 @@ Sans GPU, `ESSAI_RAPIDE = True` dans `agent.ipynb` fait tourner tout le notebook
 | `agent.ipynb` | notebook final (installation, puis parties 1 à 7 du sujet), qui garde ses sorties |
 | `src/` | `config.py` (modèle, hyperparamètres), `game_state.py` (état de la partie), `prompt_builder.py` (message système), `guard.py` (filtre de sortie), `llm.py` (chargement, génération), `train.py` (QLoRA), `app.py` (Gradio) |
 | `cases/main_case/` | l'affaire : `case.json`, `characters/` (8 fiches), `assets/` (rapports, plan, 12 pièces) |
+| `cases/theatre_miroir/` | la seconde affaire, au même format (7 fiches, 11 pièces), jamais vue à l'entraînement |
+| `src/jeu/` | interface ludique : `moteur.py` (parties, score), `catalogue.py` (affaires, portraits), `demo.py` (mode sans modèle), `interface.py` et `web/` (page de jeu) |
+| `jouer.py`, `jouer.ipynb`, `jouer_demo.bat` | lanceurs du jeu (ligne de commande, Colab, double-clic) |
 | `cases/check_case.py` | vérificateur de l'affaire, **à relancer après chaque modification d'une fiche** |
 | `data/` | `raw/` (plan, répliques rédigées, exemples à relire), `generate.py`, `relire.py`, `build_dataset.py`, `train.jsonl` / `val.jsonl` (découpés par personnage), `test.jsonl` (écrit à la main), `interrogatoires_types.json` (mise au point) |
 | `eval/` | `grille_evaluation.md` (grille et 34 requêtes), `evaluate.py` (génération, métriques, notation à l'aveugle) |
@@ -85,6 +112,8 @@ python cases/check_case.py --autotest   # le vérificateur détecte-t-il des err
 python eval/evaluate.py verifier        # le jeu de test respecte le §11
 python data/build_dataset.py --stats    # données : découpage, longueurs, aucune question de test reprise
 python tests/test_interface.py          # jeu et interface Gradio, avec un générateur factice (sans modèle)
+python tests/test_jeu.py                # interface ludique : moteur, puis parcours dans le navigateur (pip install playwright)
+python cases/check_case.py cases/theatre_miroir --autotest   # la seconde affaire
 ```
 
 ## Modifier l'affaire
