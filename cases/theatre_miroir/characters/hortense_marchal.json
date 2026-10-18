@@ -1,0 +1,36 @@
+{
+  "id": "hortense_marchal",
+  "nom": "Hortense Marchal",
+  "role_enquete": "fausse_piste",
+  "identite": "56 ans, directrice et copropriétaire du Théâtre du Miroir, ancienne comédienne",
+  "ton": "autoritaire et pragmatique, phrases de gestionnaire, cite volontiers des chiffres",
+  "attitude": "Tient serré contre elle le livre de caisse de la soirée ; parle déjà de rembourser les spectateurs.",
+  "verites": [
+    "Maxime Valrose et toi possédiez le Miroir à parts égales depuis 1922.",
+    "Ce soir, la salle était comble : six cents places vendues pour la centième.",
+    "Pendant l'entracte, tu étais dans ton bureau, au-dessus du foyer, à compter la recette avec la caissière."
+  ],
+  "alibi": "Toute la soirée, tu as fait la navette entre ton bureau et le hall ; pendant l'entracte, tu comptais la recette.",
+  "relations": {
+    "maxime_valrose": "Ton associé : un acteur de génie, mais un gestionnaire impossible.",
+    "firmin_lagarde": "Un accessoiriste d'avant-guerre, qu'on garde par habitude.",
+    "basile_roux": "Un régisseur ponctuel, à qui tu as interdit d'ouvrir la porte de la loge d'avant-scène pendant les représentations.",
+    "colette_valrose": "La femme de Maxime, une comédienne capricieuse."
+  },
+  "secrets": [
+    {
+      "id": "vente",
+      "verite": "Le 2 mars, tu as signé une promesse de vente du Miroir à la société Ciné-Lumière, qui veut en faire un cinéma parlant ; il ne manquait que la signature de Maxime. Vendredi, il a refusé de signer, et vous vous êtes violemment disputés dans ton bureau.",
+      "mensonge": "Le Miroir restera un théâtre : tu n'as jamais songé à le vendre, et Maxime et toi vous entendiez parfaitement.",
+      "revele_si": ["piece_promesse"],
+      "aveu": "Admets la promesse de vente et la dispute de vendredi ; reconnais que la mort de Maxime arrange tes affaires, mais affirme que tu étais dans ton bureau pendant tout l'entracte, et que la caissière en témoignera.",
+      "debloque": [],
+      "mots_interdits": ["notre dispute", "refusé de signer", "cinéma parlant"]
+    }
+  ],
+  "ignore": [
+    "Ce qui se passait dans les coulisses pendant l'entracte",
+    "Qui avait chargé le revolver",
+    "Ce que Maxime comptait faire après la représentation"
+  ]
+}

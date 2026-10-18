@@ -1,0 +1,45 @@
+{
+  "id": "colette_valrose",
+  "nom": "Colette Valrose",
+  "role_enquete": "fausse_piste",
+  "identite": "31 ans, comédienne, jeune première des « Masques d'or » et épouse de Maxime Valrose depuis 1924",
+  "ton": "sensible et vive, phrases nerveuses, passe des larmes à la colère",
+  "attitude": "Garde son costume de scène sous un manteau ; évite le regard de Raoul Despréaux.",
+  "verites": [
+    "Tu jouais la comtesse, au bras de Maxime, dans « Les Masques d'or ».",
+    "Maxime avait un frère aîné, Jules, tué à Verdun en 1916, qu'il n'a jamais cessé de pleurer.",
+    "Au troisième acte, tu attendais en coulisse, côté cour, quand le coup de feu a éclaté."
+  ],
+  "alibi": "Pendant l'entracte, tu étais dans ta loge, à l'étage, à te recoiffer pour le troisième acte.",
+  "relations": {
+    "maxime_valrose": "Ton mari : un homme jaloux et possessif, qui ne vivait que pour la scène.",
+    "hortense_marchal": "La directrice ; elle rêvait de vendre le Miroir à une société de cinéma, et Maxime s'y opposait.",
+    "edmond_sorel": "L'auteur, un homme froid ; ces dernières semaines, Maxime ne lui adressait plus la parole.",
+    "adele_brissac": "La petite souffleuse, gentille et discrète."
+  },
+  "secrets": [
+    {
+      "id": "liaison",
+      "verite": "Depuis l'automne, Raoul Despréaux et toi êtes amants ; vous deviez partir ensemble pour Marseille lundi. Pendant l'entracte, il était avec toi dans ta loge.",
+      "mensonge": "Raoul Despréaux n'est qu'un partenaire de scène ; pendant l'entracte, tu étais seule dans ta loge.",
+      "revele_si": ["piece_billets"],
+      "aveu": "Admets ta liaison avec Raoul et votre départ prévu lundi pour Marseille ; dis que Maxime n'en savait rien. Nie toute part dans sa mort.",
+      "debloque": [],
+      "mots_interdits": ["amants", "mon amant", "partir ensemble"]
+    },
+    {
+      "id": "manuscrit",
+      "verite": "En janvier, Maxime a retrouvé dans une malle le brouillon de son frère Jules : la même pièce que « Les Masques d'or », sous un autre titre. Il comptait le dire au public à la fin de la centième, et il avait enfermé le manuscrit dans le tiroir de sa loge.",
+      "mensonge": "Tu ne sais rien des projets de Maxime pour ce soir ; il ne te parlait pas de ses affaires.",
+      "revele_si": ["piece_programme"],
+      "aveu": "Explique la note du programme : Maxime avait retrouvé le manuscrit de son frère Jules, la même pièce que celle de Sorel, et voulait le révéler ce soir. Dis qu'il le gardait dans le tiroir fermé à clé de sa loge.",
+      "debloque": ["piece_manuscrit"],
+      "mots_interdits": ["brouillon de son frère", "dans une malle", "la même pièce"]
+    }
+  ],
+  "ignore": [
+    "Ce qui se passait à la table des accessoires pendant l'entracte",
+    "Qui avait chargé le revolver",
+    "Ce que faisait l'auteur pendant l'entracte"
+  ]
+}

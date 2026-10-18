@@ -1,7 +1,8 @@
 """Vérifie une affaire avant de s'en servir (cahier des charges, §4.1, §4.2, §7 et §8.4).
 
-    python cases/check_case.py              # vérifie cases/main_case
-    python cases/check_case.py --autotest   # vérifie aussi que le vérificateur détecte des erreurs plantées
+    python cases/check_case.py                          # vérifie cases/main_case
+    python cases/check_case.py cases/theatre_miroir     # vérifie une autre affaire
+    python cases/check_case.py --autotest               # vérifie aussi que le vérificateur détecte des erreurs plantées
 
 À relancer après chaque modification de case.json ou d'une fiche.
 Code de sortie 1 s'il reste au moins une ERREUR ; les avertissements n'empêchent pas de continuer.
@@ -570,35 +571,67 @@ def verifier_tout(case, fiches, dossier, chemins, compter, nom_compteur):
     return r
 
 
-def _secret(fiches, pid, sid):
-    return next(s for s in fiches[pid]["secrets"] if s["id"] == sid)
+# Les erreurs plantées visent des éléments choisis dans l'affaire elle-même : l'autotest marche
+# pour n'importe quelle affaire, pas seulement pour cases/main_case.
+
+def _meurtre(c, f):
+    return next(s for s in f[c["coupable"]]["secrets"] if not s["revele_si"])
+
+
+def _avouable(fiche):
+    return next(s for s in fiche["secrets"] if s["revele_si"])
+
+
+def _innocent(c, f):
+    return f[next(pid for pid in f if pid != c["coupable"])]
+
+
+def _piece_debloquee(c, preuve):
+    """Une pièce absente du dossier de départ : une preuve du coupable, ou au contraire une pièce
+    qui n'est la preuve de rien."""
+    preuves = {p for liste in c["preuves"].values() for p in liste}
+    candidates = [p["id"] for p in c["pieces"] if not p["disponible_au_depart"]]
+    choix = ([p for p in candidates if p in c["preuves"]["coupable"]] if preuve
+             else [p for p in candidates if p not in preuves])
+    return (choix or candidates)[0]
+
+
+def _rendre_inatteignable(f, piece_id):
+    for fiche in f.values():
+        for secret in fiche["secrets"]:
+            secret["debloque"] = [p for p in secret["debloque"] if p != piece_id]
+
+
+def _mot_du_prompt(fiche):
+    """Le mot le plus long de l'attitude, qui figure donc dans le prompt du personnage."""
+    return max(re.findall(r"[^\W\d_]{6,}", fiche["attitude"]), key=len)
 
 
 MUTATIONS = [
     ("pièce rendue inatteignable", "inatteignable",
-     lambda c, f: _secret(f, "leon_perrin", "flacon").update(debloque=[])),
+     lambda c, f: _rendre_inatteignable(f, _piece_debloquee(c, preuve=False))),
     ("vérité recopiée dans les vérités libres", "barrière 2",
-     lambda c, f: f["rose_delorme"]["verites"].append(_secret(f, "rose_delorme", "vol")["verite"])),
+     lambda c, f: f[c["coupable"]]["verites"].append(_avouable(f[c["coupable"]])["verite"])),
     ("mot interdit déjà présent dans la fiche", "mot interdit",
-     lambda c, f: _secret(f, "leon_perrin", "flacon")["mots_interdits"].append("papillons")),
+     lambda c, f: _avouable(_innocent(c, f))["mots_interdits"].append(_mot_du_prompt(_innocent(c, f)))),
     ("vérité donnée au meurtre", "barrière 3",
-     lambda c, f: _secret(f, "rose_delorme", "meurtre").update(verite="Tu as empoisonné ton frère.")),
+     lambda c, f: _meurtre(c, f).update(verite="Tu as tué la victime.")),
     ("référence à une pièce inexistante", "pièce inconnue",
-     lambda c, f: _secret(f, "lucien_fabre", "cle").update(revele_si=["piece_fantome"])),
+     lambda c, f: _avouable(_innocent(c, f)).update(revele_si=["piece_fantome"])),
     ("deux coupables", "exactement un coupable",
-     lambda c, f: f["leon_perrin"].update(role_enquete="coupable")),
+     lambda c, f: _innocent(c, f).update(role_enquete="coupable")),
     ("relation vers un inconnu", "personnage inconnu",
-     lambda c, f: f["armand_riviere"]["relations"].update(fantome="Un inconnu.")),
+     lambda c, f: _innocent(c, f)["relations"].update(fantome="Un inconnu.")),
     ("preuve finale rendue inatteignable", "preuve inatteignable",
-     lambda c, f: _secret(f, "rose_delorme", "vestiaire").update(debloque=[])),
+     lambda c, f: _rendre_inatteignable(f, _piece_debloquee(c, preuve=True))),
     ("mensonge effacé", "mensonge",
-     lambda c, f: _secret(f, "rose_delorme", "absence").update(mensonge="")),
+     lambda c, f: _avouable(f[c["coupable"]]).update(mensonge="")),
     ("meurtre sans mots interdits", "mots interdits vides",
-     lambda c, f: _secret(f, "rose_delorme", "meurtre").update(mots_interdits=[])),
+     lambda c, f: _meurtre(c, f).update(mots_interdits=[])),
     ("fiche beaucoup trop longue", "inférence au pire",
-     lambda c, f: f["lucien_fabre"]["verites"].append("Une phrase trop longue. " * 300)),
+     lambda c, f: _innocent(c, f)["verites"].append("Une phrase trop longue. " * 300)),
     ("champ manquant", "champ manquant",
-     lambda c, f: f["josephine_laurent"].pop("attitude")),
+     lambda c, f: _innocent(c, f).pop("attitude")),
 ]
 
 

@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 760" width="960" height="760" font-family="Georgia, 'Times New Roman', serif">
+  <title>Plan du Théâtre du Miroir</title>
+  <defs>
+    <pattern id="sieges" width="14" height="12" patternUnits="userSpaceOnUse">
+      <rect x="2" y="2" width="10" height="7" rx="2" fill="#c9b79c"/>
+    </pattern>
+    <pattern id="planches" width="24" height="24" patternUnits="userSpaceOnUse">
+      <rect width="24" height="24" fill="#e8d6b3"/>
+      <line x1="0" y1="12" x2="24" y2="12" stroke="#d4bf97" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <style>
+    .mur { fill: #fffaf0; stroke: #2a2420; stroke-width: 3; }
+    .zone { stroke: #2a2420; stroke-width: 2; }
+    .titre { font-size: 22px; font-weight: bold; fill: #2a2420; }
+    .nom { font-size: 15px; font-weight: bold; fill: #2a2420; }
+    .petit { font-size: 12px; fill: #4a4038; }
+    .meuble { fill: #b08d57; stroke: #2a2420; stroke-width: 1.5; }
+    .porte { stroke: #8b1e1e; stroke-width: 5; }
+    .rue { fill: #d9d4cc; }
+  </style>
+
+  <rect x="0" y="0" width="960" height="760" fill="#f4ecd8"/>
+  <text x="480" y="34" text-anchor="middle" class="titre">Plan du Théâtre du Miroir — rez-de-chaussée</text>
+
+  <!-- Enveloppe du bâtiment -->
+  <rect x="60" y="60" width="840" height="560" class="mur"/>
+
+  <!-- Foyer des artistes -->
+  <rect x="300" y="60" width="360" height="80" class="zone" fill="#efe2c4"/>
+  <text x="480" y="95" text-anchor="middle" class="nom">Foyer des artistes</text>
+  <text x="480" y="115" text-anchor="middle" class="petit">au-dessus : bureau de la directrice</text>
+
+  <!-- Scène -->
+  <rect x="300" y="140" width="360" height="200" class="zone" fill="url(#planches)"/>
+  <text x="480" y="230" text-anchor="middle" class="nom">SCÈNE</text>
+  <text x="480" y="250" text-anchor="middle" class="petit">le duel du troisième acte se joue au centre</text>
+  <rect x="455" y="318" width="50" height="22" rx="10" class="zone" fill="#5a4a3a"/>
+  <text x="480" y="310" text-anchor="middle" class="petit">trou du souffleur</text>
+
+  <!-- Coulisses côté jardin (gauche) -->
+  <rect x="60" y="60" width="240" height="280" class="zone" fill="#e9dcc0"/>
+  <text x="180" y="88" text-anchor="middle" class="nom">Coulisses côté jardin</text>
+  <rect x="200" y="150" width="80" height="34" class="meuble"/>
+  <text x="240" y="200" text-anchor="middle" class="petit">table des</text>
+  <text x="240" y="214" text-anchor="middle" class="petit">accessoires</text>
+  <rect x="90" y="110" width="70" height="26" class="meuble"/>
+  <text x="125" y="152" text-anchor="middle" class="petit">pupitre du régisseur</text>
+  <g stroke="#2a2420" stroke-width="1.5" fill="#d8c6a2">
+    <rect x="84" y="196" width="12" height="70"/>
+    <rect x="102" y="196" width="12" height="70"/>
+    <rect x="120" y="196" width="12" height="70"/>
+    <rect x="138" y="196" width="12" height="70"/>
+  </g>
+  <text x="117" y="284" text-anchor="middle" class="petit">décors rangés (portants)</text>
+
+  <!-- Coulisses côté cour (droite) -->
+  <rect x="660" y="60" width="240" height="280" class="zone" fill="#e9dcc0"/>
+  <text x="780" y="88" text-anchor="middle" class="nom">Coulisses côté cour</text>
+  <g stroke="#2a2420" stroke-width="1.5" fill="none">
+    <rect x="760" y="140" width="110" height="90"/>
+    <line x1="760" y1="155" x2="870" y2="155"/><line x1="760" y1="170" x2="870" y2="170"/>
+    <line x1="760" y1="185" x2="870" y2="185"/><line x1="760" y1="200" x2="870" y2="200"/>
+    <line x1="760" y1="215" x2="870" y2="215"/>
+  </g>
+  <text x="815" y="250" text-anchor="middle" class="petit">escalier vers les loges</text>
+  <text x="815" y="266" text-anchor="middle" class="petit">des comédiens (à l'étage) :</text>
+  <text x="815" y="282" text-anchor="middle" class="petit">n° 1 M. Valrose, n° 2 Mme Valrose,</text>
+  <text x="815" y="298" text-anchor="middle" class="petit">n° 3 R. Despréaux</text>
+
+  <!-- Salle -->
+  <rect x="160" y="340" width="640" height="200" class="zone" fill="#f1e6cf"/>
+  <rect x="300" y="380" width="360" height="140" fill="url(#sieges)"/>
+  <text x="480" y="370" text-anchor="middle" class="nom">SALLE (six cents places)</text>
+
+  <!-- Loges d'avant-scène -->
+  <rect x="160" y="340" width="120" height="90" class="zone" fill="#e3c9a0"/>
+  <text x="220" y="375" text-anchor="middle" class="nom">Loge</text>
+  <text x="220" y="392" text-anchor="middle" class="petit">d'avant-scène jardin</text>
+  <text x="220" y="408" text-anchor="middle" class="petit">(loge de l'auteur)</text>
+  <line x1="200" y1="340" x2="250" y2="340" class="porte"/>
+  <text x="225" y="330" text-anchor="middle" class="petit" fill="#8b1e1e">petite porte vers les coulisses</text>
+
+  <rect x="680" y="340" width="120" height="90" class="zone" fill="#e3c9a0"/>
+  <text x="740" y="375" text-anchor="middle" class="nom">Loge</text>
+  <text x="740" y="392" text-anchor="middle" class="petit">d'avant-scène cour</text>
+
+  <!-- Hall -->
+  <rect x="300" y="540" width="360" height="80" class="zone" fill="#efe2c4"/>
+  <text x="480" y="585" text-anchor="middle" class="nom">Hall d'entrée</text>
+  <line x1="450" y1="620" x2="510" y2="620" stroke="#f4ecd8" stroke-width="6"/>
+
+  <!-- Boulevard -->
+  <rect x="0" y="640" width="960" height="60" class="rue"/>
+  <text x="480" y="676" text-anchor="middle" class="nom">Boulevard du Temple</text>
+  <rect x="380" y="705" width="200" height="45" class="zone" fill="#b23a2e"/>
+  <text x="480" y="732" text-anchor="middle" class="nom" fill="#fffaf0">Le Rideau Rouge (bistro)</text>
+
+  <!-- Repères -->
+  <text x="70" y="612" class="petit">Jardin : à gauche vu de la salle. Cour : à droite.</text>
+</svg>

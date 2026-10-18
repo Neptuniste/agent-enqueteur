@@ -1,0 +1,85 @@
+{
+ "id": "theatre_miroir",
+ "titre": "Dernière au Théâtre du Miroir",
+ "source": "Affaire originale, écrite pour ce projet avec l'aide de Claude (Anthropic), dans le même format que « Le Dernier Verre du Faisan Doré ». Elle n'a servi ni à l'entraînement ni à la validation : elle teste l'agent sur une intrigue qu'il n'a jamais vue.",
+ "cadre": {
+  "lieu": "Le Théâtre du Miroir, boulevard du Temple, à Paris",
+  "date": "Samedi 9 mars 1929, soir de la centième",
+  "contexte_public": "Paris, samedi 9 mars 1929. Au Théâtre du Miroir, boulevard du Temple, la troupe jouait pour la centième fois « Les Masques d'or », le drame d'Edmond Sorel. À 22h41, pendant le duel du dernier acte, Raoul Despréaux a tiré sur Maxime Valrose avec le revolver de scène, chargé à blanc comme chaque soir. Maxime s'est effondré et ne s'est pas relevé : la balle était réelle. Les portes ont été fermées ; passé minuit, un inspecteur interroge la troupe au foyer des artistes."
+ },
+ "victime": {
+  "id": "maxime_valrose",
+  "nom": "Maxime Valrose",
+  "identite": "47 ans, acteur vedette des « Masques d'or », copropriétaire du Théâtre du Miroir et époux de Colette Valrose",
+  "cause_deces": "Une balle de 8 mm en plein cœur, tirée à moins d'un mètre par le revolver de scène, dans lequel une cartouche de guerre avait pris la place d'une cartouche à blanc",
+  "heure_deces": "22h41, sur scène, pendant le duel du troisième acte"
+ },
+ "personnages": {
+  "edmond_sorel": "Edmond Sorel",
+  "raoul_despreaux": "Raoul Despréaux",
+  "colette_valrose": "Colette Valrose",
+  "hortense_marchal": "Hortense Marchal",
+  "firmin_lagarde": "Firmin Lagarde",
+  "adele_brissac": "Adèle Brissac",
+  "basile_roux": "Basile Roux"
+ },
+ "chronologie": [
+  {"quand": "1915", "fait": "Dans les tranchées, le sergent Jules Valrose, frère aîné de Maxime, écrit un drame en trois actes, « Le Bal des masques ». Il en laisse le brouillon à sa famille."},
+  {"quand": "Juin 1916", "fait": "Jules Valrose meurt à Verdun dans les bras de son lieutenant, Edmond Sorel, à qui il confie la copie propre de sa pièce en lui demandant de la faire jouer. Sorel garde aussi de la guerre son revolver et une boîte de cartouches de 8 mm frappées « 1916 »."},
+  {"quand": "1922", "fait": "Maxime Valrose et Hortense Marchal rachètent ensemble le Théâtre du Miroir, à parts égales. Firmin Lagarde y est accessoiriste depuis 1902."},
+  {"quand": "1924", "fait": "Maxime Valrose épouse Colette, jeune comédienne de la troupe."},
+  {"quand": "1926", "fait": "Edmond Sorel fait paraître « Les Masques d'or » sous son nom : c'est, presque mot pour mot, la pièce de Jules Valrose."},
+  {"quand": "Automne 1928", "fait": "Colette Valrose et Raoul Despréaux deviennent amants."},
+  {"quand": "Novembre 1928", "fait": "Création des « Masques d'or » au Théâtre du Miroir : Maxime joue le comte, Colette la comtesse, Raoul le traître qui tue le comte en duel au dernier acte. Grand succès."},
+  {"quand": "Janvier 1929", "fait": "En vidant une malle de famille, Maxime retrouve le brouillon de son frère et reconnaît la pièce. Il en parle à Colette, enferme le manuscrit dans le tiroir de sa loge et cesse d'adresser la parole à Sorel. Vers la même époque, Firmin Lagarde commence à revendre de vieux accessoires à un brocanteur de la rue de Bretagne."},
+  {"quand": "Février 1929", "fait": "Raoul et Colette achètent deux billets de première classe pour Marseille, au nom de M. et Mme Despréaux, pour le lundi 11 mars. Raoul a pris l'habitude de signer le registre des accessoires sans ouvrir le barillet du revolver."},
+  {"quand": "2 mars 1929", "fait": "Hortense Marchal signe une promesse de vente du Miroir à la société Ciné-Lumière, qui veut en faire un cinéma parlant ; la vente exige aussi la signature de Maxime."},
+  {"quand": "Vendredi 8 mars 1929", "fait": "Maxime refuse de signer la vente ; violente dispute avec Hortense dans son bureau. Le même soir, il prévient Sorel qu'à la fin de la centième il dira à la salle d'où vient vraiment la pièce."},
+  {"quand": "Samedi 9 mars 1929, après-midi", "fait": "Sorel glisse dans la poche de son habit une cartouche de 8 mm de sa boîte."},
+  {"quand": "20h25", "fait": "Edmond Sorel s'installe dans sa loge d'avant-scène, côté jardin, sa canne à pommeau d'argent à la main."},
+  {"quand": "20h30", "fait": "Lever de rideau. Salle comble : six cents spectateurs."},
+  {"quand": "21h00", "fait": "Firmin Lagarde charge le revolver de scène de six cartouches à blanc, le pose sur la table des accessoires, côté jardin, et le note au registre."},
+  {"quand": "22h00", "fait": "Fin du deuxième acte ; entracte de vingt minutes. Firmin quitte son poste pour le bistro d'en face, le Rideau Rouge. Raoul rejoint Colette dans la loge de celle-ci. Hortense compte la recette dans son bureau avec la caissière. Maxime se repose dans sa loge. Adèle Brissac quitte le trou du souffleur pour retrouver son fiancé, Jojo, machiniste, derrière les portants. Basile Roux est à son pupitre de régie, côté jardin."},
+  {"quand": "22h04", "fait": "Contre le règlement, Basile Roux ouvre à Edmond Sorel la porte de communication de la loge d'avant-scène : l'auteur dit vouloir féliciter Maxime."},
+  {"quand": "22h05", "fait": "Au Rideau Rouge, Firmin commande trois marcs ; le patron les inscrit sur l'ardoise."},
+  {"quand": "22h08", "fait": "À la table des accessoires, Sorel ouvre le barillet, retire une cartouche à blanc et met à sa place sa cartouche de 8 mm. Cachée derrière les portants, Adèle voit de dos un homme en habit sombre, une canne à pommeau d'argent à la main, penché sur la table ; en reculant, elle perd son ruban de satin bleu."},
+  {"quand": "22h12", "fait": "Sorel repasse la porte de communication, que Basile referme à clé. Dans sa loge, il laisse tomber sans s'en apercevoir la cartouche à blanc retirée, qui roule sous son fauteuil."},
+  {"quand": "22h18", "fait": "Raoul, en retard, signe le registre « vérifié par l'acteur » sans ouvrir le barillet."},
+  {"quand": "22h20", "fait": "Firmin revient à son poste. Lever de rideau du troisième acte."},
+  {"quand": "22h41", "fait": "Scène du duel : Raoul tire sur Maxime, qui s'effondre comme chaque soir. La balle de 8 mm l'a atteint en plein cœur."},
+  {"quand": "22h43", "fait": "Le rideau tombe ; Maxime ne se relève pas. Un médecin présent dans la salle constate la mort."},
+  {"quand": "22h50", "fait": "Le brigadier Émile Ferrand, du commissariat du Temple, arrive avec deux agents et fait fermer les portes. Les spectateurs sont relâchés après relevé de leur identité ; la troupe est retenue au foyer des artistes."},
+  {"quand": "Après minuit", "fait": "Un inspecteur arrive et commence les interrogatoires au foyer des artistes."}
+ ],
+ "coupable": "edmond_sorel",
+ "mobile": "Edmond Sorel devait tout aux « Masques d'or », qu'il avait volés à Jules Valrose ; Maxime s'apprêtait à le dire publiquement le soir même.",
+ "moyen": "Une munition de guerre de 8 mm, conservée depuis Verdun, substituée à l'une des six cartouches inoffensives du revolver du duel.",
+ "opportunite": "L'entracte : le régisseur lui a ouvert la petite porte de sa loge, et l'accessoiriste avait abandonné son poste pour le bistro.",
+ "preuves": {
+  "coupable": ["piece_cartouche_blanc", "piece_deposition_adele", "piece_douille"],
+  "mobile": ["piece_manuscrit", "piece_programme"],
+  "moyen": ["piece_douille", "piece_revolver"],
+  "opportunite": ["piece_deposition_adele", "piece_ardoise"]
+ },
+ "documents": [
+  {"id": "rapport_police", "titre": "Rapport de police", "fichier": "assets/rapport_police.md"},
+  {"id": "rapport_legiste", "titre": "Rapport du médecin légiste", "fichier": "assets/rapport_legiste.md"},
+  {"id": "lieux", "titre": "Le théâtre et la soirée", "fichier": "assets/lieux.md"},
+  {"id": "plan", "titre": "Plan du Théâtre du Miroir", "fichier": "assets/plan.svg"}
+ ],
+ "pieces": [
+  {"id": "piece_revolver", "nom": "le revolver de scène", "description": "Le revolver modèle 1892 du duel, saisi sur scène : cinq cartouches à blanc percutées dans le barillet, et l'étui vide d'une vraie cartouche. Transformé pour le théâtre, il peut pourtant tirer de vraies munitions.", "document": "assets/pieces/piece_revolver.md", "disponible_au_depart": true},
+  {"id": "piece_douille", "nom": "la douille de la vraie cartouche", "description": "L'étui de laiton de la balle mortelle, retrouvé dans le barillet : du 8 mm militaire, le culot frappé « 1916 ». Les cinq autres étuis portent la marque de l'armurerie qui fournit le théâtre.", "document": "assets/pieces/piece_douille.md", "disponible_au_depart": true},
+  {"id": "piece_registre", "nom": "le registre des accessoires", "description": "Le cahier de Firmin Lagarde. Ce soir : « 21h00 – revolver chargé, 6 cartouches à blanc – F. L. », puis « 22h18 – vérifié par l'acteur – R. D. ». Depuis janvier, plusieurs objets y sont notés « égarés » : un chandelier, deux épées.", "document": "assets/pieces/piece_registre.md", "disponible_au_depart": true},
+  {"id": "piece_programme", "nom": "le programme annoté", "description": "Le programme de la centième, trouvé sur la coiffeuse de Maxime Valrose. Sous le titre, de sa main : « Après le rideau : la vérité sur les Masques. »", "document": "assets/pieces/piece_programme.md", "disponible_au_depart": true},
+  {"id": "piece_promesse", "nom": "la promesse de vente", "description": "Une promesse de vente du Théâtre du Miroir à la société Ciné-Lumière, signée par Hortense Marchal le 2 mars ; la ligne réservée à la signature de Maxime Valrose est restée vide.", "document": "assets/pieces/piece_promesse.md", "disponible_au_depart": true},
+  {"id": "piece_billets", "nom": "les deux billets de train", "description": "Deux billets de première classe Paris–Marseille pour le lundi 11 mars, au nom de M. et Mme Despréaux, trouvés dans la poche du manteau de Raoul Despréaux.", "document": "assets/pieces/piece_billets.md", "disponible_au_depart": true},
+  {"id": "piece_ardoise", "nom": "l'ardoise du bistro", "description": "L'ardoise du Rideau Rouge, le bistro d'en face : « Firmin (le Miroir) – 3 marcs – 22h05 ». Selon le patron, l'accessoiriste est arrivé au début de l'entracte et reparti au troisième acte.", "document": "assets/pieces/piece_ardoise.md", "disponible_au_depart": true},
+  {"id": "piece_ruban", "nom": "le ruban de satin bleu", "description": "Un ruban de satin bleu ciel, retrouvé derrière les portants, à deux pas de la table des accessoires, lors de la fouille des coulisses ordonnée après les aveux de Firmin Lagarde.", "document": "assets/pieces/piece_ruban.md", "disponible_au_depart": false},
+  {"id": "piece_deposition_adele", "nom": "la déposition d'Adèle Brissac", "description": "La déposition signée d'Adèle Brissac : à 22h08, cachée dans les coulisses, elle a vu de dos un homme en habit sombre, une canne à pommeau d'argent à la main, penché sur la table des accessoires ; il est reparti par la porte de communication de la loge d'avant-scène, que le régisseur lui tenait ouverte.", "document": "assets/pieces/piece_deposition_adele.md", "disponible_au_depart": false},
+  {"id": "piece_manuscrit", "nom": "le manuscrit de Jules Valrose", "description": "Un manuscrit jauni, « Le Bal des masques », signé Jules Valrose et daté de 1915, retrouvé dans le tiroir fermé à clé de la loge de Maxime : c'est, presque mot pour mot, « Les Masques d'or ».", "document": "assets/pieces/piece_manuscrit.md", "disponible_au_depart": false},
+  {"id": "piece_cartouche_blanc", "nom": "la cartouche à blanc de la loge", "description": "Une cartouche à blanc intacte, de la même boîte que celles du revolver, retrouvée sous le fauteuil de la loge d'avant-scène d'Edmond Sorel lors de la fouille ordonnée après les aveux du régisseur.", "document": "assets/pieces/piece_cartouche_blanc.md", "disponible_au_depart": false}
+ ],
+ "solution": "L'assassin est Edmond Sorel. « Les Masques d'or » n'étaient pas de lui : Jules Valrose avait écrit cette pièce dans les tranchées et la lui avait remise en mourant à Verdun, en 1916. Maxime, qui avait retrouvé le brouillon de son frère en janvier, voulait dévoiler l'imposture au public à la fin de la centième. Pendant l'entracte, Sorel a obtenu du régisseur qu'il lui ouvre la porte entre sa loge et les coulisses. Profitant de l'absence de Firmin Lagarde, parti boire au bistro, il a ouvert le barillet du revolver de scène et remplacé une cartouche à blanc par une balle de guerre qu'il gardait depuis Verdun ; la cartouche retirée a glissé sous son fauteuil. Au troisième acte, Raoul Despréaux, qui signait le registre sans plus rien vérifier, a tiré comme chaque soir.",
+ "aveu_final": "*(Il pose sa canne en travers de ses genoux.)* Jules est mort dans mes bras, inspecteur, à Verdun, en juin 1916. Il m'a tendu son manuscrit en disant : « Fais-la jouer. » Je l'ai fait jouer, oui… sous mon nom. Treize ans que je vis avec sa pièce, et vendredi, Maxime m'a promis de tout dire à la salle ce soir. Alors pendant l'entracte, Basile m'a ouvert la petite porte, et j'ai glissé dans le barillet une balle de là-bas. Raoul a tiré, comme chaque soir. Pour une fois, c'est moi qui avais écrit la fin."
+}
