@@ -619,12 +619,12 @@ Conventions de code (à transmettre à l'outil de vibe coding) :
 
 | Date | Contenu | Jalon |
 |---|---|---|
-| sam. 18 oct | Modèle, entraînement, évaluation, interface et notebook écrits et testés ; 540 dialogues rédigés et contrôlés ; 5 interrogatoires types | Dépôt prêt pour Colab |
-| dim. 19 oct | Relecture des 540 exemples (`data/relire.py`), répartie entre les membres ; `build_dataset.py` ; commit de `train.jsonl` et `val.jsonl` | Données figées |
-| lun. 20 oct | Colab : parties 1 à 3 (choix du modèle, baseline), puis entraînement QLoRA (partie 5) ; publication de l'adaptateur | Adaptateur publié |
-| mar. 21 oct | Évaluation (partie 6) ; notation à l'aveugle par deux membres ; agrégation | Tableau d'évaluation |
-| mer. 22 oct | Analyse des cinq cas ; commentaires « À VÉRIFIER » du notebook ; rapport ; `README.txt` | Rapport rédigé |
-| jeu. 23 oct | Exécution complète du notebook, relecture, rendu | **Rendu** |
+| dim. 18 oct | Modèle, entraînement, évaluation, interface et notebook écrits et testés ; 540 dialogues rédigés et contrôlés ; 5 interrogatoires types | Dépôt prêt pour Colab |
+| lun. 19 oct | Dialogues réécrits pour la clarté ; relecture des 540 exemples (`data/relire.py`), répartie entre les membres ; `build_dataset.py` ; commit de `train.jsonl` et `val.jsonl` | Données figées |
+| mar. 20 oct | Colab : parties 1 à 3 (choix du modèle, baseline), puis entraînement QLoRA (partie 5) ; publication de l'adaptateur | Adaptateur publié |
+| mer. 21 oct | Évaluation (partie 6) ; notation à l'aveugle par deux membres ; agrégation | Tableau d'évaluation |
+| jeu. 22 oct | Analyse des cinq cas ; commentaires « À VÉRIFIER » du notebook ; rapport ; `README.txt` | Rapport rédigé |
+| ven. 23 oct | Exécution complète du notebook, relecture, rendu | **Rendu** |
 
 | Étape | Contenu | Mode | Points |
 |---|---|---|---|

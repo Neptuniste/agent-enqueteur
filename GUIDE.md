@@ -36,7 +36,9 @@ git pull
 
 ---
 
-## Étape 1 : relire les 540 dialogues (dimanche, à se répartir)
+## Étape 1 : relire les 540 dialogues (lundi 19, à se répartir)
+
+Les dialogues ont été réécrits le 19 octobre pour être plus clairs. Faites d'abord `git pull` (étape 0.1) : une relecture commencée avant cette date est à refaire.
 
 Il y a 7 personnages à relire :
 
@@ -111,7 +113,7 @@ Le notebook créera ce dépôt sur Hugging Face et y publiera l'adaptateur, grâ
 
 ---
 
-## Étape 3 : tout lancer sur Colab (lundi, 1 h 30 à 2 h)
+## Étape 3 : tout lancer sur Colab (mardi 20, 1 h 30 à 2 h)
 
 **3.1 Ouvrez le notebook.** Ouvrez cette adresse dans Chrome, en étant connecté à votre compte Google :
 
@@ -173,7 +175,7 @@ Gardez le tableau affiché : il va dans le rapport, section 5.
 
 ---
 
-## Étape 4 : noter à l'aveugle (mardi, 2 personnes, environ 2 h chacune)
+## Étape 4 : noter à l'aveugle (mercredi 21, 2 personnes, environ 2 h chacune)
 
 **4.1 Préparez les deux feuilles.** Copiez `results\notation_aveugle.csv` deux fois, sous les noms `results\notes_A.csv` et `results\notes_B.csv`.
 
@@ -210,7 +212,7 @@ Le tableau final est dans `results\tableau_evaluation.md`, et le graphique dans 
 
 ---
 
-## Étape 5 : exécution finale et finitions (mercredi et jeudi)
+## Étape 5 : exécution finale et finitions (jeudi 22 et vendredi 23)
 
 **5.1 Rouvrez le notebook dans Colab** avec la même adresse qu'en 3.1. Choisissez le GPU T4 ; les secrets sont toujours là.
 
@@ -256,7 +258,7 @@ git push
 
 ---
 
-## Étape 6 : rendre (jeudi 23)
+## Étape 6 : rendre (vendredi 23)
 
 Déposez, selon les consignes du cours :
 - `agent.ipynb`, exécuté ;
