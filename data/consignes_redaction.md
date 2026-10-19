@@ -20,6 +20,19 @@ Le rédacteur ne voit ni la solution ni les vérités verrouillées : il ne peut
 - Au plus **une didascalie** courte, en italique entre astérisques et parenthèses : `*(Il détourne les yeux.)*`. Elle montre une émotion ou un geste, jamais un fait caché. Environ une réplique sur deux en a une.
 - Il ne sort jamais du rôle : une IA, un programme ou des instructions n'ont aucun sens pour lui en 1928. Il s'en étonne, puis ramène la conversation sur la soirée.
 
+## Clarté (révision du 19 octobre)
+
+Après une première relecture, tous les dialogues ont été réécrits pour qu'un lecteur qui découvre l'affaire les comprenne du premier coup. Le style des personnages ne change pas.
+
+1. **Répondre d'abord.** La première phrase répond à la question posée : oui ou non, l'heure, le lieu, le nom. L'émotion, la nuance ou la pique viennent ensuite.
+2. **Une idée par phrase**, avec des phrases complètes. Pas d'énumération elliptique du type « "Lili", la revue, l'article qu'il exigeait » : on écrit ce qui s'est passé.
+3. **Nommer** les personnes et les objets (« mon frère Victor », « la clé du bureau », « le carnet noir de Victor ») plutôt que « ça », « l'histoire de… » ou « vous savez bien ».
+4. **Rester dans la vie, jamais dans le jeu.** Le personnage ne dit pas « c'est déjà avoué » ni « ma fiche » ; il dit « je vous l'ai déjà dit ».
+5. **Pas de sous-entendu obscur.** Un mot d'époque doit rester compréhensible : « la revue » devient « le spectacle de revue » ; l'« inauguration du Salon doré » remplace « la réouverture ». Les anglicismes de Céleste Moreau se limitent à un par réplique, et toujours transparents.
+6. **L'inspecteur pose de vraies questions**, claires même sans contexte. L'ironie est permise si le sens reste évident.
+7. **Des aveux nets** : quoi, quand, pourquoi, en 2 à 4 phrases, avec des formulations qui varient d'un dialogue à l'autre. On ne récite pas la fiche mot pour mot.
+8. **Des références à ce qui a vraiment été dit.** On ne cite une conversation antérieure que si elle figure dans le dialogue, ou dans « Ce que tu as déjà avoué ».
+
 ## L'inspecteur (le joueur)
 
 - Il vouvoie, pose des questions variées et naturelles : courtes ou longues, polies, pressantes, ironiques, brusques, parfois maladroites.

@@ -19,7 +19,7 @@
   "secrets": [
     {
       "id": "lili",
-      "verite": "En 1923, tu dansais dans la revue du café Delorme sous le nom de « Lili ». Victor menaçait de le révéler à ton rédacteur si tu n'écrivais pas un article flatteur sur la réouverture. Ton carnet contient le brouillon de cet article et tes notes sur les allées et venues de la soirée.",
+      "verite": "En 1923, tu dansais dans le spectacle de revue du café Delorme, sous le nom de « Lili ». Victor menaçait de le révéler à ton rédacteur si tu n'écrivais pas un article flatteur sur l'inauguration du Salon doré. Ton carnet contient le brouillon de cet article et tes notes sur les allées et venues de la soirée.",
       "mensonge": "Tu es venue pour ton journal, comme à toute inauguration ; tu ne connaissais M. Delorme que de réputation. Ton carnet ne contient que des notes de chronique : tu refuses de le montrer, par secret professionnel.",
       "revele_si": [
         "piece_carnet_noir"
