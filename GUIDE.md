@@ -8,11 +8,15 @@ Chaque étape dit quoi faire, où cliquer, et quoi taper. Les commandes se tapen
 
 ## Étape 0 : préparer (une seule fois, 15 min)
 
-**0.1 Récupérer la dernière version du projet**
+**0.1 Récupérer la dernière version du projet**, sur la branche `affaire-faisan-dore` : tout le travail y est, `main` ne contient que le squelette du début.
 
 ```
+git fetch
+git checkout affaire-faisan-dore
 git pull
 ```
+
+Si vous n'avez pas encore le projet, tapez d'abord `git clone https://github.com/Neptuniste/agent-enqueteur.git`, puis `cd agent-enqueteur`, puis les trois commandes ci-dessus. Le dépôt est privé : il faut avoir été ajouté comme collaborateur sur GitHub.
 
 **0.2 Créer un jeton GitHub.** Colab en a besoin pour télécharger le dépôt, qui est privé. C'est le propriétaire du dépôt qui le crée.
 
@@ -40,19 +44,15 @@ git pull
 
 Les dialogues ont été réécrits le 19 octobre pour être plus clairs. Faites d'abord `git pull` (étape 0.1) : une relecture commencée avant cette date est à refaire.
 
-Il y a 7 personnages à relire :
+Les 7 personnages sont répartis entre trois relecteurs. Chacun ne relit que les siens : chaque personnage a son propre fichier, donc vos envois ne se gênent pas.
 
-| Personnage | Dialogues |
-|---|---|
-| `rose_delorme` | 78 |
-| `leon_perrin` | 78 |
-| `lucien_fabre` | 78 |
-| `josephine_laurent` | 78 |
-| `marguerite_delorme` | 78 |
-| `henri_berthier` | 78 |
-| `celeste_moreau` | 72 |
+| Relecteur | Personnages | Dialogues |
+|---|---|---|
+| 1 (Thibaut, déjà commencé) | `celeste_moreau`, `lucien_fabre` | 72 + 78 = 150 |
+| 2 | `leon_perrin`, `josephine_laurent` | 78 + 78 = 156 |
+| 3 | `rose_delorme`, `marguerite_delorme`, `henri_berthier` | 78 × 3 = 234, mais les répliques les plus courtes |
 
-Répartissez-les entre vous, par exemple 2 ou 3 personnages par personne. Comptez environ 1 h par personnage.
+Comptez environ 1 h par personnage. Pour relire, il suffit d'avoir Python 3.10 ou plus récent : rien à installer.
 
 **1.1 Pour chacun de vos personnages, lancez la relecture.** Exemple pour Rose :
 
