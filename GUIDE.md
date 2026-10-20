@@ -144,6 +144,8 @@ Si Colab demande l'accès à GitHub, acceptez.
 
 **3.7 En cas d'erreur.** Si une cellule s'arrête sur une erreur en rouge, copiez le message et envoyez-le.
 
+Si la première cellule affiche « Secret … illisible », le secret manque, porte un autre nom, ou n'a pas l'accès au notebook. Corrigez-le dans l'icône **clé**, ou collez le jeton dans le champ masqué qui apparaît. Ne collez jamais un jeton dans une cellule de code : il serait enregistré dans le notebook.
+
 Si le message contient `CUDA out of memory`, le GPU manque de mémoire :
 1. Dans `src\config.py`, mettez `per_device_train_batch_size=1` et `gradient_accumulation_steps=8`.
 2. Poussez la modification.

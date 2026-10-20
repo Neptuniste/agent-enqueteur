@@ -11,6 +11,7 @@ Depuis le notebook (section 5) :
 
 import json
 import math
+import os
 from pathlib import Path
 
 import torch
@@ -210,3 +211,35 @@ def publier_adaptateur(dossier, depot, prive=False):
     api.create_repo(depot, exist_ok=True, private=prive)
     api.upload_folder(folder_path=str(dossier), repo_id=depot)
     return f"https://huggingface.co/{depot}"
+
+
+def verifier_compte_hub(depot, demander_jeton=None):
+    """Vérifie avant l'entraînement que l'adaptateur pourra être publié sur `depot` ; renvoie le compte.
+
+    Sans jeton valide, demander_jeton() en fournit un (secret Colab ou saisie masquée), rangé dans HF_TOKEN.
+    Lève RuntimeError si la publication échouerait : mieux vaut le savoir avant une heure d'entraînement.
+    """
+    from huggingface_hub import whoami
+
+    def compte():
+        try:
+            return whoami()
+        except Exception:
+            return None
+
+    infos = compte()
+    if infos is None and demander_jeton:
+        jeton = demander_jeton()
+        if jeton:
+            os.environ["HF_TOKEN"] = jeton
+            infos = compte()
+    if infos is None:
+        raise RuntimeError(f"Aucun jeton Hugging Face valide : l'adaptateur ne pourrait pas être publié sur {depot}. "
+                           "Ajouter le secret HF_TOKEN (jeton de type Write), puis relancer la cellule.")
+    proprietaire, nom = depot.split("/")[0], infos.get("name")
+    if proprietaire != nom and proprietaire not in [o.get("name") for o in infos.get("orgs") or []]:
+        raise RuntimeError(f"Le jeton Hugging Face est celui du compte {nom} : pour publier sur {depot}, "
+                           f"il faut un jeton du compte {proprietaire}.")
+    if ((infos.get("auth") or {}).get("accessToken") or {}).get("role") == "read":
+        raise RuntimeError("Le jeton Hugging Face est en lecture seule : en créer un de type Write.")
+    return nom
