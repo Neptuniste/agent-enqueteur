@@ -85,7 +85,8 @@ python -m venv .venv
 pip install torch                       # CPU suffit pour relire les données et lancer les contrôles
 pip install -r requirements.txt
 pip install nbstripout jupyter
-nbstripout --install                    # retire les sorties des brouillons au commit (agent.ipynb les garde)
+nbstripout --install                    # retire les sorties des brouillons au commit
+Add-Content .git\info\attributes "agent.ipynb -filter"   # sauf le notebook final, rendu exécuté
 ```
 
 > Ne pas cloner dans OneDrive : la synchronisation entre en conflit avec git.
