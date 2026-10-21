@@ -1,0 +1,10 @@
+{
+ "meilleur_pas": 60,
+ "meilleure_perte_val": 1.0454885959625244,
+ "pas_effectues": 90,
+ "pas_par_epoque": 59,
+ "exemples_train": 467,
+ "exemples_val": 72,
+ "arret_anticipe": true,
+ "pertes_finies": true
+}

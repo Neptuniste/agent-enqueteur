@@ -1,0 +1,18 @@
+{
+ "version": "lora",
+ "modele": "Qwen/Qwen3-4B-Instruct-2507",
+ "adaptateur": "adapter",
+ "tirages": 5,
+ "reglages": {
+  "max_new_tokens": 150,
+  "do_sample": true,
+  "temperature": 0.7,
+  "top_p": 0.9,
+  "top_k": 20,
+  "repetition_penalty": 1.1
+ },
+ "requetes": 34,
+ "graine": 42,
+ "duree_s": 679,
+ "date": "2026-10-21 13:08"
+}
