@@ -181,15 +181,23 @@ Gardez le tableau affiché : il va dans le rapport, section 5.
 
 **4.1 Les deux feuilles sont prêtes** : `results\notes_A.csv` pour le premier notateur, `results\notes_B.csv` pour le second (deux copies de `results\notation_aveugle.csv`). Faites `git pull`, puis chacun ne modifie que sa propre feuille.
 
-**4.2 Ouvrez chacun votre feuille dans Excel.** Les réponses se lisent plus facilement dans `results\notation_transcriptions.md`. La grille est dans `eval\grille_evaluation.md`. N'ouvrez **pas** `notation_cles.json`.
+**4.2 Lancez la notation au clavier**, sans Excel. Chacun ne note que sa propre feuille (`A` ou `B`) :
 
-**4.3 Notez chaque ligne.** Mettez **0, 1 ou 2** dans les colonnes suivantes :
-- `pertinence`, `role_format`, `historique`, `hors_perimetre`, `invention` ;
-- `bonus_mensonge`, `bonus_mise_en_scene`.
+```
+python eval\noter.py A
+```
 
-Laissez les cases « - » telles quelles.
+La grille complète est dans `eval\grille_evaluation.md`. N'ouvrez **pas** `notation_cles.json` : il dit quelle réponse vient de quelle version.
 
-**4.4 Enregistrez au format CSV.** Si Excel demande s'il faut garder ce format, répondez **Oui**.
+**4.3 Pour chaque réponse affichée, tapez une seule ligne puis Entrée** :
+- un chiffre (0, 1 ou 2) par critère affiché, dans l'ordre, par exemple `2122` ;
+- éventuellement suivi d'un commentaire : `2122 invente un chiffre`.
+
+Les critères sans objet (« - ») ne sont pas demandés. `g` réaffiche la grille, `s` passe la réponse, `q` quitte. Tout est enregistré après chaque réponse, et la relance reprend où vous en étiez. `python eval\noter.py A --bilan` donne l'avancement.
+
+**4.4 Envoyez votre feuille** quand elle est finie : `git add results`, `git commit -m "Notes A"`, `git pull`, `git push`.
+
+*(La feuille reste un CSV ordinaire : on peut aussi la remplir dans Excel, en mettant 0, 1 ou 2 dans les colonnes de notes, en laissant les « - », puis en l'enregistrant au format CSV.)*
 
 **4.5 Mesurez votre accord**, avant toute discussion :
 
