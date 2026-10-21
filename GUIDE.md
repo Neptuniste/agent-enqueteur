@@ -179,7 +179,7 @@ Gardez le tableau affiché : il va dans le rapport, section 5.
 
 ## Étape 4 : noter à l'aveugle (mercredi 21, 2 personnes, environ 2 h chacune)
 
-**4.1 Préparez les deux feuilles.** Copiez `results\notation_aveugle.csv` deux fois, sous les noms `results\notes_A.csv` et `results\notes_B.csv`.
+**4.1 Les deux feuilles sont prêtes** : `results\notes_A.csv` pour le premier notateur, `results\notes_B.csv` pour le second (deux copies de `results\notation_aveugle.csv`). Faites `git pull`, puis chacun ne modifie que sa propre feuille.
 
 **4.2 Ouvrez chacun votre feuille dans Excel.** Les réponses se lisent plus facilement dans `results\notation_transcriptions.md`. La grille est dans `eval\grille_evaluation.md`. N'ouvrez **pas** `notation_cles.json`.
 
