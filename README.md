@@ -35,45 +35,24 @@ Il existe aussi une interface ludique (`src/jeu/`), plus complète que celle du 
 
 Le mode démo sert à essayer l'interface et à tester une affaire : il ne contient aucun modèle de langage, et ne peut rien divulguer, puisqu'il ne lit que le prompt.
 
-## Ce qu'il reste à faire
+## État du projet (21 octobre 2026)
 
-Le code est écrit et testé sur CPU avec un petit modèle. Les 540 dialogues sont rédigés et passent les contrôles automatiques. Il reste les étapes qui demandent un GPU ou des humains :
+Tout est fait sauf le rendu lui-même :
 
-1. **Relire les données** : 540 exemples, à répartir par personnage.
-   - Lancer `python data/relire.py <personnage>` ; `python data/relire.py --bilan` donne l'avancement.
-   - Ensuite, `python data/build_dataset.py` écrit `data/train.jsonl` et `data/val.jsonl`, à commiter.
-2. **Exécuter `agent.ipynb` sur Colab avec un GPU T4.**
-   - Pour l'ouvrir : *Fichier > Ouvrir un notebook > GitHub*, en cochant « Inclure les dépôts privés ».
-   - La première cellule de code clone le dépôt. Si le dépôt est privé, elle a besoin d'un jeton `GITHUB_TOKEN` dans les secrets Colab (icône de clé), avec l'accès du notebook activé.
-   - `ADAPTER_REPO` est déjà renseigné dans `src/config.py` : `Neptuniste/faisan-dore-lora`. Il reste à donner accès au Hub :
-     - soit un secret Colab `HF_TOKEN`, avec un jeton en écriture créé sur huggingface.co, *Settings > Access Tokens* ;
-     - soit `from huggingface_hub import login; login()` dans une cellule.
-   - Après l'entraînement et la génération des réponses de la section 6, **commiter `results/`** : courbes, bilan, `eval_*.jsonl` et feuille de notation. Une nouvelle session Colab repart d'un clone du dépôt, et ces fichiers doivent y être.
-     - Sur Colab, la cellule qui suit la création de la feuille télécharge `resultats.zip`.
-     - Le décompresser à la racine du dépôt, puis commiter.
-     - Si `ADAPTER_REPO` est vide, elle télécharge aussi `adaptateur.zip`, à garder hors de git.
-   - **Facultatif, environ 10 minutes, même session :** mesurer la généralisation sur la seconde affaire, jamais vue à l'entraînement (14 requêtes de `data/test_theatre.jsonl`, métriques automatiques seulement). Coller dans une nouvelle cellule :
-     ```python
-     !python eval/evaluate.py --affaire cases/theatre_miroir --test data/test_theatre.jsonl --resultats results/theatre generer --version baseline
-     !python eval/evaluate.py --affaire cases/theatre_miroir --test data/test_theatre.jsonl --resultats results/theatre generer --version lora --adaptateur Neptuniste/faisan-dore-lora
-     !python eval/evaluate.py --test data/test_theatre.jsonl --resultats results/theatre auto
-     ```
-     Le tableau affiché (fuites, aveux corrects, format, baseline contre LoRA) va dans le rapport, section 5. `results/theatre/` est à commiter avec le reste.
-3. **Noter à l'aveugle** :
-   - copier `results/notation_aveugle.csv` en `results/notes_A.csv` et `results/notes_B.csv` ;
-   - chaque notateur remplit sa copie avec la grille (`eval/grille_evaluation.md`) ;
-   - commiter les copies, puis relancer la cellule d'agrégation du notebook.
-   - Tant que la feuille existe, le notebook ne régénère pas les réponses : les notes restent valables.
-4. **Compléter le notebook** :
-   - chercher `À VÉRIFIER` et `À COMPLÉTER` (commentaires invisibles une fois le notebook rendu) ;
-   - adapter les commentaires aux sorties réelles ;
-   - écrire l'analyse des cinq cas de la section 6.3.
-5. **Rapport** : partir de [rapport/rapport.md](rapport/rapport.md), le compléter avec les chiffres obtenus, puis l'exporter en PDF.
-6. **Rendu** :
-   - exécuter tout le notebook une dernière fois avec `ENTRAINER = False` : l'adaptateur évalué est alors celui du Hub ;
-   - le télécharger depuis Colab (Fichier > Télécharger > .ipynb) et le commiter avec ses sorties ;
-   - compléter `README.txt` (membres, lien de l'adaptateur).
-7. Avant de rendre le dépôt public, **demander l'autorisation à Team Break** : l'affaire est adaptée de leur scénario.
+- **Données** : 540 dialogues relus par l'équipe (539 acceptés, 1 rejeté) ; `data/train.jsonl` (467) et `data/val.jsonl` (72).
+- **Entraînement** sur Colab : meilleur pas 60, perte de validation 1,045 ; adaptateur publié sur https://huggingface.co/Neptuniste/faisan-dore-lora.
+- **Évaluation** : métriques automatiques et notation des 68 réponses, faite par Claude faute de notateurs (`results/notes_claude.csv`, `results/tableau_evaluation.md`).
+- **Notebook** `agent.ipynb` exécuté (37 cellules, sans erreur), commentaires complétés.
+- **Rapport** : `rapport.pdf` (4 pages et une annexe), source dans `rapport/rapport.md`.
+
+Il reste :
+
+1. Remplacer « [troisième membre] » dans `README.txt` et `rapport/rapport.md`, puis régénérer `rapport.pdf`.
+2. Relire le notebook et le rapport, rédigés avec l'aide de Claude.
+3. Déposer le rendu : `agent.ipynb`, `rapport.pdf`, `README.txt`, le lien du dépôt (données) et celui de l'adaptateur.
+4. Avant de rendre le dépôt public, **demander l'autorisation à Team Break** : l'affaire est adaptée de leur scénario.
+
+Facultatif : évaluer la seconde affaire sur GPU (14 requêtes de `data/test_theatre.jsonl`), avec les commandes de l'étape 3.8 de [GUIDE.md](GUIDE.md).
 
 ## Mise en route (une fois par membre)
 

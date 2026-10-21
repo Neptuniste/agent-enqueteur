@@ -2,7 +2,7 @@ LE DERNIER VERRE DU FAISAN DORÉ
 Un agent conversationnel qui joue les suspects d'une enquête policière
 Mini-projet 2 NLP : du Transformer pré-entraîné à une application de dialogue
 
-Membres : (à compléter)
+Membres : Thibaut Laheurte, Nathan Signoud, [troisième membre]
 Rendu : 23 octobre 2026
 
 
@@ -55,7 +55,7 @@ CONTENU
   Pour les reconstruire à partir des dialogues relus de data/raw/ :
     python data/build_dataset.py
 
-  Jeu de test : data/test.jsonl (34 requêtes écrites à la main). Pour le contrôler :
+  Jeu de test : data/test.jsonl (34 requêtes, figées avant l'entraînement). Pour le contrôler :
     python eval/evaluate.py verifier
 
   Fabrication des données : docs/cahier_des_charges.md, section 9.
@@ -93,3 +93,4 @@ Modèle de base : Qwen/Qwen3-4B-Instruct-2507 (licence Apache 2.0).
 Affaire librement adaptée de « Le Dernier Verre du Faisan Doré » (Team Break, https://team-break.fr).
 Seconde affaire, « Dernière au Théâtre du Miroir » : originale, écrite pour le projet avec l'aide de Claude.
 Dialogues d'entraînement rédigés avec l'aide de Claude (Anthropic), puis relus par l'équipe.
+Notation de l'évaluation faite par Claude, faute de notateurs disponibles (voir le rapport, section 5).
