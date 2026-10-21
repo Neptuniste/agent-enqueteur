@@ -2,7 +2,7 @@ LE DERNIER VERRE DU FAISAN DORÉ
 Un agent conversationnel qui joue les suspects d'une enquête policière
 Mini-projet 2 NLP : du Transformer pré-entraîné à une application de dialogue
 
-Membres : Thibaut Laheurte, Nathan Signoud, [troisième membre]
+Membres : Thibaut Laheurte, Nathan Signoud, Capucine Lardiere
 Rendu : 23 octobre 2026
 
 

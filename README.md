@@ -47,10 +47,9 @@ Tout est fait sauf le rendu lui-même :
 
 Il reste :
 
-1. Remplacer « [troisième membre] » dans `README.txt` et `rapport/rapport.md`, puis régénérer `rapport.pdf`.
-2. Relire le notebook et le rapport, rédigés avec l'aide de Claude.
-3. Déposer le rendu : `agent.ipynb`, `rapport.pdf`, `README.txt`, le lien du dépôt (données) et celui de l'adaptateur.
-4. Avant de rendre le dépôt public, **demander l'autorisation à Team Break** : l'affaire est adaptée de leur scénario.
+1. Relire le notebook et le rapport, rédigés avec l'aide de Claude.
+2. Déposer le rendu : `agent.ipynb`, `rapport.pdf`, `README.txt`, le lien du dépôt (données) et celui de l'adaptateur.
+3. Avant de rendre le dépôt public, **demander l'autorisation à Team Break** : l'affaire est adaptée de leur scénario.
 
 Facultatif : évaluer la seconde affaire sur GPU (14 requêtes de `data/test_theatre.jsonl`), avec les commandes de l'étape 3.8 de [GUIDE.md](GUIDE.md).
 

@@ -1,6 +1,6 @@
 # Le Dernier Verre du Faisan Doré : un agent conversationnel qui joue les suspects d'une enquête
 
-Mini-projet 2 de NLP. Équipe : Thibaut Laheurte, Nathan Signoud, [troisième membre]. 23 octobre 2026.
+Mini-projet 2 de NLP. Équipe : Thibaut Laheurte, Nathan Signoud, Capucine Lardiere. 23 octobre 2026.
 Adaptateur : https://huggingface.co/Neptuniste/faisan-dore-lora
 
 ## 1. Cas d'usage et périmètre
