@@ -179,6 +179,8 @@ Gardez le tableau affiché : il va dans le rapport, section 5.
 
 ## Étape 4 : noter à l'aveugle (mercredi 21, 2 personnes, environ 2 h chacune)
 
+> **21 octobre : faute de notateurs disponibles, la notation a été faite par Claude** (`results\notes_claude.csv`, un commentaire par note). Le tableau et le graphique sont prêts (`results\tableau_evaluation.md`, `results\scores_evaluation.png`), et le rapport le signale. Les étapes ci-dessous ne servent plus qu'à ajouter un notateur humain : copiez d'abord `results\notation_aveugle.csv` en `results\notes_A.csv`. L'agrégation calcule alors l'accord avec Claude.
+
 **4.1 Les deux feuilles sont prêtes** : `results\notes_A.csv` pour le premier notateur, `results\notes_B.csv` pour le second (deux copies de `results\notation_aveugle.csv`). Faites `git pull`, puis chacun ne modifie que sa propre feuille.
 
 **4.2 Lancez la notation au clavier**, sans Excel. Chacun ne note que sa propre feuille (`A` ou `B`) :

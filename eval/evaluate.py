@@ -366,13 +366,13 @@ def fmt(x, pourcent=False):
     return f"{x:.0%}" if pourcent else f"{x:.2f}"
 
 
-def tableau_humain(moyennes, infos, accord, oublis, ordre):
+def tableau_humain(moyennes, infos, accord, oublis, ordre, titre="Notation humaine à l'aveugle"):
     def score(version, critere, groupe=None):
         return moyenne([n for (code, c), n in moyennes.items() if c == critere and infos[code]["version"] == version
                         and (groupe is None or infos[code]["groupe"] == groupe)])
 
     entete = ["| Critère | " + " | ".join(ordre) + " |", "|---|" + "---|" * len(ordre)]
-    md = ["## Notation humaine à l'aveugle (notes moyennes, de 0 à 2)\n", *entete]
+    md = [f"## {titre} (notes moyennes, de 0 à 2)\n", *entete]
     md += [f"| {c} | " + " | ".join(fmt(score(v, c)) for v in ordre) + " |" for c in CRITERES]
     md.append("| **moyenne des 5 critères principaux** | " + " | ".join(
         fmt(moyenne([s for s in (score(v, c) for c in PRINCIPAUX) if s is not None])) for v in ordre) + " |")
@@ -449,8 +449,9 @@ def tracer(moyennes, infos, ordre, chemin):
         valeurs = [moyenne([n for (code, c), n in moyennes.items() if c == crit and infos[code]["version"] == v]) or 0
                    for crit in CRITERES]
         a.bar([x + i * largeur for x in range(len(CRITERES))], valeurs, largeur, label=v)
-        groupes = [moyenne([n for (code, c), n in moyennes.items() if c in PRINCIPAUX
-                            and infos[code]["version"] == v and infos[code]["groupe"] == g]) or 0
+        groupes = [moyenne([s for s in (moyenne([n for (code, c), n in moyennes.items() if c == crit  # comme le tableau
+                                                  and infos[code]["version"] == v and infos[code]["groupe"] == g])
+                                         for crit in PRINCIPAUX) if s is not None]) or 0
                    for g in GROUPES.values()]
         b.bar([x + i * largeur for x in range(len(GROUPES))], groupes, largeur, label=v)
     a.set_xticks([x + largeur * (len(ordre) - 1) / 2 for x in range(len(CRITERES))])
@@ -487,7 +488,14 @@ def commande_agreger(args):
     md = [f"# Évaluation : {' vs '.join(versions)}\n"]
     if cles_chemin.exists() and all(f.exists() for f in feuilles):
         moyennes, infos, accord, oublis = notes_humaines(feuilles, json.loads(cles_chemin.read_text(encoding="utf-8")), tests)
-        md += tableau_humain(moyennes, infos, accord, oublis, list(versions))
+        par_claude = sum("claude" in f.name.lower() for f in feuilles)
+        if not par_claude:
+            titre = "Notation humaine à l'aveugle"
+        elif par_claude == len(feuilles):
+            titre = "Notation par Claude selon la grille, un seul notateur"
+        else:
+            titre = "Notation à l'aveugle, par Claude et par des notateurs humains"
+        md += tableau_humain(moyennes, infos, accord, oublis, list(versions), titre)
         tracer(moyennes, infos, list(versions), dossier / "scores_evaluation.png")
     else:
         md.append("*Pas de feuille de notation : seules les métriques automatiques sont calculées.*\n")

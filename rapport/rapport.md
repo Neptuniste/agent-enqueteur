@@ -107,11 +107,11 @@ Aucune question de test ne figure dans les données : c'est vérifié automatiqu
 
 [Figure : results/courbes_loss.png]
 
-**Arrêt de l'entraînement.** [À COMPLÉTER]
+**Arrêt de l'entraînement.**
 
-- La perte de validation atteint son minimum au pas [s] (époque [e]), à [v].
-- L'entraînement s'arrête au pas [t] : [arrêt anticipé, ou fin des époques].
-- Le meilleur adaptateur, selon la validation, est rechargé puis publié : [lien Hugging Face].
+- La perte de validation atteint son minimum au pas 60 (environ 1 époque, 59 pas par époque), à 1,045.
+- L'entraînement s'arrête au pas 90 par arrêt anticipé : la perte de validation ne baisse plus pendant 3 évaluations, alors que la perte d'entraînement descend jusqu'à 0,58.
+- Le meilleur adaptateur, selon la validation, est rechargé puis publié : https://huggingface.co/Neptuniste/faisan-dore-lora
 
 L'écart entre les pertes d'entraînement et de validation après le minimum signale le début du par cœur.
 
@@ -123,18 +123,18 @@ L'écart entre les pertes d'entraînement et de validation après le minimum sig
 - 4 scénarios de 5 à 10 tours ;
 - 13 requêtes sur Armand Rivière.
 
-La baseline est le même modèle, adaptateur désactivé, avec le même prompt B, les mêmes réglages et la même graine par requête. Le filtre de sortie est coupé pour évaluer le modèle seul. Deux notateurs ont noté à l'aveugle, ordre mélangé et version masquée, avec une échelle de 0 à 2 et cinq critères plus deux bonus. Taux d'accord entre notateurs : [A] %.
+La baseline est le même modèle, adaptateur désactivé, avec le même prompt B, les mêmes réglages et la même graine par requête. Le filtre de sortie est coupé pour évaluer le modèle seul. La feuille de notation mélange l'ordre et masque la version, avec une échelle de 0 à 2, cinq critères et deux bonus. Faute de notateurs disponibles, elle a été remplie par Claude (Anthropic), sans la clé, avec un commentaire par note (`results/notes_claude.csv`). Il n'y a donc qu'un notateur et pas de taux d'accord, et la notation n'est pas strictement à l'aveugle : Claude avait lu une partie des réponses de la LoRA en analysant les métriques automatiques.
 
-| Critère (moyenne sur 2) | Baseline | LoRA |
+| Critère (moyenne sur 2, notes de Claude) | Baseline | LoRA |
 |---|---|---|
-| Pertinence et correction | | |
-| Rôle et format | | |
-| Historique | | |
-| Hors périmètre | | |
-| Informations inventées | | |
-| Bonus : mensonge tenu / mise en scène | | |
-| Moyenne, personnages vus / Armand (jamais vu) | | |
-| Taux de fuite (sans filtre) / aveu correct | | |
+| Pertinence et correction | 1,26 | 1,68 |
+| Rôle et format | 1,24 | 1,91 |
+| Historique | 1,29 | 1,29 |
+| Hors périmètre | 1,40 | 1,70 |
+| Informations inventées | 0,91 | 1,65 |
+| Bonus : mensonge tenu / mise en scène | 1,92 / 0,94 | 1,67 / 1,03 |
+| Moyenne, personnages vus / Armand (jamais vu) | 1,17 / 1,26 | 1,61 / 1,67 |
+| Taux de fuite (sans filtre) / aveu reconnu automatiquement | 1 % / 100 % | 0 % / 80 % |
 
 [À COMPLÉTER : analyse d'au moins cinq réussites ou erreurs, avec citations courtes. Pistes :
 - confrontation sur Armand (T04) : l'aveu reste-t-il limité à la consigne ?
@@ -142,7 +142,8 @@ La baseline est le même modèle, adaptateur désactivé, avec le même prompt B
 - hors périmètre (T10, T25, T30) ;
 - mémoire (T11) ;
 - scénario long de Rose (S02) ;
-- erreurs restantes ou introduites par la LoRA.]
+- erreurs restantes ou introduites par la LoRA ;
+- aveux reconnus à 80 % seulement : regarder dans `results/eval_lora.jsonl` si ce sont des paraphrases (T19).]
 
 **Généralisation à une intrigue inédite** (facultatif). Une seconde affaire originale, « Dernière au Théâtre du Miroir » (1929), n'a servi ni à l'entraînement ni à la validation. Elle compte 7 personnages et 11 pièces.
 
@@ -175,7 +176,7 @@ Chaque réponse passe par le filtre de sortie. Si la génération échoue, l'ét
 - **Une seule affaire.** Armand Rivière mesure la généralisation à une nouvelle fiche, pas à une nouvelle intrigue.
 - **Données rédigées par un modèle.** Elles sont relues, mais leur style est plus homogène que celui de vrais joueurs.
 - **Filtre lexical.** Il ne détecte pas une paraphrase du secret. La protection principale reste le verrouillage des fiches.
-- **Évaluation humaine.** Elle repose sur deux notateurs et 34 requêtes.
+- **Évaluation.** Faute de notateurs disponibles, les 68 réponses ont été notées par un seul notateur, Claude, sur 34 requêtes : pas de taux d'accord, et une notation qui n'est pas strictement à l'aveugle.
 - **Latence.** Il faut compter quelques secondes par réponse sur un T4.
 
 **Pistes.**
