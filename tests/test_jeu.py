@@ -20,12 +20,14 @@ try:
 except AttributeError:
     pass
 
-from src.jeu.demo import generateur_demo, premiere_personne  # noqa: E402
+from src.jeu.demo import RIEN, generateur_demo, premiere_personne  # noqa: E402
 from src.jeu.moteur import ErreurDeJeu, MoteurDeJeu  # noqa: E402
 
 # --- 1. Moteur ---------------------------------------------------------------------------------
 assert premiere_personne("Tu ne possèdes plus aucune arme.") == "Je ne possède plus aucune arme."
 assert premiere_personne("Tu as vu ton frère ; il t'a parlé.") == "J'ai vu mon frère ; il m'a parlé."
+assert premiere_personne("Ton frère : tu en parles.") == "Mon frère : j'en parle."
+assert premiere_personne("C'est toi qui as tiré.") == "C'est moi qui ai tiré."
 
 moteur = MoteurDeJeu(generateur_demo(), mode="demo")
 ids = [a["id"] for a in moteur.catalogue()["affaires"]]
@@ -40,6 +42,23 @@ for affaire in ids:
         assert interdit not in public, (affaire, interdit)
     assert len(r["pieces"]) == sum(p["disponible_au_depart"] for p in case["pieces"])
 print("dossiers publics sans secret :", ids)
+
+# Mode démo : les questions que suggère l'interface (rendreSuggestions dans jeu.js) ont une réponse, et un
+# nom de famille partagé ne fait pas répondre sur un autre personnage (« Rose Delorme » n'est pas Victor).
+for affaire in ids:
+    case, fiches = moteur.affaire(affaire)
+    s = moteur.ouvrir(affaire)["session"]
+    suggestions = ["Racontez-moi votre soirée.", "Où étiez-vous au moment du drame ?",
+                   f"Que pensez-vous de {case['victime']['nom']} ?", "Avez-vous remarqué quelque chose d'inhabituel ?",
+                   "Qui pouvait lui en vouloir ?"]
+    for perso in fiches:
+        for question in suggestions:
+            assert moteur.interroger(s, perso, question)["reponse"] not in RIEN, (affaire, perso, question)
+s = moteur.ouvrir("faisan_dore")["session"]
+reponse = moteur.interroger(s, "celeste_moreau", "Que pensez-vous de Rose Delorme ?")["reponse"]
+assert not reponse.startswith("Victor"), reponse
+assert "Lili" in moteur.interroger(s, "celeste_moreau", "", "piece_carnet_noir")["reponse"]
+assert "sais pas qui" in moteur.interroger(s, "celeste_moreau", "Qui a tué Victor ?")["reponse"]
 
 r = moteur.ouvrir("theatre_miroir")
 s = r["session"]
