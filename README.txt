@@ -11,7 +11,7 @@ CONTENU
   agent.ipynb          notebook exécuté, de l'installation à l'interface (sections 0 à 7)
   rapport.pdf          rapport (4 pages hors annexes)
   data/                données : train.jsonl, val.jsonl, test.jsonl, et les scripts qui les produisent
-  adaptateur LoRA      https://huggingface.co/Neptuniste/faisan-dore-lora (ou dossier adapter/)
+  adaptateur LoRA      https://huggingface.co/Neptuniste/faisan-dore-lora (public ; dossier adapter/ après un entraînement)
   src/                 code du jeu et du modèle, importé par le notebook
   eval/                grille et script d'évaluation
   cases/main_case/     l'affaire : fiches des personnages, pièces à conviction, plan
@@ -22,15 +22,17 @@ CONTENU
 
   a. Ouvrir agent.ipynb dans Colab.
      Choisir un GPU : Exécution > Modifier le type d'exécution > GPU T4.
-  b. Si le dépôt GitHub est privé, enregistrer un jeton GitHub dans les secrets Colab,
-     sous le nom GITHUB_TOKEN.
+  b. Si le dépôt GitHub est privé, enregistrer un jeton GitHub (le sien, avec accès au dépôt)
+     dans les secrets Colab, sous le nom GITHUB_TOKEN ; sinon la cellule le demande.
   c. Exécution > Tout exécuter.
      La première cellule de code clone le dépôt et installe requirements.txt.
-     Durée totale : 1 h 30 à 2 h, dont 45 à 60 min d'entraînement.
-  d. Pour réutiliser l'adaptateur publié au lieu d'entraîner :
-     mettre ENTRAINER = False dans la cellule de réglages.
-     L'adaptateur est alors téléchargé depuis le dépôt Hugging Face indiqué
-     dans src/config.py (ADAPTER_REPO).
+  d. Réglage rendu : ENTRAINER = False. L'adaptateur est téléchargé depuis le dépôt
+     Hugging Face de src/config.py (ADAPTER_REPO, public : aucun jeton Hugging Face),
+     les courbes viennent de l'entraînement enregistré dans results/, et les réponses
+     déjà notées sont réutilisées.
+     Pour réentraîner : ENTRAINER = True (45 à 60 min d'entraînement, 1 h 30 à 2 h
+     en tout). La publication de l'adaptateur demande alors un jeton Hugging Face
+     en écriture (secret HF_TOKEN) du compte propriétaire d'ADAPTER_REPO.
   e. La dernière cellule lance l'interface Gradio et affiche un lien public temporaire.
 
 
@@ -64,9 +66,10 @@ CONTENU
 4. ÉVALUATION EN LIGNE DE COMMANDE (facultatif : mêmes fonctions que le notebook)
 
     python eval/evaluate.py generer --version baseline
-    python eval/evaluate.py generer --version lora --adaptateur adapter
+    python eval/evaluate.py generer --version lora --adaptateur Neptuniste/faisan-dore-lora
     python eval/evaluate.py feuille
-    python eval/evaluate.py agreger results/notes_A.csv results/notes_B.csv
+    python eval/evaluate.py agreger results/notes_claude.csv     (ajouter results/notes_A.csv
+                                                                 si un humain note : python eval/noter.py A)
 
 
 5. INTERFACE SEULE
@@ -74,7 +77,7 @@ CONTENU
   Dans Python, avec un GPU :
     from src.llm import charger_modele
     from src.app import lancer
-    model, tokenizer = charger_modele(adaptateur="adapter")
+    model, tokenizer = charger_modele(adaptateur="Neptuniste/faisan-dore-lora")
     lancer(model, tokenizer)
 
 
