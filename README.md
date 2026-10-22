@@ -28,8 +28,8 @@ Il existe aussi une interface ludique (`src/jeu/`), plus complète que celle du 
 
 | Comment | Commande |
 |---|---|
-| Sans modèle ni GPU (mode démo : les personnages répondent avec leur fiche) | double-clic sur `jouer_demo.bat`, ou `python jouer.py --demo` |
-| Avec le modèle et l'adaptateur, sur Colab | ouvrir `jouer.ipynb` et exécuter ses trois cellules |
+| Sans modèle ni GPU (mode démo : les personnages répondent avec leur fiche) | double-clic sur `jouer_demo.bat` (la première fois, il crée `.venv` et y installe Gradio ; il faut Python 3.10 à 3.13), ou `python jouer.py --demo` |
+| Avec le modèle et l'adaptateur, sur Colab | ouvrir `jouer.ipynb` et exécuter ses trois cellules ; tant que le dépôt est privé, il faut un jeton GitHub à soi (secret Colab `GITHUB_TOKEN`), aucun jeton Hugging Face |
 | Avec le modèle, sur une machine avec GPU | `python jouer.py` (`--sans-adaptateur` pour la baseline, `--share` pour un lien public) |
 | L'interface du rendu, sur une autre affaire | `python jouer.py --classique --affaire theatre_miroir` |
 

@@ -3,3 +3,5 @@
 *.ipynb diff=ipynb
 # Le notebook final doit être rendu EXÉCUTÉ : on garde ses sorties
 agent.ipynb -filter
+# Les .bat doivent garder des fins de ligne Windows (CRLF)
+*.bat text eol=crlf
