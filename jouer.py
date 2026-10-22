@@ -37,7 +37,8 @@ def main():
     parser.add_argument("--classique", action="store_true", help="interface du rendu au lieu de l'interface ludique")
     parser.add_argument("--affaire", default="main_case", help="avec --classique : le dossier de cases/ à jouer")
     parser.add_argument("--share", action="store_true", help="lien public temporaire")
-    parser.add_argument("--port", type=int, default=7860)
+    parser.add_argument("--port", type=int, default=None,
+                        help="port local (par défaut le premier libre à partir de 7860)")
     parser.add_argument("--sans-navigateur", action="store_true", help="ne pas ouvrir le navigateur automatiquement")
     args = parser.parse_args()
     os.environ.setdefault("GRADIO_ANALYTICS_ENABLED", "False")
