@@ -534,7 +534,7 @@ Ces deux extensions dépassent les exigences du sujet. Elles ne changent ni les 
 - **Seconde affaire, « Dernière au Théâtre du Miroir »** (`cases/theatre_miroir/`). Elle est originale et suit le même format (§7) : 7 personnages, 11 pièces, une chaîne de 3 aveux en cascade. Elle passe `check_case.py` sans erreur ni avertissement. Elle n'a servi ni à l'entraînement ni à la validation, et teste donc l'agent sur une intrigue nouvelle, pas seulement sur une fiche nouvelle comme Armand Rivière (§9.5).
 - **Interface ludique** (`src/jeu/`). C'est une page de jeu servie par `gr.HTML` et ses `server_functions`, qui propose :
   - un choix des affaires ;
-  - la une du journal ;
+  - la une du journal, puis le dossier à lire avant de prendre l'affaire ;
   - des portraits ;
   - des répliques tapées à la machine ;
   - des pièces à glisser sur le suspect ;

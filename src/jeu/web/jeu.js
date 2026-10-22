@@ -137,7 +137,7 @@
         el('span', {}, el('b', {}, a.personnages), 'suspects'),
         el('span', {}, el('b', {}, a.pieces), 'pièces'),
         el('span', {}, el('b', {}, a.pieces_depart), 'au dossier')),
-      el('button', { class: 'jx-bouton', onclick: () => ouvrirAffaire(a.id) }, 'Ouvrir le dossier')));
+      el('button', { class: 'jx-bouton', onclick: () => ouvrirAffaire(a.id) }, "Ouvrir l'affaire")));
     const mode = etat.catalogue.mode === 'demo'
       ? 'Mode démo : les personnages répondent avec leur fiche, sans modèle de langage'
       : 'Personnages joués par ' + (etat.catalogue.modele || 'un modèle de langage');
@@ -180,7 +180,6 @@
     ecrire(CLE, { session: r.session });
     charger(r);
     briefing();
-    fenetreDossier(0);                       // le dossier d'abord : rapports, plan, pièces de départ
   }
   async function reprendre(session) {
     const r = await appeler('reprendre', { session });
@@ -194,6 +193,15 @@
   function briefing() {
     viderVue();
     const a = etat.affaire;
+    // La une d'abord, puis le dossier : l'affaire ne se prend qu'une fois le dossier ouvert.
+    const prendre = el('button', { class: 'jx-bouton', onclick: enquete, disabled: true,
+      title: "Lisez d'abord le dossier" }, "Prendre l'affaire");
+    const lire = el('button', { class: 'jx-bouton', onclick: () => {
+      fenetreDossier(0);
+      prendre.disabled = false;
+      prendre.removeAttribute('title');
+      lire.textContent = 'Relire le dossier';
+    } }, 'Lire le dossier');
     ecran('jx-briefing', el('div', { class: 'jx-journal' },
       el('div', { class: 'jx-nom-journal' }, "L'Écho du Soir"),
       el('div', { class: 'jx-edition' }, el('span', {}, 'Édition spéciale'), el('span', {}, a.date), el('span', {}, '25 centimes')),
@@ -204,8 +212,8 @@
         el('div', { class: 'jx-encadre' }, el('b', {}, 'Les personnes retenues : '),
           a.personnages.map((p) => p.nom).join(', ') + '.')),
       el('div', { class: 'jx-actions' },
-        el('button', { class: 'jx-bouton', onclick: enquete }, "Prendre l'affaire"),
-        el('button', { class: 'jx-bouton', onclick: () => fenetreDossier(0) }, 'Relire le dossier'),
+        lire,
+        prendre,
         el('button', { class: 'jx-bouton', onclick: accueil }, 'Retour'))));
   }
 

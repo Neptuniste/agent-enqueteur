@@ -5,7 +5,7 @@
 1. moteur, sur les deux affaires : dossier public sans secret, chaîne d'aveux complète, refus,
    accusation fausse puis révélation, accusation juste et score, reprise d'une partie ;
 2. si Playwright et Chrome (ou Edge) sont installés, parcours complet dans le navigateur :
-   lanceur, dossier ouvert d'abord, une du journal, portraits, interrogatoire, pièce montrée et pièce glissée, dossier, carnet, verdict.
+   lanceur, une du journal, dossier lu avant de prendre l'affaire, portraits, interrogatoire, pièce montrée et pièce glissée, dossier, carnet, verdict.
 """
 import json
 import os
@@ -106,15 +106,22 @@ with sync_playwright() as p:
     page.wait_for_selector(".jx-affiche", timeout=30000)
     assert page.locator(".jx-affiche").count() == len(ids)
     page.locator(".jx-affiche").nth(1).locator("button").click()
-    page.wait_for_selector(".jx-fenetre")          # le dossier s'ouvre d'abord, par-dessus la une
+    page.wait_for_selector(".jx-journal")          # la une d'abord, sans fenêtre par-dessus
+    assert page.locator(".jx-fenetre").count() == 0
+    boutons = page.locator(".jx-journal .jx-actions button")
+    assert boutons.all_text_contents()[:2] == ["Lire le dossier", "Prendre l'affaire"], boutons.all_text_contents()
+    assert boutons.nth(1).is_disabled(), "l'affaire ne se prend qu'après le dossier"
+    boutons.nth(0).click()
+    page.wait_for_selector(".jx-fenetre")
     assert page.locator(".jx-fenetre header h2").inner_text() == "Le dossier"
     fen = page.locator(".jx-fenetre").bounding_box()
     page.locator(".jx-corps").evaluate("e => e.scrollTop = e.scrollHeight")
     fin = page.locator(".jx-corps .jx-document > *").last.bounding_box()
     assert fen["y"] >= 0 and fin["y"] + fin["height"] <= fen["y"] + fen["height"] <= page.viewport_size["height"], (fen, fin)
     page.keyboard.press("Escape")
-    page.wait_for_selector(".jx-journal")
-    page.get_by_text("Prendre l'affaire").click()
+    assert page.locator(".jx-fenetre").count() == 0 and boutons.nth(1).is_enabled()
+    assert boutons.nth(0).text_content() == "Relire le dossier"
+    boutons.nth(1).click()
     page.wait_for_selector(".jx-suspect")
     portraits = page.locator(".jx-suspect img").evaluate_all("l => l.map(i => i.src)")
     assert len(set(portraits)) == len(portraits) == 7, "un portrait distinct par personnage"

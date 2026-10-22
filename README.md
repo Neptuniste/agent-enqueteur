@@ -19,7 +19,7 @@ Le jeu a deux enquêtes :
 
 Il existe aussi une interface ludique (`src/jeu/`), plus complète que celle du rendu (`src/app.py`). Elle offre :
 - un choix des enquêtes ;
-- la une du journal ;
+- la une du journal, puis le dossier à lire avant de prendre l'affaire ;
 - des portraits ;
 - des répliques tapées à la machine ;
 - des pièces à glisser sur le suspect ;
