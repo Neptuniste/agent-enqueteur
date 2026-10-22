@@ -5,7 +5,7 @@
 1. moteur, sur les deux affaires : dossier public sans secret, chaîne d'aveux complète, refus,
    accusation fausse puis révélation, accusation juste et score, reprise d'une partie ;
 2. si Playwright et Chrome (ou Edge) sont installés, parcours complet dans le navigateur :
-   lanceur, une du journal, interrogatoire, pièce montrée et pièce glissée, dossier, carnet, verdict.
+   lanceur, dossier ouvert d'abord, une du journal, portraits, interrogatoire, pièce montrée et pièce glissée, dossier, carnet, verdict.
 """
 import json
 import os
@@ -106,9 +106,18 @@ with sync_playwright() as p:
     page.wait_for_selector(".jx-affiche", timeout=30000)
     assert page.locator(".jx-affiche").count() == len(ids)
     page.locator(".jx-affiche").nth(1).locator("button").click()
+    page.wait_for_selector(".jx-fenetre")          # le dossier s'ouvre d'abord, par-dessus la une
+    assert page.locator(".jx-fenetre header h2").inner_text() == "Le dossier"
+    fen = page.locator(".jx-fenetre").bounding_box()
+    page.locator(".jx-corps").evaluate("e => e.scrollTop = e.scrollHeight")
+    fin = page.locator(".jx-corps .jx-document > *").last.bounding_box()
+    assert fen["y"] >= 0 and fin["y"] + fin["height"] <= fen["y"] + fen["height"] <= page.viewport_size["height"], (fen, fin)
+    page.keyboard.press("Escape")
     page.wait_for_selector(".jx-journal")
     page.get_by_text("Prendre l'affaire").click()
     page.wait_for_selector(".jx-suspect")
+    portraits = page.locator(".jx-suspect img").evaluate_all("l => l.map(i => i.src)")
+    assert len(set(portraits)) == len(portraits) == 7, "un portrait distinct par personnage"
     page.locator(".jx-suspect", has_text="Firmin Lagarde").click()
     page.fill(".jx-saisie input", "Où étiez-vous pendant l'entracte ?")
     page.keyboard.press("Enter")

@@ -180,6 +180,7 @@
     ecrire(CLE, { session: r.session });
     charger(r);
     briefing();
+    fenetreDossier(0);                       // le dossier d'abord : rapports, plan, pièces de départ
   }
   async function reprendre(session) {
     const r = await appeler('reprendre', { session });
@@ -204,6 +205,7 @@
           a.personnages.map((p) => p.nom).join(', ') + '.')),
       el('div', { class: 'jx-actions' },
         el('button', { class: 'jx-bouton', onclick: enquete }, "Prendre l'affaire"),
+        el('button', { class: 'jx-bouton', onclick: () => fenetreDossier(0) }, 'Relire le dossier'),
         el('button', { class: 'jx-bouton', onclick: accueil }, 'Retour'))));
   }
 

@@ -13,6 +13,7 @@ message système de chaque tour et applique le filtre de sortie ; le modèle ne 
 
 import base64
 import copy
+import html
 import unicodedata
 from pathlib import Path
 
@@ -149,6 +150,17 @@ def fiche_publique(fiche):
     return f"**{fiche['nom']}**, {fiche['identite']}.  \n*{fiche['attitude']}*"
 
 
+def carte_personnage(fiche, traits=None):
+    """La fiche publique en HTML, avec le portrait du personnage s'il est décrit dans portraits.json."""
+    from src.jeu.portraits import data_uri, dessiner
+    texte = (f"<div><b>{html.escape(fiche['nom'])}</b>, {html.escape(fiche['identite'])}.<br>"
+             f"<i>{html.escape(fiche['attitude'])}</i></div>")
+    if not traits:
+        return texte
+    return (f'<div style="display:flex;gap:14px;align-items:center"><img src="{data_uri(dessiner(traits, fiche["nom"]))}" '
+            f'width="92" height="92" alt="Portrait de {html.escape(fiche["nom"])}">{texte}</div>')
+
+
 def plan_html(document, dossier=AFFAIRE):
     """Le plan SVG, inséré comme image (data URI) pour éviter tout nettoyage du HTML."""
     donnees = base64.b64encode((Path(dossier) / document["fichier"]).read_bytes()).decode("ascii")
@@ -189,6 +201,8 @@ def creer_interface(model=None, tokenizer=None, generer=None, modele_affiche=Non
             raise ValueError("donner model et tokenizer, ou une fonction generer")
         generer = generateur_du_modele(model, tokenizer)
     case, fiches = charger_affaire(dossier)
+    from src.jeu.portraits import charger_traits
+    portraits = charger_traits(dossier)
     ordre = sorted(fiches, key=lambda p: sans_accents(fiches[p]["nom"]))
     choix_persos = [(fiches[p]["nom"], p) for p in ordre]
 
@@ -212,7 +226,7 @@ def creer_interface(model=None, tokenizer=None, generer=None, modele_affiche=Non
         with gr.Tab("Interrogatoire"):
             with gr.Row():
                 perso = gr.Dropdown(choix_persos, value=ordre[0], label="Personnage interrogé", scale=1)
-                identite = gr.Markdown(fiche_publique(fiches[ordre[0]]))
+                identite = gr.HTML(carte_personnage(fiches[ordre[0]], portraits.get(ordre[0])))
             chat = gr.Chatbot(label=f"Interrogatoire de {fiches[ordre[0]]['nom']}", height=440,
                               placeholder="Posez votre première question.")
             with gr.Row():
@@ -272,7 +286,7 @@ def creer_interface(model=None, tokenizer=None, generer=None, modele_affiche=Non
 
         def changer(p, perso_id):
             return (gr.update(value=p.historiques[perso_id], label=f"Interrogatoire de {fiches[perso_id]['nom']}"),
-                    fiche_publique(fiches[perso_id]), "")
+                    carte_personnage(fiches[perso_id], portraits.get(perso_id)), "")
         perso.change(changer, [partie, perso], [chat, identite, statut], api_name="changer_personnage")
 
         def effacer(p, perso_id):

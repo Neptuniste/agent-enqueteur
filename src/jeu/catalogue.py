@@ -11,6 +11,7 @@ import re
 from pathlib import Path
 
 from src.game_state import charger_affaire
+from src.jeu.portraits import charger_traits, data_uri, dessiner
 
 ROOT = Path(__file__).resolve().parents[2]
 DOSSIER_AFFAIRES = ROOT / "cases"
@@ -82,10 +83,11 @@ def piece_publique(piece, dossier):
             "depart": piece["disponible_au_depart"]}
 
 
-def personnage_public(fiche, indice):
-    """L'identité et l'attitude : ce que voit l'inspecteur. Jamais le rôle ni les secrets."""
+def personnage_public(fiche, indice, traits=None):
+    """L'identité, l'attitude et le portrait : ce que voit l'inspecteur. Jamais le rôle ni les secrets."""
+    portrait = data_uri(dessiner(traits, fiche["nom"])) if traits else portrait_svg(fiche["nom"], indice)
     return {"id": fiche["id"], "nom": fiche["nom"], "identite": fiche["identite"], "attitude": fiche["attitude"],
-            "portrait": portrait_svg(fiche["nom"], indice)}
+            "portrait": portrait}
 
 
 def dossier_public(case, fiches, dossier):
@@ -102,7 +104,8 @@ def dossier_public(case, fiches, dossier):
             documents.append({"id": doc["id"], "titre": doc["titre"],
                               "html": markdown_en_html(chemin.read_text(encoding="utf-8")), "plan": False})
     ordre = sorted(fiches, key=lambda p: fiches[p]["nom"])
+    traits = charger_traits(dossier)       # cases/<affaire>/portraits.json, s'il existe
     return {**carte_affaire(case, fiches), "contexte": case["cadre"]["contexte_public"],
             "victime": {"nom": case["victime"]["nom"], "identite": case["victime"]["identite"]},
             "documents": documents,
-            "personnages": [personnage_public(fiches[p], i) for i, p in enumerate(ordre)]}
+            "personnages": [personnage_public(fiches[p], i, traits.get(p)) for i, p in enumerate(ordre)]}
