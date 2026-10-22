@@ -10,7 +10,7 @@ import html
 import re
 from pathlib import Path
 
-from src.game_state import charger_affaire
+from src.game_state import charger_affaire, obtention
 from src.jeu.portraits import charger_traits, data_uri, dessiner
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -78,9 +78,10 @@ def carte_affaire(case, fiches):
 
 
 def piece_publique(piece, dossier):
+    document = (Path(dossier) / piece["document"]).read_text(encoding="utf-8")
     return {"id": piece["id"], "nom": piece["nom"][0].upper() + piece["nom"][1:], "description": piece["description"],
-            "document": markdown_en_html((Path(dossier) / piece["document"]).read_text(encoding="utf-8")),
-            "depart": piece["disponible_au_depart"]}
+            "document": markdown_en_html(document), "depart": piece["disponible_au_depart"],
+            "obtenue": obtention(document)}
 
 
 def personnage_public(fiche, indice, traits=None):

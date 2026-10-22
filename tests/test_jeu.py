@@ -68,6 +68,12 @@ for perso, piece in etapes:
     q = moteur.interroger(s, perso, "Expliquez-vous.", piece)
     assert q["aveu"], (perso, piece, q["reponse"])
 assert q["progression"]["pieces"] == 11 and len(moteur.sessions[s].carnet) == 5
+# Chaque pièce débloquée est racontée dans l'interrogatoire, avec la façon dont elle a été obtenue.
+recits = moteur.reprendre(s)["recits"]
+debloquees = 11 - sum(p["disponible_au_depart"] for p in moteur.affaire("theatre_miroir")[0]["pieces"])
+assert len(recits) == debloquees and all(". Obtenue : " in x["texte"] for x in recits), recits
+moteur.reinitialiser(s, "firmin_lagarde")
+assert all(x["perso"] != "firmin_lagarde" for x in moteur.reprendre(s)["recits"])
 q = moteur.interroger(s, "edmond_sorel", "Et ceci ?", "piece_cartouche_blanc")
 assert not q["aveu"]
 for args in [(s, "personne", "x"), ("inconnue", "edmond_sorel", "x"), (s, "edmond_sorel", "", None)]:
@@ -154,11 +160,17 @@ with sync_playwright() as p:
     page.wait_for_selector(".jx-piece.jx-nouvelle", timeout=20000)
     page.locator(".jx-dialogue").click()
     page.wait_for_function(attendre_fin, timeout=20000)
+    recit = page.locator(".jx-recit")   # comment la pièce débloquée est arrivée au dossier
+    assert recit.count() == 1 and "Obtenue : fouille des coulisses" in recit.inner_text(), recit.all_text_contents()
+    page.screenshot(path=str(captures / "recit.png"))
     page.locator(".jx-suspect", has_text="Adèle Brissac").click()
     page.locator(".jx-piece", has_text="ruban").drag_to(page.locator(".jx-interrogatoire"))
     page.wait_for_function("document.querySelectorAll('.jx-piece').length === 9", timeout=20000)
     page.locator(".jx-dialogue").click()
     page.wait_for_function(attendre_fin, timeout=20000)
+    assert page.locator(".jx-recit").count() == 1
+    page.locator(".jx-suspect", has_text="Firmin Lagarde").click()   # le récit reste à sa place
+    assert "fouille des coulisses" in page.locator(".jx-recit").inner_text()
     page.get_by_role("button", name="Carnet").click()
     page.wait_for_selector(".jx-carnet-entree")
     assert page.locator(".jx-carnet-entree").count() == 2

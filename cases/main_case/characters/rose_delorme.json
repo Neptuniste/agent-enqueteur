@@ -92,7 +92,11 @@
         "je l'ai empoisonné",
         "j'ai empoisonné",
         "j'ai versé le poison",
-        "j'ai versé le cyanure"
+        "j'ai versé le cyanure",
+        "j'ai touché à la bouteille",
+        "j'ai touché la bouteille",
+        "j'ai touché à sa bouteille",
+        "j'ai touché sa bouteille"
       ]
     }
   ],

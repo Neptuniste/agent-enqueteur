@@ -105,6 +105,8 @@
 .jx-replique.jx-perso .jx-texte { font-size: 1.08em; }
 .jx-replique.jx-aveu .jx-texte { border-left: 3px solid var(--rouge); padding-left: 12px; }
 .jx-didascalie { color: var(--gris); font-style: italic; }
+.jx-recit { margin: -4px 0 16px; max-width: 860px; padding: 6px 12px; border: 1px dashed var(--or); color: var(--or);
+  font-family: var(--machine); font-size: .8em; animation: jx-fondu .35s ease; }
 .jx-vide { color: var(--gris); font-style: italic; text-align: center; margin-top: 12vh; }
 .jx-reflexion { color: var(--gris); font-style: italic; }
 .jx-reflexion::after { content: "…"; display: inline-block; width: 1.2em; animation: jx-points 1.2s steps(4) infinite; overflow: hidden; vertical-align: bottom; }

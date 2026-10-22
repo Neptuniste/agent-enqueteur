@@ -123,7 +123,7 @@ La comparaison des deux prompts de la partie 3 porte sur la barrière 2 : **prom
 
 Quand le joueur présente une pièce à un personnage, le code injecte sa description et l'un de ces trois cas :
 
-1. **La pièce ouvre un secret verrouillé** (`revele_si`) : vérité + consigne d'aveu, puis les pièces listées dans `debloque` sont ajoutées au dossier. Le message « Nouvelle pièce : … » est affiché par le code, pas par le modèle.
+1. **La pièce ouvre un secret verrouillé** (`revele_si`) : vérité + consigne d'aveu, puis les pièces listées dans `debloque` sont ajoutées au dossier. Le message « Nouvelle pièce : … » est affiché par le code, pas par le modèle, avec la façon dont la pièce a été obtenue (ligne « Obtenue » de son document) : un personnage ne remet pas toujours la pièce lui-même.
 2. **Le secret est déjà ouvert** : rappel de l'aveu déjà fait, le personnage n'ajoute rien.
 3. **La pièce ne concerne aucun de ses secrets** : consigne « réagis avec ce que tu sais déjà, sans rien avouer ni inventer ». Le personnage peut commenter la pièce avec ses vérités (Marguerite connaît la rancœur de Rose devant le testament), sans rien révéler de verrouillé.
 
@@ -521,7 +521,7 @@ Construite avec `gr.Blocks`, lancée depuis le notebook.
 
 - **Encadré de présentation** : rôle de l'agent, règles, limites (le personnage peut mentir, il ne connaît que sa fiche) – exigé.
 - **Onglet Dossier** : rapport, description de la scène, plan, images, pièces débloquées au fil de la partie.
-- **Onglet Interrogatoire** : choix du personnage, zone de conversation (`gr.Chatbot`, didascalies en italique), saisie, liste des pièces disponibles, bouton « Présenter une pièce », message « Nouvelle pièce : … » après un aveu, bouton « Réinitialiser » (historique du personnage courant).
+- **Onglet Interrogatoire** : choix du personnage, zone de conversation (`gr.Chatbot`, didascalies en italique), saisie, liste des pièces disponibles, bouton « Présenter une pièce », message « Nouvelle pièce : … » après un aveu, avec la façon dont elle a été obtenue, bouton « Réinitialiser » (historique du personnage courant).
 - **Onglet Accusation** : choix du coupable, verdict, aveu final et solution complète.
 - Bouton « Nouvelle partie » qui réinitialise tout l'état du jeu.
 

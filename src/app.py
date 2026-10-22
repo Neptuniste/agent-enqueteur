@@ -19,7 +19,7 @@ from pathlib import Path
 
 import gradio as gr
 
-from src.game_state import GameState, charger_affaire, texte_du_dossier
+from src.game_state import GameState, charger_affaire, obtention, texte_du_dossier
 from src.prompt_builder import annonce_piece, build_system_prompt
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -258,10 +258,15 @@ def creer_interface(model=None, tokenizer=None, generer=None, modele_affiche=Non
                 raise gr.Error(f"La réponse n'a pas pu être générée ({type(erreur).__name__}).") from erreur
             message = ""
             if nouvelles:
-                noms = [nom_de_piece(next(x for x in case["pieces"] if x["id"] == n)) for n in nouvelles]
-                for nom in noms:
+                pieces = {x["id"]: x for x in case["pieces"]}
+                annonces = []
+                for n in nouvelles:
+                    nom = nom_de_piece(pieces[n])
                     gr.Info(f"Nouvelle pièce : {nom}", title="Dossier")
-                message = "**Nouvelle pièce au dossier** : " + " ; ".join(noms) + "."
+                    # le personnage ne remet pas toujours la pièce lui-même : on dit comment elle a été obtenue
+                    comment = obtention((Path(dossier) / pieces[n]["document"]).read_text(encoding="utf-8"))
+                    annonces.append(nom + (f" ({comment})" if comment else ""))
+                message = "**Nouvelle pièce au dossier** : " + " ; ".join(annonces) + "."
             return (p, p.historiques[perso_id], "", gr.update(choices=choix_pieces(p.jeu), value=None),
                     texte_pieces(p.jeu, dossier), message)
 

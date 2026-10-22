@@ -5,6 +5,7 @@ Le code garde la vérité : quelles pièces le joueur possède, ce qu'il a montr
 """
 
 import json
+import re
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -35,6 +36,16 @@ def texte_du_dossier(case, dossier, piece_ids):
         morceaux.append(piece["description"])
         morceaux.append((dossier / piece["document"]).read_text(encoding="utf-8"))
     return "\n".join(morceaux)
+
+
+def obtention(document):
+    """La ligne « **Obtenue** : … » du document d'une pièce (comment l'inspecteur l'a eue), sans le point final.
+
+    Une pièce débloquée n'est pas toujours remise par le personnage (fouille, déposition) : les interfaces
+    l'affichent avec l'annonce de la nouvelle pièce.
+    """
+    trouve = re.search(r"^\*\*Obtenue\*\*\s*:\s*(.+?)\.?\s*$", document, re.MULTILINE)
+    return trouve.group(1) if trouve else None
 
 
 def secrets_ouverts_par(fiche, piece_id):

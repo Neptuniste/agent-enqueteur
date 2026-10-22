@@ -23,6 +23,7 @@ Il existe aussi une interface ludique (`src/jeu/`), plus complète que celle du 
 - des portraits ;
 - des répliques tapées à la machine ;
 - des pièces à glisser sur le suspect ;
+- le récit de la façon dont chaque nouvelle pièce a été obtenue (fouille, déposition…) ;
 - un carnet des aveux ;
 - une accusation avec score et grade.
 

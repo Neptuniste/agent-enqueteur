@@ -13,7 +13,7 @@
   const LIBELLES = { coupable: "Désignent l'assassin", mobile: 'Le mobile', moyen: 'Le moyen', opportunite: "L'occasion" };
   const etat = {
     catalogue: null, session: null, affaire: null, perso: null, historiques: {}, pieces: [],
-    nouvelles: new Set(), carnet: [], progression: null, attente: false, saut: false,
+    nouvelles: new Set(), carnet: [], recits: [], progression: null, attente: false, saut: false,
   };
   const vue = {};
 
@@ -169,6 +169,7 @@
     etat.pieces = r.pieces;
     etat.historiques = r.historiques || {};
     etat.carnet = r.carnet || [];
+    etat.recits = r.recits || [];
     etat.progression = r.progression;
     etat.nouvelles = new Set();
     etat.perso = null;
@@ -286,6 +287,12 @@
       el('div', { class: 'jx-texte', html: enHtml(texte) }));
   }
 
+  // Comment une pièce débloquée arrive au dossier (fouille, déposition…), raconté après la réplique.
+  function recit(texte) { return el('div', { class: 'jx-recit' }, texte); }
+  function recitsApres(perso, position) {
+    return etat.recits.filter((x) => x.perso === perso && x.apres === position).map((x) => recit(x.texte));
+  }
+
   function rendreDialogue() {
     const h = etat.historiques[etat.perso] || [];
     if (!h.length) {
@@ -293,7 +300,7 @@
         personnage(etat.perso).nom + " attend vos questions. Glissez une pièce du dossier ici pour la lui montrer."));
       return;
     }
-    vue.dialogue.replaceChildren(...h.map((m) => ligne(m.role, m.content)));
+    vue.dialogue.replaceChildren(...h.flatMap((m, i) => [ligne(m.role, m.content), ...recitsApres(etat.perso, i + 1)]));
     vue.dialogue.scrollTop = vue.dialogue.scrollHeight;
   }
 
@@ -357,6 +364,12 @@
     }
     if (vue.jauges) { rendreJauges(); rendreSuspects(); rendrePieces(); }
     await taper(texte, r.reponse, 16);
+    let dernier = attente;
+    for (const x of r.recits || []) {
+      etat.recits.push(x);
+      if (etat.perso === perso) { const n = recit(x.texte); dernier.after(n); dernier = n; }
+    }
+    if (r.recits && r.recits.length && etat.perso === perso) vue.dialogue.scrollTop = vue.dialogue.scrollHeight;
     bloquer(false);
     if (vue.question) vue.question.focus();
   }
@@ -368,6 +381,7 @@
     const r = await appeler('reinitialiser', { session: etat.session, perso: etat.perso });
     if (!r) return;
     delete etat.historiques[etat.perso];
+    etat.recits = etat.recits.filter((x) => x.perso !== etat.perso);
     etat.progression = r.progression;
     rendreDialogue();
     annoncer('Interrogatoire effacé ; les aveux restent acquis');

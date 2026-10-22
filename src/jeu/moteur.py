@@ -30,6 +30,7 @@ class Session:
         self.partie = partie
         self.questions = 0
         self.carnet = []
+        self.recits = []    # pièces obtenues, racontées dans l'interrogatoire : {"perso", "apres", "texte"}
         self.verdict = None
         self.vue = time.time()
 
@@ -83,7 +84,7 @@ class MoteurDeJeu:
         historiques = {p: list(h) for p, h in s.partie.historiques.items() if h}
         return {"affaire": dossier_public(case, fiches, self.affaires[s.affaire_id]),
                 "pieces": self._pieces(s), "historiques": historiques, "carnet": list(s.carnet),
-                "progression": self._progression(s), "verdict": s.verdict}
+                "recits": list(s.recits), "progression": self._progression(s), "verdict": s.verdict}
 
     # --- jeu -------------------------------------------------------------------------------------
     def _pieces(self, s):
@@ -126,14 +127,22 @@ class MoteurDeJeu:
                       "texte": reponse, "numero": len(s.carnet) + 1}
             s.carnet.append(entree)
         nouvelles_pieces = [p for p in self._pieces(s) if p["id"] in nouvelles]
+        # Le personnage ne remet pas toujours la pièce lui-même (une fouille, une déposition) : on raconte
+        # comment elle arrive au dossier, juste après sa réplique.
+        recits = [{"perso": perso, "apres": len(s.partie.historiques[perso]),
+                   "texte": f"Nouvelle pièce au dossier : {p['nom'][0].lower() + p['nom'][1:]}"
+                            + (f". Obtenue : {p['obtenue']}." if p["obtenue"] else ".")}
+                  for p in nouvelles_pieces]
+        s.recits += recits
         return {"perso": perso, "question": posee, "reponse": reponse, "aveu": bool(aveux), "carnet": entree,
-                "nouvelles_pieces": nouvelles_pieces, "progression": self._progression(s)}
+                "nouvelles_pieces": nouvelles_pieces, "recits": recits, "progression": self._progression(s)}
 
     def reinitialiser(self, ident, perso):
         s = self._session(ident)
         if perso not in s.partie.historiques:
             raise ErreurDeJeu(f"personnage inconnu : {perso}")
         s.partie.reinitialiser(perso)
+        s.recits = [r for r in s.recits if r["perso"] != perso]
         return {"perso": perso, "progression": self._progression(s)}
 
     def accuser(self, ident, perso, preuves=None):
