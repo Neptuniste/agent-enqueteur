@@ -50,7 +50,7 @@ for affaire in ids:
     s = moteur.ouvrir(affaire)["session"]
     suggestions = ["Racontez-moi votre soirée.", "Où étiez-vous au moment du drame ?",
                    f"Que pensez-vous de {case['victime']['nom']} ?", "Avez-vous remarqué quelque chose d'inhabituel ?",
-                   "Qui pouvait lui en vouloir ?"]
+                   f"Qui pouvait en vouloir à {case['victime']['nom']} ?"]
     for perso in fiches:
         for question in suggestions:
             assert moteur.interroger(s, perso, question)["reponse"] not in RIEN, (affaire, perso, question)

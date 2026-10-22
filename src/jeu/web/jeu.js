@@ -307,7 +307,7 @@
   function rendreSuggestions() {
     const victime = etat.affaire.victime.nom;
     const idees = ['Racontez-moi votre soirée.', 'Où étiez-vous au moment du drame ?', 'Que pensez-vous de ' + victime + ' ?',
-      "Avez-vous remarqué quelque chose d'inhabituel ?", 'Qui pouvait lui en vouloir ?'];
+      "Avez-vous remarqué quelque chose d'inhabituel ?", 'Qui pouvait en vouloir à ' + victime + ' ?'];
     vue.suggestions.replaceChildren(...idees.map((q) => el('button', { class: 'jx-suggestion', onclick: () => envoyer(q) }, q)));
   }
 
